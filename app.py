@@ -374,6 +374,10 @@ with st.container(border=True):
         if st.session_state.get("extract_note"):
             meta += f" · ⚠️ {st.session_state['extract_note']}"
         st.caption(meta)
+        st.markdown('<p class="note" style="margin-top:-6px">Levels are judged by the model from evidence in your resume: '
+                    '<b>expert</b> = certified, led it, or ran it at scale · <b>pro</b> = independent professional use · '
+                    '<b>basic</b> = coursework or exposure. A posting that needs a higher level than you have gives half credit (↑ tags).</p>',
+                    unsafe_allow_html=True)
 
 if not skills:
     st.markdown('<p class="note" style="text-align:center;font-size:14px;margin-top:6px">Upload a resume (PDF / DOCX / TXT) and click '
