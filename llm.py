@@ -14,7 +14,20 @@ from skills import CANONICAL_SKILLS
 
 load_dotenv(".env")
 
-MODEL = os.environ.get("AIAND_MODEL", "deepseek-ai/deepseek-v4-flash")
+MODEL = os.environ.get("AIAND_MODEL", "moonshotai/kimi-k3")
+
+# models offered in the UI: id -> (label, reasoning_effort to use for fast structured turns)
+MODELS = {
+    "moonshotai/kimi-k3": ("Kimi K3 (Moonshot)", "low"),
+    "deepseek-ai/deepseek-v4-flash": ("DeepSeek V4 Flash", "none"),
+    "deepseek-ai/deepseek-v4-pro": ("DeepSeek V4 Pro", "none"),
+    "zai-org/glm-5.3-flash": ("GLM-5.3 Flash (Z.ai)", "low"),
+    "qwen/qwen3.8-27b": ("Qwen 3.8 27B", "none"),
+}
+
+
+def effort_for(model: str) -> str:
+    return MODELS.get(model, ("", "low"))[1]
 
 _client = None
 
@@ -67,14 +80,15 @@ Rules:
 - 'English' levels: 1 = conversational, 2 = business, 3 = fluent / native. Include if English is listed as a language."""
 
 
-def extract_skills(resume_text: str) -> tuple[list[dict], float]:
+def extract_skills(resume_text: str, model: str | None = None) -> tuple[list[dict], float]:
     """Return ([{name, level}], seconds). Deduplicates by name keeping the highest level."""
+    model = model or MODEL
     t = time.perf_counter()
     r = client().chat.completions.create(
-        model=MODEL,
-        max_tokens=2000,
+        model=model,
+        max_tokens=4000,
         temperature=0,
-        reasoning_effort="none",
+        reasoning_effort=effort_for(model),
         response_format={"type": "json_schema", "json_schema": {"name": "skills", "schema": SKILLS_SCHEMA, "strict": True}},
         messages=[{"role": "system", "content": EXTRACT_SYSTEM}, {"role": "user", "content": resume_text}],
     )
@@ -127,13 +141,14 @@ Rules:
 - Ignore generic soft skills except Team Leadership (managing/leading engineers) and Mentoring."""
 
 
-def extract_job_requirements(title: str, description: str) -> list[dict]:
+def extract_job_requirements(title: str, description: str, model: str | None = None) -> list[dict]:
     """Return [{skill, level, mandatory}] for a real job posting."""
+    model = model or MODEL
     r = client().chat.completions.create(
-        model=MODEL,
-        max_tokens=1500,
+        model=model,
+        max_tokens=4000,
         temperature=0,
-        reasoning_effort="none",
+        reasoning_effort=effort_for(model),
         response_format={"type": "json_schema", "json_schema": {"name": "job", "schema": JOB_SCHEMA, "strict": True}},
         messages=[{"role": "system", "content": JOB_SYSTEM},
                   {"role": "user", "content": f"TITLE: {title}\n\n{description[:12000]}"}],

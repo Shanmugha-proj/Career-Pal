@@ -1,7 +1,8 @@
-"""Career-Pal: what should I learn next? A graph knows.
+"""Career-Pal — what should I learn next? The graph knows.
 
 Run: python -m streamlit run app.py
 """
+import hashlib
 import json
 import sys
 
@@ -10,44 +11,132 @@ import streamlit as st
 
 import graph
 import llm
-from skills import LEARN_DAYS, LEVEL_LABELS
+from skills import LEVEL_LABELS
 
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
 CID = "demo"
-TOTAL_JOBS = 300
 
-st.set_page_config(page_title="Career-Pal", page_icon="🧭", layout="wide")
+st.set_page_config(page_title="Career-Pal · what should I learn next?", page_icon="🧭", layout="wide",
+                   initial_sidebar_state="expanded")
+
+# ----------------------------------------------------------------------------- design system
+
 st.markdown("""
 <style>
-  .big   { font-size: 64px; font-weight: 800; line-height: 1.05; margin: 0; }
-  .big em { font-style: normal; color: #ff4b4b; }
-  .sub   { font-size: 20px; opacity: .8; margin-top: 4px; }
-  .chip  { display:inline-block; padding: 4px 12px; margin: 3px; border-radius: 999px; font-size: 15px; font-weight: 600; }
-  .l3 { background:#1f7a3a; color:#fff; } .l2 { background:#2b6cb0; color:#fff; } .l1 { background:#6b7280; color:#fff; }
-  .new { outline: 3px solid #ff4b4b; }
-  .lat   { font-family: ui-monospace, monospace; font-size: 13px; opacity: .85; }
-  .step  { font-size: 18px; }
-  .path  { display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; margin: 8px 0 4px; }
-  .card  { flex:1 1 170px; min-width:170px; border:1px solid rgba(128,128,128,.35); border-radius:12px; padding:12px 14px; }
-  .card-day   { font-size:13px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
-  .card-skill { font-size:22px; font-weight:700; line-height:1.15; margin:4px 0 6px; overflow-wrap:anywhere; }
-  .card-meta  { font-size:15px; } .card-course { font-size:12px; opacity:.65; }
-  .arrow { align-self:center; font-size:28px; opacity:.5; }
-  h2 { margin-top: 1.2rem !important; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+html, body, [data-testid="stAppViewContainer"], [data-testid="stSidebar"], .stMarkdown, .stButton, .stSlider, .stSelectbox,
+[data-testid="stChatInput"] * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+[data-testid="stToolbar"], .stAppDeployButton, #MainMenu, footer { display: none !important; }
+header[data-testid="stHeader"] { background: transparent; }
+.block-container { padding-top: 1.1rem; padding-bottom: 7rem; max-width: 1240px; }
+[data-testid="stSidebar"] { background: #ffffff; border-right: 1px solid #e6e8f0; }
+[data-testid="stSidebar"] .block-container { padding-top: 1.5rem; }
+[data-testid="stVerticalBlockBorderWrapper"] { border: 1px solid #e6e8f0 !important; border-radius: 18px !important; background: #fff;
+  box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 12px 32px -20px rgba(16,24,40,.22); padding: 8px 10px 4px; margin-bottom: 14px; }
+[data-testid="stExpander"] { border: 1px solid #e6e8f0; border-radius: 14px; background: #fafbfe; }
+[data-testid="stFileUploader"] section { border-radius: 14px; border: 1.5px dashed #c7d2fe; background: #f8f9ff; }
+.stButton > button { border-radius: 10px; font-weight: 700; padding: .55rem 1rem; }
+[data-testid="stChatInput"] { border-radius: 14px; border: 1px solid #c7d2fe; background: #fff; }
+[data-testid="stChatMessage"] { background: #fff; border: 1px solid #e6e8f0; border-radius: 14px; padding: 10px 14px; }
+
+.cp-hero { background: radial-gradient(900px 380px at 8% -30%, rgba(99,102,241,.55), transparent 60%),
+  radial-gradient(700px 300px at 95% 120%, rgba(34,211,238,.25), transparent 60%),
+  linear-gradient(135deg,#0b1020 0%,#141a3a 45%,#1e1b4b 100%); color:#fff; border-radius:22px; padding:28px 32px 26px; margin-bottom:16px; }
+.cp-brand { display:flex; align-items:center; gap:12px; font-weight:800; font-size:20px; letter-spacing:-.01em; }
+.cp-logo { width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#6366f1,#22d3ee); display:inline-flex;
+  align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px; box-shadow:0 8px 20px -8px rgba(99,102,241,.8); }
+.cp-pills { margin-left:auto; display:flex; gap:8px; flex-wrap:wrap; }
+.pill { display:inline-flex; align-items:center; gap:7px; padding:5px 11px; border-radius:999px; font-size:12.5px; font-weight:600;
+  background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.16); color:#e5e7eb; }
+.pill .dot { width:7px;height:7px;border-radius:50%; background:#34d399; box-shadow:0 0 0 3px rgba(52,211,153,.22); }
+.cp-title { font-size:42px; font-weight:800; letter-spacing:-.025em; line-height:1.08; margin:22px 0 10px; }
+.cp-title em { font-style:normal; background:linear-gradient(90deg,#a5b4fc,#67e8f9); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.cp-sub { font-size:16px; color:#c7cbe0; max-width:860px; line-height:1.55; }
+.cp-sub b { color:#fff; }
+.kpis { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-top:22px; }
+.kpi { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:14px 16px; min-height:88px; }
+.kpi .k { font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:#aab0cc; font-weight:700; }
+.kpi .v { font-size:26px; font-weight:800; margin-top:5px; letter-spacing:-.01em; line-height:1.1; }
+.kpi .v small { font-size:13px; font-weight:600; color:#c7cbe0; margin-left:6px; }
+.kpi .d { font-size:13px; color:#86efac; font-weight:800; margin-left:8px; }
+
+.sec { display:flex; align-items:center; gap:12px; margin: 8px 0 12px; }
+.sec .n { width:30px;height:30px;border-radius:9px;background:#eef2ff;color:#4f46e5;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px; }
+.sec h2 { margin:0; font-size:21px; font-weight:800; letter-spacing:-.01em; color:#0f172a; }
+.sec .hint { margin-left:auto; color:#64748b; font-size:13px; }
+.big { font-size:50px; font-weight:800; letter-spacing:-.025em; line-height:1.05; margin:4px 0 2px; color:#0f172a; }
+.big em { font-style:normal; color:#4f46e5; }
+.big .delta { font-size:20px; color:#059669; font-weight:800; margin-left:10px; vertical-align:middle; background:#ecfdf5; padding:4px 10px; border-radius:10px; }
+.sub { color:#64748b; font-size:15px; margin:0 0 14px; }
+.chips { margin: 4px 0 6px; }
+.chip { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; margin:4px 6px 4px 0; border-radius:999px; font-size:13.5px; font-weight:600; border:1px solid transparent; }
+.l3 { background:#ecfdf5; color:#047857; border-color:#a7f3d0; } .l2 { background:#eef2ff; color:#4338ca; border-color:#c7d2fe; } .l1 { background:#f1f5f9; color:#475569; border-color:#e2e8f0; }
+.chip.new { box-shadow:0 0 0 3px rgba(245,158,11,.35); background:#fffbeb; color:#b45309; border-color:#fcd34d; }
+.chip .lv { font-size:11px; opacity:.8; font-weight:700; }
+.jobs { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+.job { border:1px solid #e6e8f0; border-radius:14px; padding:14px 14px 12px; background:#fff; display:flex; flex-direction:column; gap:10px; }
+.job-top { display:flex; align-items:flex-start; gap:10px; }
+.avatar { width:38px;height:38px;border-radius:10px; display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:14px; flex:0 0 38px; }
+.job-title { font-weight:700; font-size:14.5px; line-height:1.25; color:#0f172a; }
+.job-co { color:#64748b; font-size:12.5px; margin-top:2px; }
+.fit { margin-left:auto; font-weight:800; font-size:18px; letter-spacing:-.01em; white-space:nowrap; }
+.bar { height:6px; background:#eef0f6; border-radius:999px; overflow:hidden; }
+.bar span { display:block; height:100%; border-radius:999px; }
+.tags { display:flex; flex-wrap:wrap; gap:5px; }
+.tag { font-size:11.5px; padding:3px 8px; border-radius:7px; font-weight:600; }
+.tag.ok { background:#ecfdf5; color:#047857; } .tag.miss { background:#fff1f2; color:#be123c; } .tag.part { background:#fffbeb; color:#b45309; }
+.job-foot { display:flex; align-items:center; margin-top:auto; gap:8px; }
+.badge { font-size:11.5px; font-weight:700; padding:3px 8px; border-radius:7px; background:#ecfdf5; color:#047857; }
+.badge.syn { background:#f1f5f9; color:#475569; }
+.apply { margin-left:auto; font-size:12.5px; font-weight:700; color:#4f46e5; text-decoration:none; padding:6px 10px; border-radius:8px; background:#eef2ff; }
+.apply:hover { background:#e0e7ff; }
+.lb { display:flex; flex-direction:column; gap:8px; }
+.lb-row { display:grid; grid-template-columns: 34px 1fr 120px 96px; gap:14px; align-items:center; padding:12px 14px; border:1px solid #e6e8f0; border-radius:12px; background:#fff; }
+.lb-row.top { border-color:#c7d2fe; background:linear-gradient(90deg,#eef2ff, #fff 60%); }
+.lb-rank { width:30px;height:30px;border-radius:9px;background:#f1f5f9;color:#334155;display:inline-flex;align-items:center;justify-content:center;font-weight:800; }
+.lb-row.top .lb-rank { background:#4f46e5; color:#fff; }
+.lb-skill { font-weight:700; font-size:15px; color:#0f172a; }
+.lb-course { color:#64748b; font-size:12px; font-weight:500; margin-left:8px; }
+.lb-bar { height:8px; background:#eef0f6; border-radius:999px; overflow:hidden; margin-top:7px; }
+.lb-bar span { display:block; height:100%; background:linear-gradient(90deg,#6366f1,#22d3ee); border-radius:999px; }
+.lb-num { font-weight:800; font-size:20px; color:#0f172a; text-align:right; white-space:nowrap; }
+.lb-num small, .lb-days small { font-size:12px; color:#64748b; font-weight:600; margin-left:4px; }
+.lb-days { font-weight:700; font-size:16px; color:#334155; text-align:right; white-space:nowrap; }
+.callout { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:14px; background:linear-gradient(90deg,#eef2ff,#ecfeff); border:1px solid #c7d2fe; margin-bottom:12px; font-size:16px; color:#0f172a; }
+.callout .vs { color:#64748b; font-size:14px; margin-left:auto; text-align:right; }
+.path { display:flex; align-items:stretch; margin:8px 0 6px; overflow-x:auto; padding-bottom:4px; }
+.step { flex:1 1 170px; min-width:170px; position:relative; padding:14px 14px 12px; border:1px solid #e6e8f0; border-radius:14px; background:#fff; }
+.step + .step { margin-left:28px; }
+.step + .step:before { content:""; position:absolute; left:-28px; top:50%; width:28px; height:2px; background:#c7d2fe; }
+.step .day { font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:#4f46e5; font-weight:800; }
+.step .sk { font-size:17px; font-weight:800; line-height:1.2; margin:5px 0 6px; color:#0f172a; overflow-wrap:anywhere; }
+.step .m { font-size:13px; color:#334155; font-weight:600; } .step .c { font-size:11.5px; color:#64748b; margin-top:4px; }
+.status { font-size:12.5px; color:#334155; }
+.status .row { display:flex; justify-content:space-between; gap:8px; padding:7px 0; border-bottom:1px dashed #e6e8f0; }
+.status .row:last-child { border-bottom:none; }
+.status .ok { color:#059669; font-weight:700; font-variant-numeric: tabular-nums; }
+.status .lbl { color:#64748b; }
+.banner { padding:12px 16px; border-radius:12px; background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; font-weight:600; margin: 4px 0 10px; }
+.note { color:#64748b; font-size:12.5px; line-height:1.5; }
+@media (max-width: 1100px) { .jobs { grid-template-columns: repeat(2, 1fr);} .kpis { grid-template-columns: repeat(2, 1fr);} }
 </style>
 """, unsafe_allow_html=True)
 
+SHORT = {
+    "CI/CD (GitLab CI/GitHub Actions)": "CI/CD pipelines", "Prometheus/Grafana": "Prometheus / Grafana",
+    "SRE Practices (SLOs/On-call)": "SRE practices", "Networking (L2/L3)": "Networking", "Incident Management/RCA": "Incident mgmt",
+    "Cloud Security/IAM": "Cloud security", "GitOps (ArgoCD/Flux)": "GitOps", "Logging (ELK/Loki)": "Logging",
+    "Bare-metal Provisioning": "Bare-metal", "Virtualization (VMware/KVM)": "Virtualization", "Storage (Ceph/SAN)": "Storage",
+    "Secrets Management (Vault)": "Vault", "Service Mesh (Istio)": "Service mesh", "Telecom Core Networks": "Telecom core",
+    "Technical Documentation": "Tech writing",
+}
+short = lambda s: SHORT.get(s, s)
+AVATAR_COLORS = ["#4f46e5", "#0891b2", "#059669", "#d97706", "#db2777", "#7c3aed", "#2563eb", "#dc2626", "#0d9488"]
 
-# ----------------------------------------------------------------------------- state helpers
 
-def load_resume_text() -> str:
-    try:
-        return open("demo/resume.txt", encoding="utf-8").read()
-    except FileNotFoundError:
-        return ""
-
+# ----------------------------------------------------------------------------- helpers
 
 def read_resume_file(up) -> str:
     """Extract plain text from an uploaded PDF / DOCX / TXT."""
@@ -70,6 +159,13 @@ def read_resume_file(up) -> str:
     return re.sub(r"[ \t]+\n", "\n", text).strip()
 
 
+def load_resume_text() -> str:
+    try:
+        return open("demo/resume.txt", encoding="utf-8").read()
+    except FileNotFoundError:
+        return ""
+
+
 def cached_skills() -> list[dict]:
     try:
         return json.load(open("demo/resume_skills.json"))["skills"]
@@ -86,7 +182,6 @@ def signature(skills: list[dict]) -> tuple:
 
 
 def get_fits(sig: tuple) -> list[dict]:
-    """All 300 jobs with fit scores; cached per skill-state. Cutoff filtering is client-side -> instant slider."""
     cache = st.session_state.setdefault("fits_cache", {})
     if sig not in cache:
         cache.clear()
@@ -103,222 +198,275 @@ def get_plan(sig: tuple, cutoff: float, budget: int) -> dict:
 
 
 def level_label(skill: str, level: int) -> str:
-    return LEVEL_LABELS.get(skill, {}).get(level, f"L{level}")
+    return LEVEL_LABELS.get(skill, {}).get(level, {1: "basic", 2: "pro", 3: "expert"}[level])
 
 
 def chips(skills: list[dict], highlight: set[str] = frozenset()) -> str:
-    return "".join(
-        f'<span class="chip l{s["level"]} {"new" if s["name"] in highlight else ""}">{s["name"]} · {level_label(s["name"], s["level"])}</span>'
-        for s in skills
-    )
+    return '<div class="chips">' + "".join(
+        f'<span class="chip l{s["level"]} {"new" if s["name"] in highlight else ""}">{s["name"]}'
+        f'<span class="lv">{"NEW · " if s["name"] in highlight else ""}{level_label(s["name"], s["level"])}</span></span>'
+        for s in skills) + "</div>"
+
+
+def fit_color(f: float) -> str:
+    return "#059669" if f >= 0.8 else "#4f46e5" if f >= 0.6 else "#d97706"
+
+
+def avatar(company: str) -> str:
+    color = AVATAR_COLORS[int(hashlib.md5(company.encode()).hexdigest(), 16) % len(AVATAR_COLORS)]
+    initials = "".join(w[0] for w in company.replace("&", "").split()[:2]).upper() or "?"
+    return f'<div class="avatar" style="background:{color}">{initials}</div>'
+
+
+def job_card(f: dict) -> str:
+    fit = f["fit"]
+    ok = [s for s in f["matched"][:4]]
+    gaps = f["gaps"][:3]
+    tags = "".join(f'<span class="tag ok">{short(s)}</span>' for s in ok) + "".join(
+        f'<span class="tag {"part" if g["m"] > 0 else "miss"}">{"↑ " if g["m"] > 0 else "+ "}{short(g["s"])}</span>' for g in gaps)
+    real = f.get("source") == "real"
+    badge = '<span class="badge">● Real posting</span>' if real else '<span class="badge syn">synthetic</span>'
+    link = f'<a class="apply" href="{f["url"]}" target="_blank">Apply ↗</a>' if f.get("url") else ""
+    return (f'<div class="job"><div class="job-top">{avatar(f["company"])}<div><div class="job-title">{f["title"]}</div>'
+            f'<div class="job-co">{f["company"]} · {f["location"]}</div></div>'
+            f'<div class="fit" style="color:{fit_color(fit)}">{round(100 * fit)}%</div></div>'
+            f'<div class="bar"><span style="width:{round(100 * fit)}%;background:{fit_color(fit)}"></span></div>'
+            f'<div class="tags">{tags}</div><div class="job-foot">{badge}{link}</div></div>')
 
 
 def apply_skill(skill: str, level: int, source: str):
     """Agent memory write + bookkeeping for the 'what changed' deltas."""
-    fits_before = get_fits(signature(skills_from_graph()))
-    st.session_state["before"] = {"fits": fits_before, "sig": signature(skills_from_graph())}
+    cur = skills_from_graph()
+    st.session_state["before"] = {"fits": get_fits(signature(cur)), "sig": signature(cur),
+                                  "plan": st.session_state.get("last_plan")}
     graph.mark_skill(CID, skill, level, source=source)
     st.session_state["highlight"] = {skill}
     st.session_state.pop("plan_cache", None)
 
 
+def section(n: int, title: str, hint: str = ""):
+    st.markdown(f'<div class="sec"><span class="n">{n}</span><h2>{title}</h2><span class="hint">{hint}</span></div>',
+                unsafe_allow_html=True)
+
+
 # ----------------------------------------------------------------------------- sidebar
 
 with st.sidebar:
-    st.header("Career-Pal")
+    st.markdown("**Controls**")
+    model_ids = list(llm.MODELS)
+    model = st.selectbox("Model (ai& inference)", model_ids, index=model_ids.index(llm.MODEL) if llm.MODEL in model_ids else 0,
+                         format_func=lambda m: llm.MODELS[m][0])
+    st.session_state["model"] = model
     cutoff_pct = st.slider("Minimum fit to count as *qualified*", 40, 90, 60, 5, format="%d%%")
     cutoff = cutoff_pct / 100
     budget = st.slider("Learning budget (days)", 14, 120, 45, 1)
     st.divider()
-    lat = st.empty()
+    st.markdown("**Live status**")
+    status = st.empty()
     st.divider()
-    if st.button("Reset demo", type="secondary", width="stretch"):
+    if st.button("Reset demo", width="stretch"):
         graph.set_candidate_skills(CID, [])
-        for k in ("fits_cache", "plan_cache", "before", "highlight", "chat", "extract_secs", "extract_note"):
+        for k in ("fits_cache", "plan_cache", "before", "highlight", "chat", "extract_secs", "extract_note", "last_plan",
+                  "resume_text", "uploaded_name", "agent_secs"):
             st.session_state.pop(k, None)
         st.rerun()
-    st.caption("Corpus: real Tokyo postings pulled from public job-board APIs (Greenhouse, Lever, Workable, Ashby, JSearch) "
-               "and extracted with ai&, topped up with synthetic postings generated from role templates. "
-               "Stat sources: METI IT HR Supply & Demand Survey (2019); Recruit Works Institute Future Predictions 2040.")
+    st.markdown('<p class="note">Corpus: real Tokyo postings pulled today from public job-board APIs (Greenhouse, Lever, Workable, '
+                'Ashby, SmartRecruiters, Workday) and structured with ai&. Stats: METI IT HR Supply &amp; Demand Survey (2019); '
+                'Recruit Works Institute, Future Predictions 2040.</p>', unsafe_allow_html=True)
 
+# ----------------------------------------------------------------------------- data
 
-# ----------------------------------------------------------------------------- header
+skills = skills_from_graph()
+sig = signature(skills) if skills else ()
+fits = get_fits(sig) if skills else []
+qualified = [f for f in fits if f["fit"] >= cutoff]
+n_q = len(qualified)
+n_real = sum(1 for f in fits if f.get("source") == "real")
+n_companies = len({f["company"] for f in fits})
 
-st.markdown('<p class="big">Career-Pal</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub">Japan is short <b>~790,000 IT workers by 2030</b> (METI). It is a <b>skills</b> gap, not a headcount gap. '
-            'So: which skill should <i>you</i> learn next?</p>', unsafe_allow_html=True)
+lb_all = graph.leaderboard(CID, cutoff, limit=25) if skills else []
+jp = next((r for r in lb_all if r["skill"] == "Japanese"), None)
+lb = lb_all[:8]
+top = lb[0] if lb else None
+
+plan = None
+if skills:
+    with st.spinner("Re-planning in Neo4j…"):
+        plan = get_plan(sig, cutoff, budget)
+    st.session_state["last_plan"] = plan
+
+before = st.session_state.get("before")
+delta_jobs = None
+if before and before["sig"] != sig:
+    delta_jobs = n_q - sum(1 for f in before["fits"] if f["fit"] >= cutoff)
+
+# ----------------------------------------------------------------------------- hero
+
+model_label = llm.MODELS.get(model, (model,))[0]
+kpis = ""
+if skills:
+    kpi_jobs = f'<div class="kpi"><div class="k">Real postings analysed</div><div class="v">{len(fits)}<small>{n_companies} companies</small></div></div>'
+    d = f'<span class="d">{"+" if delta_jobs > 0 else ""}{delta_jobs}</span>' if delta_jobs else ""
+    kpi_q = f'<div class="kpi"><div class="k">You qualify for</div><div class="v">{n_q}{d}<small>≥ {cutoff_pct}% fit</small></div></div>'
+    kpi_next = (f'<div class="kpi"><div class="k">Best next move</div><div class="v">{short(top["skill"])}<small>+{top["unlocks"]} jobs · {top["days"]}d</small></div></div>'
+                if top else '<div class="kpi"><div class="k">Best next move</div><div class="v">—</div></div>')
+    kpi_path = (f'<div class="kpi"><div class="k">Fastest path</div><div class="v">{plan["total_days"]} days<small>→ +{plan["total_unlocked"]} jobs</small></div></div>'
+                if plan and plan["steps"] else '<div class="kpi"><div class="k">Fastest path</div><div class="v">—</div></div>')
+    kpis = f'<div class="kpis">{kpi_jobs}{kpi_q}{kpi_next}{kpi_path}</div>'
+
+st.markdown(
+    f'<div class="cp-hero"><div class="cp-brand"><span class="cp-logo">C</span>Career-Pal'
+    f'<span class="cp-pills"><span class="pill"><span class="dot"></span>Neo4j AuraDB · memory graph</span>'
+    f'<span class="pill"><span class="dot"></span>ai& inference · {model_label}</span>'
+    f'<span class="pill">🇯🇵 Data stays in Japan</span></span></div>'
+    f'<div class="cp-title">What should you learn next?<br><em>The graph knows.</em></div>'
+    f'<div class="cp-sub">Japan is short <b>~790,000 IT workers by 2030</b> (METI) — a <b>skills</b> gap, not a headcount gap. '
+    f'Every job tool asks “which jobs fit me?”. Career-Pal inverts it: <b>what is the cheapest change to <i>you</i> that fits the most jobs?</b></div>'
+    f'{kpis}</div>', unsafe_allow_html=True)
 
 # ----------------------------------------------------------------------------- 1 · resume
 
-skills = skills_from_graph()
+with st.container(border=True):
+    section(1, "Your resume", f"Structured extraction into a 44-skill taxonomy · {model_label} on ai&, hosted in Japan")
+    with st.expander("Upload or paste your resume", expanded=not skills):
+        up = st.file_uploader("Upload resume (PDF, DOCX or TXT)", type=["pdf", "docx", "txt"], label_visibility="collapsed")
+        if up is not None and st.session_state.get("uploaded_name") != up.name:
+            try:
+                st.session_state["resume_text"] = read_resume_file(up)
+                st.session_state["uploaded_name"] = up.name
+                st.toast(f"Loaded {up.name} · {len(st.session_state['resume_text'].split())} words")
+            except Exception as e:  # noqa: BLE001
+                st.error(f"Could not read {up.name}: {e}")
+        resume_text = st.text_area("Resume text", st.session_state.get("resume_text") or load_resume_text(), height=200,
+                                   label_visibility="collapsed")
+        c1, c2 = st.columns([1, 3])
+        if c1.button("Analyze with ai& ⚡", type="primary", width="stretch"):
+            note = ""
+            try:
+                with st.spinner(f"{model_label} · extracting skills on ai& in Japan…"):
+                    extracted, secs = llm.extract_skills(resume_text, model=model)
+                if not extracted:
+                    raise ValueError("no skills returned")
+            except Exception as e:  # noqa: BLE001 - never let a live LLM call sink the demo
+                extracted, secs, note = cached_skills(), 0.0, f"ai& unavailable ({type(e).__name__}) — loaded cached extraction"
+            graph.set_candidate_skills(CID, extracted)
+            st.session_state["extract_secs"] = secs
+            st.session_state["extract_note"] = note
+            for k in ("fits_cache", "plan_cache", "before", "highlight", "last_plan"):
+                st.session_state.pop(k, None)
+            st.rerun()
+        c2.markdown('<p class="note" style="margin-top:10px">Your resume is some of the most sensitive data you own. '
+                    'Every token is processed on ai& infrastructure in Japan and becomes <b>HAS</b> edges in your Neo4j memory graph — '
+                    'nothing is stored as free text.</p>', unsafe_allow_html=True)
 
-st.header("1 · Your resume")
-with st.expander("Upload or paste resume", expanded=not skills):
-    up = st.file_uploader("Upload resume (PDF, DOCX or TXT)", type=["pdf", "docx", "txt"], label_visibility="collapsed")
-    if up is not None and st.session_state.get("uploaded_name") != up.name:
-        try:
-            st.session_state["resume_text"] = read_resume_file(up)
-            st.session_state["uploaded_name"] = up.name
-            st.toast(f"Loaded {up.name} · {len(st.session_state['resume_text'].split())} words")
-        except Exception as e:  # noqa: BLE001
-            st.error(f"Could not read {up.name}: {e}")
-    resume_text = st.text_area("Resume text", st.session_state.get("resume_text") or load_resume_text(), height=220,
-                               label_visibility="collapsed")
-    c1, c2 = st.columns([1, 3])
-    if c1.button("Analyze with ai& ⚡", type="primary", width="stretch"):
-        note = ""
-        try:
-            with st.spinner("ai& inference · deepseek-v4-flash · extracting skills in Japan…"):
-                extracted, secs = llm.extract_skills(resume_text)
-            if not extracted:
-                raise ValueError("no skills returned")
-        except Exception as e:  # noqa: BLE001 - never let a live LLM call sink the demo
-            extracted, secs, note = cached_skills(), 0.0, f"ai& unavailable ({type(e).__name__}) — loaded cached extraction"
-        graph.set_candidate_skills(CID, extracted)
-        st.session_state["extract_secs"] = secs
-        st.session_state["extract_note"] = note
-        for k in ("fits_cache", "plan_cache", "before", "highlight"):
-            st.session_state.pop(k, None)
-        st.rerun()
-    c2.caption("Structured extraction into a 44-skill taxonomy · runs on ai& inference (open-weight DeepSeek V4 Flash, hosted in Japan — your resume never leaves the country)")
+    if skills:
+        st.markdown(chips(skills, st.session_state.get("highlight", set())), unsafe_allow_html=True)
+        secs = st.session_state.get("extract_secs")
+        meta = f"**{len(skills)} skills** in your memory graph"
+        if secs:
+            meta += f" · extracted in **{secs:.1f}s** by {model_label}"
+        if st.session_state.get("extract_note"):
+            meta += f" · ⚠️ {st.session_state['extract_note']}"
+        st.caption(meta)
 
 if not skills:
-    st.info("Paste a resume and click **Analyze with ai&** to build your skill graph.")
+    st.info("Upload a resume and click **Analyze with ai&** to build your skill graph.")
     st.stop()
-
-secs = st.session_state.get("extract_secs")
-hl = st.session_state.get("highlight", set())
-st.markdown(chips(skills, hl), unsafe_allow_html=True)
-meta = f"**{len(skills)} skills** in your memory graph"
-if secs:
-    meta += f" · extracted in **{secs:.1f}s** by ai& ({llm.MODEL})"
-if st.session_state.get("extract_note"):
-    meta += f" · ⚠️ {st.session_state['extract_note']}"
-st.caption(meta)
 
 # ----------------------------------------------------------------------------- 2 · where you stand
 
-sig = signature(skills)
-fits = get_fits(sig)
-qualified = [f for f in fits if f["fit"] >= cutoff]
-n_q = len(qualified)
-
-before = st.session_state.get("before")
-delta_txt = ""
-if before and before["sig"] != sig:
-    n_before = sum(1 for f in before["fits"] if f["fit"] >= cutoff)
-    if n_before != n_q:
-        delta_txt = f' <em>({"+" if n_q > n_before else ""}{n_q - n_before})</em>'
-
-n_real = sum(1 for f in fits if f.get("source") == "real")
-n_real_q = sum(1 for f in qualified if f.get("source") == "real")
-real_boards = sorted({f["company"] for f in fits if f.get("source") == "real"})
-
-st.header("2 · Where you stand")
-st.markdown(f'<p class="big">You qualify for <em>{n_q}</em> of {len(fits)} jobs{delta_txt}</p>'
-            f'<p class="sub">at ≥ {cutoff_pct}% fit · Tokyo infra / cloud / platform roles · '
-            f'<b>{n_real} real postings</b> pulled today from public job boards ({n_real_q} qualified) + {len(fits) - n_real} synthetic</p>',
-            unsafe_allow_html=True)
-
-by_role = pd.DataFrame(fits).assign(q=lambda d: d["fit"] >= cutoff).groupby("role")["q"].agg(["sum", "count"])
-by_role = by_role.assign(pct=lambda d: (100 * d["sum"] / d["count"]).round()).sort_values("pct", ascending=False)
-cols = st.columns([3, 2])
-with cols[0]:
-    df = pd.DataFrame([{
-        "Fit": round(100 * f["fit"]), "Title": f["title"], "Company": f["company"], "Location": f["location"],
-        "Real": "🟢 real" if f.get("source") == "real" else "synthetic", "Link": f.get("url") or None,
-        "Missing": ", ".join(f'{g["s"]}{"" if g["m"] == 0 else " ↑"}' for g in f["gaps"]) or "—",
-    } for f in sorted(qualified, key=lambda f: (f.get("source") != "real", -f["fit"]))[:80]])
-    st.dataframe(df, hide_index=True, width="stretch", height=330, column_config={
-        "Fit": st.column_config.ProgressColumn("Fit", format="%d%%", min_value=0, max_value=100),
-        "Link": st.column_config.LinkColumn("Link", display_text="apply ↗"),
-    })
-with cols[1]:
-    st.caption("Qualified share by role")
-    st.dataframe(by_role.rename(columns={"sum": "qualified", "count": "jobs", "pct": "%"}), width="stretch", height=330,
-                 column_config={"%": st.column_config.ProgressColumn("%", format="%d%%", min_value=0, max_value=100)})
+with st.container(border=True):
+    section(2, "Where you stand", f"{n_real} real postings · {n_companies} companies · scored in Neo4j")
+    d_html = f'<span class="delta">{"+" if delta_jobs > 0 else ""}{delta_jobs}</span>' if delta_jobs else ""
+    st.markdown(f'<p class="big">You qualify for <em>{n_q}</em> of {len(fits)} jobs{d_html}</p>'
+                f'<p class="sub">at ≥ {cutoff_pct}% fit · Tokyo infrastructure / cloud / platform roles · '
+                f'fit = weighted coverage of each posting’s required skills, explainable skill by skill</p>', unsafe_allow_html=True)
+    show = sorted(qualified, key=lambda f: -f["fit"])[:9]
+    if show:
+        st.markdown('<div class="jobs">' + "".join(job_card(f) for f in show) + "</div>", unsafe_allow_html=True)
+    else:
+        st.warning("No postings at this cutoff — lower the bar in the sidebar.")
+    with st.expander(f"All {n_q} qualifying postings"):
+        df = pd.DataFrame([{
+            "Fit": round(100 * f["fit"]), "Title": f["title"], "Company": f["company"], "Location": f["location"],
+            "Link": f.get("url") or None, "Missing": ", ".join(f'{g["s"]}{"" if g["m"] == 0 else " ↑"}' for g in f["gaps"]) or "—",
+        } for f in sorted(qualified, key=lambda f: -f["fit"])])
+        st.dataframe(df, hide_index=True, width="stretch", height=360, column_config={
+            "Fit": st.column_config.ProgressColumn("Fit", format="%d%%", min_value=0, max_value=100),
+            "Link": st.column_config.LinkColumn("Link", display_text="apply ↗"),
+        })
 
 # ----------------------------------------------------------------------------- 3 · learn next
 
-st.header("3 · Learn next — what unlocks the most jobs?")
-lb = graph.leaderboard(CID, cutoff, limit=25)
-jp = next((r for r in lb if r["skill"] == "Japanese"), None)
-lb = lb[:10]
-if lb:
-    lb_df = pd.DataFrame([{
-        "Skill": f'{r["skill"]}{" (" + level_label(r["skill"], r["level"]) + ")" if r["skill"] in LEVEL_LABELS else ""}',
-        "+ Jobs unlocked": r["unlocks"], "Days": r["days"], "Jobs / day": round(r["unlocks"] / r["days"], 2) if r["days"] else None,
-        "Course": r["course"], "e.g.": r["examples"][0] if r["examples"] else "",
-    } for r in lb])
-    top = lb[0]
-    vs_jp = (f' &nbsp;·&nbsp; vs. "learn Japanese first": +{jp["unlocks"]} jobs in {jp["days"]} days'
-             if jp and top["skill"] != "Japanese" else "")
-    st.markdown(f'<p class="step">🏆 <b>Learn {top["skill"]}</b> → <b>+{top["unlocks"]} jobs</b> in <b>{top["days"]} days</b>{vs_jp}</p>',
-                unsafe_allow_html=True)
-    st.dataframe(lb_df, hide_index=True, width="stretch", column_config={
-        "+ Jobs unlocked": st.column_config.ProgressColumn("+ Jobs unlocked", format="%d", min_value=0, max_value=int(top["unlocks"])),
-    })
-else:
-    st.success("No single skill would unlock more jobs at this cutoff — you're there. Raise the bar with the slider.")
+with st.container(border=True):
+    section(3, "Learn next — what unlocks the most jobs?", f"one Cypher query · {graph.LAST_MS.get('leaderboard', 0):.0f} ms")
+    if top:
+        vs = (f'<span class="vs">vs. “learn Japanese first”:<br><b>+{jp["unlocks"]} jobs in {jp["days"]} days</b></span>'
+              if jp and top["skill"] != "Japanese" else "")
+        st.markdown(f'<div class="callout">🏆&nbsp; <span>Learn <b>{top["skill"]}</b> → <b>+{top["unlocks"]} jobs</b> in <b>{top["days"]} days</b></span>{vs}</div>',
+                    unsafe_allow_html=True)
+        rows = "".join(
+            f'<div class="lb-row {"top" if i == 0 else ""}"><div class="lb-rank">{i + 1}</div>'
+            f'<div><div class="lb-skill">{r["skill"]}{" (" + level_label(r["skill"], r["level"]) + ")" if r["skill"] in LEVEL_LABELS else ""}'
+            f'<span class="lb-course">{r["course"] or ""}</span></div>'
+            f'<div class="lb-bar"><span style="width:{round(100 * r["unlocks"] / top["unlocks"])}%"></span></div></div>'
+            f'<div class="lb-num">+{r["unlocks"]}<small>jobs</small></div><div class="lb-days">{r["days"]}<small>days</small></div></div>'
+            for i, r in enumerate(lb))
+        st.markdown(f'<div class="lb">{rows}</div>', unsafe_allow_html=True)
+    else:
+        st.success("No single skill would unlock more jobs at this cutoff — raise the bar with the slider.")
 
 # ----------------------------------------------------------------------------- 4 · fastest path
 
-st.header(f"4 · Your fastest path — {budget}-day budget")
-with st.spinner("Re-planning in Neo4j (greedy search over the skill graph)…"):
-    plan = get_plan(sig, cutoff, budget)
-if plan["steps"]:
-    total_after = plan["base"] + plan["total_unlocked"]
-    prev = None
-    if before and before["sig"] != sig:
-        prev = st.session_state.get("plan_cache_prev")
-    st.markdown(f'<p class="big"><em>{plan["total_days"]} days</em> → +{plan["total_unlocked"]} jobs</p>'
-                f'<p class="sub">{plan["base"]} → {total_after} qualified jobs at ≥ {cutoff_pct}% fit</p>', unsafe_allow_html=True)
-    cards = "".join(
-        f'<div class="card"><div class="card-day">Day {s["cumulative_days"]}</div>'
-        f'<div class="card-skill">{s["skill"]}</div>'
-        f'<div class="card-meta">+{s["unlocks"]} jobs · {s["days"]} days<br><span class="card-course">{s["course"] or ""}</span></div></div>'
-        + ('<div class="arrow">→</div>' if i < len(plan["steps"]) - 1 else "")
-        for i, s in enumerate(plan["steps"])
-    )
-    st.markdown(f'<div class="path">{cards}</div>', unsafe_allow_html=True)
-    st.session_state["plan_cache_prev"] = plan
-else:
-    st.info("Nothing learnable within this budget moves you past the cutoff — raise the budget or lower the bar.")
-
-# ----------------------------------------------------------------------------- why a graph
-
-with st.expander("Why a graph and not a vector index? Show the Cypher"):
-    st.markdown("A vector index answers *'which jobs resemble my resume?'*. It cannot answer *'which single edge, if added, "
-                "flips the most jobs over a threshold?'* — that is a set-cover question over explicit relationships. "
-                "And when the agent learns something new, it is **one new edge**, not a re-embedding of the whole resume.")
-    st.code(graph.LEADERBOARD_CYPHER.strip(), language="cypher")
+with st.container(border=True):
+    section(4, f"Your fastest path — {budget}-day budget", "greedy search over the skill graph, on a scratch copy of you")
+    if plan and plan["steps"]:
+        total_after = plan["base"] + plan["total_unlocked"]
+        prev = before.get("plan") if (before and before["sig"] != sig) else None
+        d_days = (f'<span class="delta" style="color:#059669">{prev["total_days"]} → {plan["total_days"]} days</span>'
+                  if prev and prev.get("steps") and prev["total_days"] != plan["total_days"] else "")
+        st.markdown(f'<p class="big"><em>{plan["total_days"]} days</em> → +{plan["total_unlocked"]} jobs{d_days}</p>'
+                    f'<p class="sub">{plan["base"]} → {total_after} qualifying postings at ≥ {cutoff_pct}% fit</p>', unsafe_allow_html=True)
+        steps = "".join(
+            f'<div class="step"><div class="day">Day {s["cumulative_days"]}</div><div class="sk">{s["skill"]}</div>'
+            f'<div class="m">+{s["unlocks"]} jobs · {s["days"]} days</div><div class="c">{s["course"] or ""}</div></div>'
+            for s in plan["steps"])
+        st.markdown(f'<div class="path">{steps}</div>', unsafe_allow_html=True)
+    else:
+        st.info("Nothing learnable within this budget moves you past the cutoff — raise the budget or lower the bar.")
 
 # ----------------------------------------------------------------------------- 5 · agent
 
-st.header("5 · Tell the agent what you learned")
-st.caption("The agent (ai& · tool calling) writes to the Neo4j memory graph. Everything above re-plans from the new edge.")
-chat = st.session_state.setdefault("chat", [])
-for role, text in chat[-6:]:
-    with st.chat_message(role):
-        st.markdown(text)
+with st.container(border=True):
+    section(5, "Tell the agent what you learned", "ai& tool calling → one new edge in Neo4j → everything above re-plans")
+    if delta_jobs:
+        new = ", ".join(sorted(st.session_state.get("highlight", set())))
+        st.markdown(f'<div class="banner">🧠 Memory updated: <b>{new}</b> → {"+" if delta_jobs > 0 else ""}{delta_jobs} jobs unlocked. '
+                    f'Leaderboard, path and scores re-planned from the new edge.</div>', unsafe_allow_html=True)
+    chat = st.session_state.setdefault("chat", [])
+    for role, text in chat[-6:]:
+        with st.chat_message(role):
+            st.markdown(text)
+    fb1, fb2 = st.columns([1, 3])
+    if top and fb1.button(f"✅ I finished {short(top['skill'])}", help="Fallback: records the top skill without the LLM", width="stretch"):
+        apply_skill(top["skill"], 2, source="button")
+        chat.append(("user", f"I finished the {top['skill']} course."))
+        chat.append(("assistant", f"Recorded **{top['skill']}** (level 2) in your memory graph. Re-planning…"))
+        st.rerun()
+    fb2.markdown('<p class="note" style="margin-top:10px">Try: “I just finished a GitHub Actions CI/CD course and set up pipelines for two repos”</p>',
+                 unsafe_allow_html=True)
 
-fb1, fb2 = st.columns([1, 4])
-if lb and fb1.button(f"✅ I finished {lb[0]['skill']}", help="Fallback: records the top skill without the LLM"):
-    apply_skill(lb[0]["skill"], 2, source="button")
-    chat.append(("user", f"I finished the {lb[0]['skill']} course."))
-    chat.append(("assistant", f"Recorded **{lb[0]['skill']}** (level 2) in your memory graph. Re-planning…"))
-    st.rerun()
-
-if msg := st.chat_input("e.g. “I finished the Terraform course and built a few modules”"):
+if msg := st.chat_input("Tell the agent what you learned…"):
+    chat = st.session_state.setdefault("chat", [])
     chat.append(("user", msg))
-    context = f"Candidate skills: {', '.join(s['name'] + ' L' + str(s['level']) for s in skills)}. " \
-              f"Top learn-next options: {', '.join(r['skill'] + ' (+' + str(r['unlocks']) + ' jobs, ' + str(r['days']) + 'd)' for r in lb[:5])}."
+    context = (f"Candidate skills: {', '.join(s['name'] + ' L' + str(s['level']) for s in skills)}. "
+               f"Top learn-next options: {', '.join(r['skill'] + ' (+' + str(r['unlocks']) + ' jobs, ' + str(r['days']) + 'd)' for r in lb[:5])}.")
     try:
-        with st.spinner("ai& agent thinking…"):
-            calls, text, secs = llm.agent_turn(msg, context)
+        with st.spinner(f"{model_label} agent thinking…"):
+            calls, text, secs = llm.agent_turn(msg, context, model=model)
         st.session_state["agent_secs"] = secs
     except Exception as e:  # noqa: BLE001
-        calls, text = [], f"⚠️ ai& unavailable ({type(e).__name__}). Use the ✅ button to record the skill."
+        calls, text, secs = [], f"⚠️ ai& unavailable ({type(e).__name__}). Use the ✅ button to record the skill.", 0.0
     for c in calls:
         apply_skill(c["skill"], c["level"], source="agent")
     if calls:
@@ -327,14 +475,24 @@ if msg := st.chat_input("e.g. “I finished the Terraform course and built a few
     chat.append(("assistant", text or "(no reply)"))
     st.rerun()
 
-# ----------------------------------------------------------------------------- latency panel (sidebar)
+# ----------------------------------------------------------------------------- why a graph
+
+with st.expander("Why a graph and not a vector index? Show the Cypher"):
+    st.markdown("A vector index answers *“which jobs resemble my resume?”*. It cannot answer *“which single edge, if added, "
+                "flips the most jobs over a threshold?”* — a set-cover question over explicit relationships. "
+                "And when the agent learns something new, it is **one new edge**, not a re-embedding of the whole resume. "
+                "Every score decomposes into named skills, so every match is explainable.")
+    st.code(graph.LEADERBOARD_CYPHER.strip(), language="cypher")
+
+# ----------------------------------------------------------------------------- sidebar status (filled last)
 
 ms = graph.LAST_MS
-lat.markdown(
-    f'<div class="lat"><b>Neo4j Aura</b><br>fit scores ×300: {ms.get("job_fits", 0):.0f} ms<br>'
-    f'leaderboard: {ms.get("leaderboard", 0):.0f} ms<br>memory write: {ms.get("mark_skill", 0):.0f} ms<br><br>'
-    f'<b>ai& inference</b> · {llm.MODEL.split("/")[-1]}<br>'
-    f'resume → skills: {(st.session_state.get("extract_secs") or 0):.1f} s<br>'
-    f'agent turn: {(st.session_state.get("agent_secs") or 0):.1f} s</div>',
-    unsafe_allow_html=True,
-)
+status.markdown(
+    f'<div class="status">'
+    f'<div class="row"><span class="lbl">Neo4j · fit ×{len(fits)}</span><span class="ok">{ms.get("job_fits", 0):.0f} ms</span></div>'
+    f'<div class="row"><span class="lbl">Neo4j · leaderboard</span><span class="ok">{ms.get("leaderboard", 0):.0f} ms</span></div>'
+    f'<div class="row"><span class="lbl">Neo4j · memory write</span><span class="ok">{ms.get("mark_skill", 0):.0f} ms</span></div>'
+    f'<div class="row"><span class="lbl">ai& · resume → skills</span><span class="ok">{(st.session_state.get("extract_secs") or 0):.1f} s</span></div>'
+    f'<div class="row"><span class="lbl">ai& · agent turn</span><span class="ok">{(st.session_state.get("agent_secs") or 0):.1f} s</span></div>'
+    f'<div class="row"><span class="lbl">model</span><span class="ok">{model_label}</span></div>'
+    f'</div>', unsafe_allow_html=True)

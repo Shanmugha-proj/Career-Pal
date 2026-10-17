@@ -89,10 +89,23 @@ INFRA_RE = __import__("re").compile(r"platform|infra|sre|reliability|devops|clou
                                      r"systems? engineer|linux|storage|database|dbre|observab", __import__("re").I)
 
 
+INFRA_SKILLS = {"Kubernetes", "Docker", "Helm", "OpenStack", "AWS", "GCP", "Azure", "Terraform", "Ansible", "Linux",
+                "Bare-metal Provisioning", "Networking (L2/L3)", "Storage (Ceph/SAN)", "Virtualization (VMware/KVM)",
+                "CI/CD (GitLab CI/GitHub Actions)", "GitOps (ArgoCD/Flux)", "Prometheus/Grafana", "Logging (ELK/Loki)", "Datadog",
+                "Incident Management/RCA", "SRE Practices (SLOs/On-call)", "Cloud Security/IAM", "Secrets Management (Vault)",
+                "Open RAN/5G", "Telecom Core Networks", "Bash", "Service Mesh (Istio)", "OpenShift"}
+
+
+def relevance(job: dict) -> float:
+    """How infra/cloud/platform-relevant a real posting is: title keywords + share of infra skills required."""
+    infra = sum(1 for r in job["requires"] if r["skill"] in INFRA_SKILLS)
+    return (3 if INFRA_RE.search(job["title"]) else 0) + infra + 0.5 * sum(1 for r in job["requires"] if r["skill"] in INFRA_SKILLS and r["mandatory"])
+
+
 def build_corpus(max_real: int = 150, total: int = TOTAL) -> list[dict]:
-    """Real jobs first (most infra-relevant titles first, up to max_real), synthetic fills the remainder."""
+    """Real jobs first (most infra-relevant first, up to max_real), synthetic fills the remainder (0 if total == max_real)."""
     real = load_real_jobs()
-    real.sort(key=lambda j: (0 if INFRA_RE.search(j["title"]) else 1, j["id"]))
+    real.sort(key=lambda j: (-relevance(j), j["id"]))
     real = real[:max_real]
     synthetic = generate_jobs(n_synthetic=total - len(real))
     jobs = real + synthetic
