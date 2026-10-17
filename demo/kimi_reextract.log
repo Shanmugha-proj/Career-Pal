@@ -6,3 +6,7 @@ re-extracting 200 seeded postings with moonshotai/kimi-k3
   100 done, {} errors, 188s
   120 done, {} errors, 222s
   140 done, {} errors, 251s
+  160 done, {} errors, 289s
+  180 done, {} errors, 323s
+done: 191/200 re-extracted with Kimi K3 in 343s; errors={}
+saved demo/real_jobs.json

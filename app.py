@@ -285,9 +285,10 @@ n_real = sum(1 for f in fits if f.get("source") == "real")
 n_companies = len({f["company"] for f in fits})
 
 lb_all = graph.leaderboard(CID, cutoff, limit=25) if skills else []
-jp = next((r for r in lb_all if r["skill"] == "Japanese"), None)
+lb_all = [r for r in lb_all if r["unlocks"] >= 2]              # drop single-job noise
 lb = lb_all[:8]
-top = lb[0] if lb else None
+top = lb[0] if lb else None                                       # best next move = most jobs per day of learning
+biggest = max(lb_all, key=lambda r: r["unlocks"]) if lb_all else None   # biggest single unlock, whatever it costs
 
 plan = None
 if skills:
@@ -399,18 +400,22 @@ with st.container(border=True):
 # ----------------------------------------------------------------------------- 3 · learn next
 
 with st.container(border=True):
-    section(3, "Learn next — what unlocks the most jobs?", f"one Cypher query · {graph.LAST_MS.get('leaderboard', 0):.0f} ms")
+    section(3, "Learn next — the cheapest edge, not the biggest", f"ranked by jobs unlocked per day of learning · one Cypher query · {graph.LAST_MS.get('leaderboard', 0):.0f} ms")
     if top:
-        vs = (f'<span class="vs">vs. “learn Japanese first”:<br><b>+{jp["unlocks"]} jobs in {jp["days"]} days</b></span>'
-              if jp and top["skill"] != "Japanese" else "")
-        st.markdown(f'<div class="callout">🏆&nbsp; <span>Learn <b>{top["skill"]}</b> → <b>+{top["unlocks"]} jobs</b> in <b>{top["days"]} days</b></span>{vs}</div>',
+        vs = (f'<span class="vs">biggest single unlock: <b>{biggest["skill"]}{" " + level_label(biggest["skill"], biggest["level"]) if biggest["skill"] in LEVEL_LABELS else ""}</b>'
+              f' → +{biggest["unlocks"]} jobs — but <b>{biggest["days"]} days</b> ({biggest["jobs_per_day"]:.2f} jobs/day)</span>'
+              if biggest and biggest["skill"] != top["skill"] else "")
+        st.markdown(f'<div class="callout">🏆&nbsp; <span>Best next move: <b>{top["skill"]}</b> → <b>+{top["unlocks"]} jobs</b> in <b>{top["days"]} days</b>'
+                    f' <span style="color:#4f46e5;font-weight:800">· {top["jobs_per_day"]:.1f} jobs/day</span></span>{vs}</div>',
                     unsafe_allow_html=True)
+        max_unlocks = max(r["unlocks"] for r in lb)
         rows = "".join(
             f'<div class="lb-row {"top" if i == 0 else ""}"><div class="lb-rank">{i + 1}</div>'
             f'<div><div class="lb-skill">{r["skill"]}{" (" + level_label(r["skill"], r["level"]) + ")" if r["skill"] in LEVEL_LABELS else ""}'
             f'<span class="lb-course">{r["course"] or ""}</span></div>'
-            f'<div class="lb-bar"><span style="width:{round(100 * r["unlocks"] / top["unlocks"])}%"></span></div></div>'
-            f'<div class="lb-num">+{r["unlocks"]}<small>jobs</small></div><div class="lb-days">{r["days"]}<small>days</small></div></div>'
+            f'<div class="lb-bar"><span style="width:{max(4, round(100 * r["unlocks"] / max_unlocks))}%"></span></div></div>'
+            f'<div class="lb-num">+{r["unlocks"]}<small>jobs</small></div>'
+            f'<div class="lb-days">{r["days"]}<small>days</small><br><small>{r["jobs_per_day"]:.2f} / day</small></div></div>'
             for i, r in enumerate(lb))
         st.markdown(f'<div class="lb">{rows}</div>', unsafe_allow_html=True)
     else:

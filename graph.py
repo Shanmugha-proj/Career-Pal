@@ -150,8 +150,10 @@ WITH gap.skill AS skill, gap.lvl AS lvl, j, (got + gap.w * (1.0 - gap.m)) / tot 
 WHERE fit_if_learned >= $cutoff                             // learning this ONE skill crosses the line
 WITH skill, max(lvl) AS level, count(DISTINCT j) AS unlocks, collect(DISTINCT j.title)[..3] AS examples
 OPTIONAL MATCH (k:Course)-[:TEACHES]->(skill)
-RETURN skill.name AS skill, level, unlocks, min(k.days) AS days, head(collect(k.name)) AS course, examples
-ORDER BY unlocks DESC, days ASC
+WITH skill, level, unlocks, min(k.days) AS days, head(collect(k.name)) AS course, examples
+RETURN skill.name AS skill, level, unlocks, days, course, examples,
+       round(toFloat(unlocks) / days, 2) AS jobs_per_day            // the cheapest edge, not the biggest
+ORDER BY jobs_per_day DESC, unlocks DESC
 LIMIT $limit
 """
 
