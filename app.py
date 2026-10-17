@@ -41,22 +41,39 @@ header[data-testid="stHeader"] { background: transparent; }
 [data-testid="stChatInput"] { border-radius: 14px; border: 1px solid #c7d2fe; background: #fff; }
 [data-testid="stChatMessage"] { background: #fff; border: 1px solid #e6e8f0; border-radius: 14px; padding: 10px 14px; }
 
-.cp-hero { background: radial-gradient(900px 380px at 8% -30%, rgba(99,102,241,.55), transparent 60%),
+.cp-hero { background:
+  linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+  radial-gradient(900px 380px at 8% -30%, rgba(99,102,241,.55), transparent 60%),
   radial-gradient(700px 300px at 95% 120%, rgba(34,211,238,.25), transparent 60%),
-  linear-gradient(135deg,#0b1020 0%,#141a3a 45%,#1e1b4b 100%); color:#fff; border-radius:22px; padding:28px 32px 26px; margin-bottom:16px; }
-.cp-brand { display:flex; align-items:center; gap:12px; font-weight:800; font-size:20px; letter-spacing:-.01em; }
-.cp-logo { width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#6366f1,#22d3ee); display:inline-flex;
-  align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px; box-shadow:0 8px 20px -8px rgba(99,102,241,.8); }
+  linear-gradient(135deg,#0b1020 0%,#141a3a 45%,#1e1b4b 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto, auto; color:#fff; border-radius:22px; padding:26px 32px 26px; margin-bottom:16px;
+  border:1px solid rgba(255,255,255,.08); box-shadow: 0 30px 60px -40px rgba(30,27,75,.8); }
+.cp-top { display:flex; align-items:center; gap:14px; }
+.cp-brand { display:flex; align-items:center; gap:12px; }
+.cp-name { font-weight:800; font-size:22px; letter-spacing:-.02em; line-height:1.05; }
+.cp-tag { font-size:11px; color:#9aa2c7; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin-top:3px; }
+.cp-logo { width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#22d3ee 100%); display:inline-flex;
+  align-items:center;justify-content:center; box-shadow:0 10px 24px -8px rgba(99,102,241,.9), inset 0 1px 0 rgba(255,255,255,.35); flex:0 0 40px; }
+.cp-eyebrow { margin-top:28px; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:#8b93b8; font-weight:700; }
+.sb-brand { display:flex; align-items:center; gap:10px; margin: -6px 0 18px; }
+.sb-brand .cp-logo { width:34px; height:34px; border-radius:10px; flex-basis:34px; }
+.sb-name { font-weight:800; font-size:18px; letter-spacing:-.02em; color:#0f172a; line-height:1.05; }
+.sb-tag { font-size:10.5px; color:#64748b; letter-spacing:.1em; text-transform:uppercase; font-weight:700; margin-top:2px; }
+.steps { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:22px; }
+.stepc { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:14px 16px; }
+.stepc .n { display:inline-flex; width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg,#6366f1,#22d3ee); align-items:center; justify-content:center; font-weight:800; font-size:13px; margin-bottom:8px; }
+.stepc .t { font-weight:700; font-size:15px; } .stepc .d { font-size:13px; color:#c7cbe0; margin-top:3px; line-height:1.45; }
 .cp-pills { margin-left:auto; display:flex; gap:8px; flex-wrap:wrap; }
 .pill { display:inline-flex; align-items:center; gap:7px; padding:5px 11px; border-radius:999px; font-size:12.5px; font-weight:600;
   background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.16); color:#e5e7eb; }
 .pill .dot { width:7px;height:7px;border-radius:50%; background:#34d399; box-shadow:0 0 0 3px rgba(52,211,153,.22); }
-.cp-title { font-size:42px; font-weight:800; letter-spacing:-.025em; line-height:1.08; margin:22px 0 10px; }
+.cp-title { font-size:44px; font-weight:800; letter-spacing:-.028em; line-height:1.06; margin:10px 0 12px; }
 .cp-title em { font-style:normal; background:linear-gradient(90deg,#a5b4fc,#67e8f9); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .cp-sub { font-size:16px; color:#c7cbe0; max-width:860px; line-height:1.55; }
 .cp-sub b { color:#fff; }
 .kpis { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-top:22px; }
-.kpi { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:14px 16px; min-height:88px; }
+.kpi { position:relative; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:14px 16px 14px 20px; min-height:88px; }
+.kpi:before { content:""; position:absolute; left:0; top:14px; bottom:14px; width:3px; border-radius:3px; background:linear-gradient(#a5b4fc,#67e8f9); }
 .kpi .k { font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:#aab0cc; font-weight:700; }
 .kpi .v { font-size:26px; font-weight:800; margin-top:5px; letter-spacing:-.01em; line-height:1.1; }
 .kpi .v small { font-size:13px; font-weight:600; color:#c7cbe0; margin-left:6px; }
@@ -123,6 +140,10 @@ header[data-testid="stHeader"] { background: transparent; }
 @media (max-width: 1100px) { .jobs { grid-template-columns: repeat(2, 1fr);} .kpis { grid-template-columns: repeat(2, 1fr);} }
 </style>
 """, unsafe_allow_html=True)
+
+LOGO_SVG = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17.5 10.5 7.5M17 17.5 13.5 7.5M8 19h8" '
+            'stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="5" cy="19" r="3" fill="#fff"/>'
+            '<circle cx="19" cy="19" r="3" fill="#fff"/><circle cx="12" cy="5" r="3" fill="#fff"/></svg>')
 
 SHORT = {
     "CI/CD (GitLab CI/GitHub Actions)": "CI/CD pipelines", "Prometheus/Grafana": "Prometheus / Grafana",
@@ -254,6 +275,8 @@ def section(n: int, title: str, hint: str = ""):
 # ----------------------------------------------------------------------------- sidebar
 
 with st.sidebar:
+    st.markdown(f'<div class="sb-brand"><span class="cp-logo">{LOGO_SVG}</span><div><div class="sb-name">Career-Pal</div>'
+                f'<div class="sb-tag">Skill-graph career planner</div></div></div>', unsafe_allow_html=True)
     st.markdown("**Controls**")
     model_ids = list(llm.MODELS)
     model = st.selectbox("Model (ai& inference)", model_ids, index=model_ids.index(llm.MODEL) if llm.MODEL in model_ids else 0,
@@ -316,15 +339,23 @@ if skills:
                 if plan and plan["steps"] else '<div class="kpi"><div class="k">Fastest path</div><div class="v">—</div></div>')
     kpis = f'<div class="kpis">{kpi_jobs}{kpi_q}{kpi_next}{kpi_path}</div>'
 
+steps = ('<div class="steps">'
+         '<div class="stepc"><span class="n">1</span><div class="t">Upload your resume</div><div class="d">PDF, DOCX or text. Processed on ai& infrastructure in Japan — it never leaves the country.</div></div>'
+         '<div class="stepc"><span class="n">2</span><div class="t">Your skills become a graph</div><div class="d">Structured into a 44-skill taxonomy and written as edges into a Neo4j memory graph.</div></div>'
+         '<div class="stepc"><span class="n">3</span><div class="t">See the cheapest skill to learn next</div><div class="d">Scored against 370 real Tokyo postings — and re-planned the moment you learn something.</div></div>'
+         '</div>') if not skills else ""
+eyebrow = f"Tokyo · {len(fits)} real postings · {n_companies} companies · pulled today" if skills else "Tokyo · 370 real postings · 199 companies · pulled today"
 st.markdown(
-    f'<div class="cp-hero"><div class="cp-brand"><span class="cp-logo">C</span>Career-Pal'
+    f'<div class="cp-hero"><div class="cp-top"><div class="cp-brand"><span class="cp-logo">{LOGO_SVG}</span>'
+    f'<div><div class="cp-name">Career-Pal</div><div class="cp-tag">Skill-graph career planner</div></div></div>'
     f'<span class="cp-pills"><span class="pill"><span class="dot"></span>Neo4j AuraDB · memory graph</span>'
     f'<span class="pill"><span class="dot"></span>ai& inference · {model_label}</span>'
     f'<span class="pill">🇯🇵 Data stays in Japan</span></span></div>'
+    f'<div class="cp-eyebrow">{eyebrow}</div>'
     f'<div class="cp-title">What should you learn next?<br><em>The graph knows.</em></div>'
     f'<div class="cp-sub">Japan is short <b>~790,000 IT workers by 2030</b> (METI) — a <b>skills</b> gap, not a headcount gap. '
     f'Every job tool asks “which jobs fit me?”. Career-Pal inverts it: <b>what is the cheapest change to <i>you</i> that fits the most jobs?</b></div>'
-    f'{kpis}</div>', unsafe_allow_html=True)
+    f'{kpis}{steps}</div>', unsafe_allow_html=True)
 
 # ----------------------------------------------------------------------------- 1 · resume
 
