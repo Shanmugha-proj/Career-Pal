@@ -1,4 +1,4 @@
-"""Career-Pal — what should I learn next? The graph knows.
+"""Career-Pal — what should I learn next? Career-Pal knows.
 
 Run: python -m streamlit run app.py
 """
@@ -385,7 +385,7 @@ st.markdown(
     f'<span class="pill"><span class="dot"></span>ai& inference · {model_label}</span>'
     f'<span class="pill">🇯🇵 Data stays in Japan</span></span></div>'
     f'<div class="cp-eyebrow">{eyebrow}</div>'
-    f'<div class="cp-title">What should you learn next?<br><em>The graph knows.</em></div>'
+    f'<div class="cp-title">What should you learn next?<br><em>Career-Pal knows.</em></div>'
     f'<div class="cp-sub">Japan is short <b>~790,000 IT workers by 2030</b> (METI) — a <b>skills</b> gap, not a headcount gap. '
     f'Every job tool asks “which jobs fit me?”. Career-Pal inverts it: <b>what is the cheapest change to <i>you</i> that fits the most jobs?</b></div>'
     f'{kpis}{steps}</div>', unsafe_allow_html=True)

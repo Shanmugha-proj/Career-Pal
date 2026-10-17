@@ -1,4 +1,4 @@
-# Career-Pal — what should I learn next? A graph knows.
+# Career-Pal — what should I learn next? Career-Pal knows.
 
 Built solo in one day at the **Tokyo Agent Hackathon** (+81 Builders, 17 Oct 2026).
 
