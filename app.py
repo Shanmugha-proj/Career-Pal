@@ -339,10 +339,10 @@ with st.container(border=True):
                 st.toast(f"Loaded {up.name} · {len(st.session_state['resume_text'].split())} words")
             except Exception as e:  # noqa: BLE001
                 st.error(f"Could not read {up.name}: {e}")
-        resume_text = st.text_area("Resume text", st.session_state.get("resume_text") or load_resume_text(), height=200,
-                                   label_visibility="collapsed")
+        resume_text = st.text_area("Resume text", st.session_state.get("resume_text") or "", height=200,
+                                   label_visibility="collapsed", placeholder="…or paste your resume text here")
         c1, c2 = st.columns([1, 3])
-        if c1.button("Analyze with ai& ⚡", type="primary", width="stretch"):
+        if c1.button("Analyze with ai& ⚡", type="primary", width="stretch", disabled=not resume_text.strip()):
             note = ""
             try:
                 with st.spinner(f"{model_label} · extracting skills on ai& in Japan…"):
@@ -350,7 +350,11 @@ with st.container(border=True):
                 if not extracted:
                     raise ValueError("no skills returned")
             except Exception as e:  # noqa: BLE001 - never let a live LLM call sink the demo
-                extracted, secs, note = cached_skills(), 0.0, f"ai& unavailable ({type(e).__name__}) — loaded cached extraction"
+                if resume_text.strip() == load_resume_text().strip() and cached_skills():
+                    extracted, secs, note = cached_skills(), 0.0, f"ai& unavailable ({type(e).__name__}) — loaded cached extraction"
+                else:
+                    st.error(f"ai& inference failed ({type(e).__name__}: {str(e)[:120]}). Try again or switch model in the sidebar.")
+                    st.stop()
             graph.set_candidate_skills(CID, extracted)
             st.session_state["extract_secs"] = secs
             st.session_state["extract_note"] = note
@@ -372,7 +376,9 @@ with st.container(border=True):
         st.caption(meta)
 
 if not skills:
-    st.info("Upload a resume and click **Analyze with ai&** to build your skill graph.")
+    st.markdown('<p class="note" style="text-align:center;font-size:14px;margin-top:6px">Upload a resume (PDF / DOCX / TXT) and click '
+                '<b>Analyze with ai&</b>. Your skills become edges in a Neo4j memory graph, scored against 420 real Tokyo postings.</p>',
+                unsafe_allow_html=True)
     st.stop()
 
 # ----------------------------------------------------------------------------- 2 · where you stand

@@ -185,13 +185,8 @@ def seed(reset: bool, max_real: int = 150, total: int = TOTAL):
     graph.upsert_courses(COURSES)
     for i in range(0, len(jobs), 100):
         graph.upsert_jobs(jobs[i:i + 100])
-    try:
-        skills = json.load(open("demo/resume_skills.json"))["skills"]
-        graph.set_candidate_skills("demo", skills)
-        print(f"candidate 'demo' seeded with {len(skills)} skills from demo/resume_skills.json")
-    except FileNotFoundError:
-        pass
-    print("seeded:", graph.counts())
+    graph.set_candidate_skills("demo", [])   # the demo starts from a blank memory graph: upload a resume to begin
+    print("seeded:", graph.counts(), "| candidate memory: empty")
 
 
 if __name__ == "__main__":
