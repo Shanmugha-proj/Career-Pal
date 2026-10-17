@@ -197,7 +197,9 @@ with cols[1]:
 # ----------------------------------------------------------------------------- 3 · learn next
 
 st.header("3 · Learn next — what unlocks the most jobs?")
-lb = graph.leaderboard(CID, cutoff, limit=10)
+lb = graph.leaderboard(CID, cutoff, limit=25)
+jp = next((r for r in lb if r["skill"] == "Japanese"), None)
+lb = lb[:10]
 if lb:
     lb_df = pd.DataFrame([{
         "Skill": f'{r["skill"]}{" (" + level_label(r["skill"], r["level"]) + ")" if r["skill"] in LEVEL_LABELS else ""}',
@@ -205,8 +207,9 @@ if lb:
         "Course": r["course"], "e.g.": r["examples"][0] if r["examples"] else "",
     } for r in lb])
     top = lb[0]
-    st.markdown(f'<p class="step">🏆 <b>Learn {top["skill"]}</b> → <b>+{top["unlocks"]} jobs</b> in <b>{top["days"]} days</b>'
-                f' &nbsp;·&nbsp; vs. Japanese: +{next((r["unlocks"] for r in lb if r["skill"] == "Japanese"), 0)} jobs in 365 days</p>',
+    vs_jp = (f' &nbsp;·&nbsp; vs. "learn Japanese first": +{jp["unlocks"]} jobs in {jp["days"]} days'
+             if jp and top["skill"] != "Japanese" else "")
+    st.markdown(f'<p class="step">🏆 <b>Learn {top["skill"]}</b> → <b>+{top["unlocks"]} jobs</b> in <b>{top["days"]} days</b>{vs_jp}</p>',
                 unsafe_allow_html=True)
     st.dataframe(lb_df, hide_index=True, width="stretch", column_config={
         "+ Jobs unlocked": st.column_config.ProgressColumn("+ Jobs unlocked", format="%d", min_value=0, max_value=int(top["unlocks"])),
