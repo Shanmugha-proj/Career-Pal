@@ -454,7 +454,7 @@ with st.container(border=True):
             st.markdown(text)
     fb1, fb2 = st.columns([1, 3])
     if top and fb1.button(f"✅ I finished {short(top['skill'])}", help="Fallback: records the top skill without the LLM", width="stretch"):
-        apply_skill(top["skill"], 2, source="button")
+        apply_skill(top["skill"], max(2, top["level"] or 2), source="button")
         chat.append(("user", f"I finished the {top['skill']} course."))
         chat.append(("assistant", f"Recorded **{top['skill']}** (level 2) in your memory graph. Re-planning…"))
         st.rerun()

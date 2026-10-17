@@ -1,7 +1,7 @@
 """ai& inference client: structured skill extraction and the planning agent's tool-calling turn.
 
-Runs with reasoning_effort="none" - deepseek-v4-flash is a reasoning model by default and would
-otherwise spend 5-8 s thinking before every answer.
+Every model on ai& reasons by default; we pick the lowest reasoning effort each model supports (see MODELS) so
+structured turns stay fast - deepseek-v4-flash would otherwise spend 5-8 s thinking before every answer.
 """
 import json
 import os
@@ -186,13 +186,14 @@ certification or production use at work = 3. If several skills are mentioned, ca
 If the message is not about learning, answer in one short sentence."""
 
 
-def agent_turn(user_message: str, context: str = "") -> tuple[list[dict], str, float]:
+def agent_turn(user_message: str, context: str = "", model: str | None = None) -> tuple[list[dict], str, float]:
     """One agent turn. Returns (tool_calls [{skill, level}], assistant_text, seconds)."""
+    model = model or MODEL
     t = time.perf_counter()
     msgs = [{"role": "system", "content": AGENT_SYSTEM + ("\n\nCurrent state:\n" + context if context else "")},
             {"role": "user", "content": user_message}]
     r = client().chat.completions.create(
-        model=MODEL, max_tokens=1500, reasoning_effort="none", tools=AGENT_TOOLS, tool_choice="auto", messages=msgs
+        model=model, max_tokens=3000, reasoning_effort=effort_for(model), tools=AGENT_TOOLS, tool_choice="auto", messages=msgs
     )
     m = r.choices[0].message
     calls = []
