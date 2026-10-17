@@ -134,7 +134,8 @@ header[data-testid="stHeader"] { background: transparent; }
 .status .row { display:flex; justify-content:space-between; gap:8px; padding:7px 0; border-bottom:1px dashed #e6e8f0; }
 .status .row:last-child { border-bottom:none; }
 .status .ok { color:#059669; font-weight:700; font-variant-numeric: tabular-nums; }
-.status .lbl { color:#64748b; }
+.status .lbl { color:#64748b; cursor: help; text-decoration: underline dotted rgba(100,116,139,.6); text-underline-offset: 3px; }
+.status .row { cursor: help; }
 .banner { padding:12px 16px; border-radius:12px; background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; font-weight:600; margin: 4px 0 10px; }
 .note { color:#64748b; font-size:12.5px; line-height:1.5; }
 @media (max-width: 1100px) { .jobs { grid-template-columns: repeat(2, 1fr);} .kpis { grid-template-columns: repeat(2, 1fr);} }
@@ -275,16 +276,17 @@ def section(n: int, title: str, hint: str = ""):
 # ----------------------------------------------------------------------------- sidebar
 
 with st.sidebar:
-    st.markdown(f'<div class="sb-brand"><span class="cp-logo">{LOGO_SVG}</span><div><div class="sb-name">Career-Pal</div>'
-                f'<div class="sb-tag">Skill-graph career planner</div></div></div>', unsafe_allow_html=True)
     st.markdown("**Controls**")
     model_ids = list(llm.MODELS)
     model = st.selectbox("Model (ai& inference)", model_ids, index=model_ids.index(llm.MODEL) if llm.MODEL in model_ids else 0,
-                         format_func=lambda m: llm.MODELS[m][0])
+                         format_func=lambda m: llm.MODELS[m][0],
+                         help="The open-weight model on ai& inference (hosted in Japan) that extracts your skills and runs the agent.")
     st.session_state["model"] = model
-    cutoff_pct = st.slider("Minimum fit to count as *qualified*", 30, 90, 50, 5, format="%d%%")
+    cutoff_pct = st.slider("Minimum fit to count as *qualified*", 30, 90, 50, 5, format="%d%%",
+                           help="A posting counts as qualified when your weighted coverage of its required skills is at least this much.")
     cutoff = cutoff_pct / 100
-    budget = st.slider("Learning budget (days)", 14, 120, 45, 1)
+    budget = st.slider("Learning budget (days)", 14, 120, 45, 1,
+                       help="Days the path planner may spend. It greedily picks the skills that unlock the most postings per day of learning.")
     st.divider()
     st.markdown("**Live status**")
     status = st.empty()
@@ -526,11 +528,19 @@ if msg := st.chat_input("Tell the agent what you learned…"):
 # ----------------------------------------------------------------------------- sidebar status (filled last)
 
 ms = graph.LAST_MS
+TIPS = {
+    "fit": "Time for Neo4j to score every posting against your skill graph — one Cypher query over all REQUIRES edges.",
+    "leaderboard": "Time for the learn-next query: which single skill would push the most postings over your cutoff, and at what cost in days.",
+    "write": "Time to record a newly learned skill as a HAS edge in your memory graph — the agent's only write.",
+    "extract": "Time for the ai& model to read your resume and structure it into the 44-skill taxonomy with levels.",
+    "model": "The open-weight model serving extraction and the agent on ai& inference, hosted in Japan.",
+}
+row = lambda key, lbl, val: f'<div class="row" title="{TIPS[key]}"><span class="lbl">{lbl}</span><span class="ok">{val}</span></div>'
 status.markdown(
-    f'<div class="status">'
-    f'<div class="row"><span class="lbl">Neo4j · fit ×{len(fits)}</span><span class="ok">{ms.get("job_fits", 0):.0f} ms</span></div>'
-    f'<div class="row"><span class="lbl">Neo4j · leaderboard</span><span class="ok">{ms.get("leaderboard", 0):.0f} ms</span></div>'
-    f'<div class="row"><span class="lbl">Neo4j · memory write</span><span class="ok">{ms.get("mark_skill", 0):.0f} ms</span></div>'
-    f'<div class="row"><span class="lbl">ai& · resume → skills</span><span class="ok">{(st.session_state.get("extract_secs") or 0):.1f} s</span></div>'
-    f'<div class="row"><span class="lbl">model</span><span class="ok">{model_label}</span></div>'
-    f'</div>', unsafe_allow_html=True)
+    '<div class="status">'
+    + row("fit", f"Neo4j · fit ×{len(fits)}", f'{ms.get("job_fits", 0):.0f} ms')
+    + row("leaderboard", "Neo4j · leaderboard", f'{ms.get("leaderboard", 0):.0f} ms')
+    + row("write", "Neo4j · memory write", f'{ms.get("mark_skill", 0):.0f} ms')
+    + row("extract", "ai& · resume → skills", f'{(st.session_state.get("extract_secs") or 0):.1f} s')
+    + row("model", "model", model_label)
+    + '</div>', unsafe_allow_html=True)
