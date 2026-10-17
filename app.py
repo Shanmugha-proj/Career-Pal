@@ -271,8 +271,7 @@ with st.sidebar:
             st.session_state.pop(k, None)
         st.rerun()
     st.markdown('<p class="note">Corpus: real Tokyo postings pulled today from public job-board APIs (Greenhouse, Lever, Workable, '
-                'Ashby, SmartRecruiters, Workday) and structured with ai&. Stats: METI IT HR Supply &amp; Demand Survey (2019); '
-                'Recruit Works Institute, Future Predictions 2040.</p>', unsafe_allow_html=True)
+                'Ashby, SmartRecruiters, Workday) and structured with ai&.</p>', unsafe_allow_html=True)
 
 # ----------------------------------------------------------------------------- data
 
@@ -400,7 +399,7 @@ with st.container(border=True):
 # ----------------------------------------------------------------------------- 3 · learn next
 
 with st.container(border=True):
-    section(3, "Learn next — the cheapest edge, not the biggest", f"ranked by jobs unlocked per day of learning · one Cypher query · {graph.LAST_MS.get('leaderboard', 0):.0f} ms")
+    section(3, "Learn next — the cheapest edge, not the biggest", "ranked by jobs unlocked per day of learning")
     if top:
         vs = (f'<span class="vs">biggest single unlock: <b>{biggest["skill"]}{" " + level_label(biggest["skill"], biggest["level"]) if biggest["skill"] in LEVEL_LABELS else ""}</b>'
               f' → +{biggest["unlocks"]} jobs — but <b>{biggest["days"]} days</b> ({biggest["jobs_per_day"]:.2f} jobs/day)</span>'
@@ -480,15 +479,6 @@ if msg := st.chat_input("Tell the agent what you learned…"):
     chat.append(("assistant", text or "(no reply)"))
     st.rerun()
 
-# ----------------------------------------------------------------------------- why a graph
-
-with st.expander("Why a graph and not a vector index? Show the Cypher"):
-    st.markdown("A vector index answers *“which jobs resemble my resume?”*. It cannot answer *“which single edge, if added, "
-                "flips the most jobs over a threshold?”* — a set-cover question over explicit relationships. "
-                "And when the agent learns something new, it is **one new edge**, not a re-embedding of the whole resume. "
-                "Every score decomposes into named skills, so every match is explainable.")
-    st.code(graph.LEADERBOARD_CYPHER.strip(), language="cypher")
-
 # ----------------------------------------------------------------------------- sidebar status (filled last)
 
 ms = graph.LAST_MS
@@ -498,6 +488,5 @@ status.markdown(
     f'<div class="row"><span class="lbl">Neo4j · leaderboard</span><span class="ok">{ms.get("leaderboard", 0):.0f} ms</span></div>'
     f'<div class="row"><span class="lbl">Neo4j · memory write</span><span class="ok">{ms.get("mark_skill", 0):.0f} ms</span></div>'
     f'<div class="row"><span class="lbl">ai& · resume → skills</span><span class="ok">{(st.session_state.get("extract_secs") or 0):.1f} s</span></div>'
-    f'<div class="row"><span class="lbl">ai& · agent turn</span><span class="ok">{(st.session_state.get("agent_secs") or 0):.1f} s</span></div>'
     f'<div class="row"><span class="lbl">model</span><span class="ok">{model_label}</span></div>'
     f'</div>', unsafe_allow_html=True)
