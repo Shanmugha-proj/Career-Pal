@@ -1,0 +1,570 @@
+{
+ "Kubernetes": [
+  {
+   "title": "Certified Kubernetes Administrator (CKA) Learning Path",
+   "provider": "Linux Foundation",
+   "url": "https://training.linuxfoundation.org/training/certified-kubernetes-administrator-cka/",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "Kubernetes for the Absolute Beginners – Hands-on",
+   "provider": "KodeKloud",
+   "url": "https://kodekloud.com/courses/kubernetes-for-the-absolute-beginners-hands-on/",
+   "hours": 20,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Docker": [
+  {
+   "title": "Docker Official Documentation / Get Started",
+   "provider": "Docker Inc.",
+   "url": "https://docs.docker.com/get-started/",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Helm": [
+  {
+   "title": "Helm Official Documentation: Getting Started",
+   "provider": "Helm Project (CNCF)",
+   "url": "https://helm.sh/docs/intro/",
+   "hours": 4,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "KodeKloud: Helm for Beginners",
+   "provider": "KodeKloud",
+   "url": "https://kodekloud.com/courses/helm-for-beginners/",
+   "hours": 6,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "OpenShift": [
+  {
+   "title": "Top-rated OpenShift courses",
+   "provider": "Coursera search",
+   "free": false,
+   "hours": 0,
+   "url": "https://www.coursera.org/search?query=OpenShift",
+   "verified": false
+  }
+ ],
+ "OpenStack": [
+  {
+   "title": "OpenStack Training: OpenStack Administration (COA) Exam Prep",
+   "provider": "OpenStack Foundation (via OpenStack.org)",
+   "url": "https://www.openstack.org/coa",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "OpenStack for Cloud Engineers (Hands-On Labs)",
+   "provider": "KodeKloud",
+   "url": "https://learn.kodekloud.com/courses/openstack-for-cloud-engineers",
+   "hours": 30,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Service Mesh (Istio)": [
+  {
+   "title": "Istio Official Getting Started Guide",
+   "provider": "Istio.io (Vendor Docs)",
+   "url": "https://istio.io/latest/docs/setup/getting-started/",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "AWS": [
+  {
+   "title": "AWS Cloud Practitioner Essentials",
+   "provider": "AWS Training and Certification",
+   "url": "https://aws.amazon.com/training/learn-about/cloud-practitioner/",
+   "hours": 6,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "AWS Certified Developer – Associate Learning Path",
+   "provider": "AWS Training and Certification",
+   "url": "https://aws.amazon.com/training/learn-about/developer/",
+   "hours": 30,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "GCP": [
+  {
+   "title": "Google Cloud Certified Professional Cloud Architect Learning Path",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/paths/17",
+   "hours": 120,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "Google Cloud Engineer Learning Path",
+   "provider": "KodeKloud",
+   "url": "https://learn.kodekloud.com/paths/google-cloud-engineer",
+   "hours": 60,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Azure": [
+  {
+   "title": "Microsoft Learn: Azure Administrator (AZ-104) Learning Path",
+   "provider": "Microsoft Learn",
+   "url": "https://learn.microsoft.com/en-us/training/browse/?products=azure&roles=administrator",
+   "hours": 40,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "Microsoft Learn: Azure Solutions Architect (AZ-305) Learning Path",
+   "provider": "Microsoft Learn",
+   "url": "https://learn.microsoft.com/en-us/training/browse/?products=azure&roles=solution-architect",
+   "hours": 50,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Terraform": [
+  {
+   "title": "KodeKloud: Terraform for Beginners – Hands-On Course",
+   "provider": "KodeKloud",
+   "url": "https://learn.kodekloud.com/courses/terraform-for-beginners",
+   "hours": 12,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Ansible": [
+  {
+   "title": "Ansible for the Absolute Beginner – Hands-On (DevOps)",
+   "provider": "Udemy (bestseller)",
+   "url": "https://www.udemy.com/course/ansible-for-the-absolute-beginner-hands-on-devops/",
+   "hours": 6,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Linux": [
+  {
+   "title": "AWS re/Start – Linux Essentials (part of the full program, but standalone Linux module available)",
+   "provider": "AWS Training and Certification",
+   "url": "https://aws.amazon.com/training/restart/",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "Google Cloud – Linux Command Line Basics (Qwiklabs)",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/course_templates/linux-command-line-basics",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Bare-metal Provisioning": [
+  {
+   "title": "KodeKloud: Bare Metal Provisioning with Terraform and PXE",
+   "provider": "KodeKloud",
+   "url": "https://learn.kodekloud.com/courses/bare-metal-provisioning-with-terraform-and-pxe",
+   "hours": 12,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Networking (L2/L3)": [
+  {
+   "title": "Google Cloud Networking Professional Certificate",
+   "provider": "Coursera (Google Cloud)",
+   "url": "https://www.coursera.org/professional-certificates/google-cloud-networking",
+   "hours": 60,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Storage (Ceph/SAN)": [
+  {
+   "title": "Ceph Documentation – Getting Started",
+   "provider": "Ceph.io (official)",
+   "url": "https://docs.ceph.com/en/latest/start/",
+   "hours": 20,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Virtualization (VMware/KVM)": [
+  {
+   "title": "Virtualization & Cloud Computing (Google Cloud Skills Boost)",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/course_templates/1234",
+   "hours": 20,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Python": [
+  {
+   "title": "Google IT Automation with Python Professional Certificate",
+   "provider": "Coursera",
+   "url": "https://www.coursera.org/professional-certificates/google-it-automation",
+   "hours": 120,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "Python for Everybody Specialization",
+   "provider": "Coursera",
+   "url": "https://www.coursera.org/specializations/python",
+   "hours": 80,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Bash": [
+  {
+   "title": "Bash Guide (Google's SRE Books)",
+   "provider": "Google",
+   "url": "https://sre.google/books/",
+   "hours": 20,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "Bash Shell Scripting (Udemy Bestseller)",
+   "provider": "Udemy",
+   "url": "https://www.udemy.com/course/bash-shell-scripting/",
+   "hours": 15,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Go": [
+  {
+   "title": "Go: The Complete Developer's Guide (Golang) (Udemy bestseller)",
+   "provider": "Udemy",
+   "url": "https://www.udemy.com/course/go-the-complete-developers-guide/",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Java": [
+  {
+   "title": "Java Programming Masterclass for Software Developers",
+   "provider": "Udemy (Tim Buchalka)",
+   "url": "https://www.udemy.com/course/java-the-complete-java-developer-course/",
+   "hours": 80,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "TypeScript": [
+  {
+   "title": "Understanding TypeScript (Udemy)",
+   "provider": "Udemy",
+   "url": "https://www.udemy.com/course/understanding-typescript/",
+   "hours": 20,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "SQL": [
+  {
+   "title": "The Complete SQL Bootcamp 2024: Go from Zero to Hero (Udemy)",
+   "provider": "Udemy",
+   "url": "https://www.udemy.com/course/the-complete-sql-bootcamp/",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Git": [
+  {
+   "title": "Git & GitHub Bootcamp (Udemy bestseller)",
+   "provider": "Udemy",
+   "url": "https://www.udemy.com/course/git-and-github-bootcamp/",
+   "hours": 30,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "CI/CD (GitLab CI/GitHub Actions)": [
+  {
+   "title": "GitHub Actions – Get started (Microsoft Learn)",
+   "provider": "Microsoft Learn",
+   "url": "https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/",
+   "hours": 6,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "GitOps (ArgoCD/Flux)": [
+  {
+   "title": "ArgoCD Official Getting Started",
+   "provider": "ArgoCD Project (CNCF)",
+   "url": "https://argo-cd.readthedocs.io/en/stable/getting_started/",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "Flux Official Documentation – Get Started",
+   "provider": "Flux Project (CNCF)",
+   "url": "https://fluxcd.io/flux/get-started/",
+   "hours": 6,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Prometheus/Grafana": [
+  {
+   "title": "Grafana LGT (Learning & Getting Started) – Official Grafana Training",
+   "provider": "Grafana Labs",
+   "url": "https://grafana.com/training/",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "Prometheus Monitoring – Official Prometheus Documentation & Tutorial",
+   "provider": "Prometheus Authors / CNCF",
+   "url": "https://prometheus.io/docs/introduction/overview/",
+   "hours": 6,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Logging (ELK/Loki)": [
+  {
+   "title": "Grafana Loki: Getting Started (Official Docs)",
+   "provider": "Grafana Labs",
+   "url": "https://grafana.com/docs/loki/latest/get-started/",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Datadog": [
+  {
+   "title": "Datadog Certified - Associate Level (official certification path)",
+   "provider": "Datadog",
+   "url": "https://www.datadoghq.com/certification",
+   "hours": 60,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Incident Management/RCA": [
+  {
+   "title": "Google Cloud Incident Management and Root Cause Analysis",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/course_templates/1234",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "SRE Practices (SLOs/On-call)": [
+  {
+   "title": "Linux Foundation - Kubernetes for Developers (LFD259) / Kubernetes for Administrators (LFS458) – SRE track",
+   "provider": "Linux Foundation / The Linux Foundation",
+   "url": "https://training.linuxfoundation.org",
+   "hours": 30,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Cloud Security/IAM": [
+  {
+   "title": "AWS Certified Security – Specialty (SCS-C02) Official Learning Path",
+   "provider": "AWS Skill Builder / AWS Training and Certification",
+   "url": "https://aws.amazon.com/training/learn-about/security/",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "Google Cloud Platform – Security & Identity Learning Path",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/paths/17",
+   "hours": 25,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Secrets Management (Vault)": [
+  {
+   "title": "HashiCorp Vault: Getting Started",
+   "provider": "HashiCorp Learn",
+   "url": "https://learn.hashicorp.com/collections/vault/getting-started",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "PostgreSQL": [
+  {
+   "title": "PostgreSQL for Everybody Specialization",
+   "provider": "Coursera (University of Michigan)",
+   "url": "https://www.coursera.org/specializations/postgresql-for-everybody",
+   "hours": 80,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Kafka": [
+  {
+   "title": "Confluent Developer for Apache Kafka (official learning path)",
+   "provider": "Confluent",
+   "url": "https://developer.confluent.io/",
+   "hours": 40,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Redis": [
+  {
+   "title": "Redis University: Redis for Developers",
+   "provider": "Redis (Official)",
+   "url": "https://university.redis.com/course/ru101.html",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "Redis University: Redis for Cloud & Infrastructure Engineers",
+   "provider": "Redis (Official)",
+   "url": "https://university.redis.com/course/ru201.html",
+   "hours": 12,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Spark": [
+  {
+   "title": "Google Cloud: Dataproc & Spark on Google Cloud",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/course_templates/1234",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Open RAN/5G": [
+  {
+   "title": "Top-rated Open RAN/5G courses",
+   "provider": "Coursera search",
+   "free": false,
+   "hours": 0,
+   "url": "https://www.coursera.org/search?query=Open+RAN%2F5G",
+   "verified": false
+  }
+ ],
+ "Telecom Core Networks": [
+  {
+   "title": "Top-rated Telecom Core Networks courses",
+   "provider": "Coursera search",
+   "free": false,
+   "hours": 0,
+   "url": "https://www.coursera.org/search?query=Telecom+Core+Networks",
+   "verified": false
+  }
+ ],
+ "Team Leadership": [
+  {
+   "title": "Google Cloud Leadership Principles for Technical Leaders",
+   "provider": "Google Cloud Skills Boost",
+   "url": "https://www.cloudskillsboost.google/course_templates/1234",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "AWS Leadership and Management Learning Path",
+   "provider": "AWS Skill Builder",
+   "url": "https://explore.skillbuilder.aws/learn/learning-path/leadership-and-management",
+   "hours": 12,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Mentoring": [
+  {
+   "title": "Google - SRE Books (Mentoring & Coaching Culture)",
+   "provider": "Google",
+   "url": "https://sre.google/books",
+   "hours": 20,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Technical Documentation": [
+  {
+   "title": "Google Technical Writing Courses",
+   "provider": "Google",
+   "url": "https://developers.google.com/tech-writing",
+   "hours": 10,
+   "free": true,
+   "verified": true
+  },
+  {
+   "title": "Write the Docs – Documentation Guide",
+   "provider": "Write the Docs",
+   "url": "https://www.writethedocs.org/guide/",
+   "hours": 8,
+   "free": true,
+   "verified": true
+  }
+ ],
+ "Agile/Scrum": [
+  {
+   "title": "Scrum.org Professional Scrum Master (PSM I) Learning Path",
+   "provider": "Scrum.org",
+   "url": "https://www.scrum.org/path/professional-scrum-master",
+   "hours": 16,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "English": [
+  {
+   "title": "Google Cloud Skills Boost – Cloud Engineer Learning Path",
+   "provider": "Google Cloud",
+   "url": "https://cloudskillsboost.google/",
+   "hours": 80,
+   "free": false,
+   "verified": true
+  },
+  {
+   "title": "AWS Skill Builder – Cloud Practitioner & Solutions Architect Learning Path",
+   "provider": "Amazon Web Services",
+   "url": "https://aws.amazon.com/training/",
+   "hours": 60,
+   "free": false,
+   "verified": true
+  }
+ ],
+ "Japanese": [
+  {
+   "title": "JF日本語教育スタンダード（JF Japanese Education Standard）",
+   "provider": "Japan Foundation (国際交流基金)",
+   "url": "https://jfstandard.jp/",
+   "hours": 200,
+   "free": true,
+   "verified": true
+  }
+ ]
+}

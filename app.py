@@ -117,6 +117,9 @@ header[data-testid="stHeader"] { background: transparent; }
 .lb-row.top .lb-rank { background:#4f46e5; color:#fff; }
 .lb-skill { font-weight:700; font-size:15px; color:#0f172a; }
 .lb-course { color:#64748b; font-size:12px; font-weight:500; margin-left:8px; }
+.cl { color:#4f46e5; text-decoration:none; font-weight:600; } .cl:hover { text-decoration:underline; }
+.lb-links { font-size:12.5px; margin-top:6px; color:#64748b; line-height:1.6; }
+.free { font-size:10.5px; font-weight:700; color:#047857; background:#ecfdf5; border-radius:6px; padding:1px 6px; margin-left:4px; }
 .lb-bar { height:8px; background:#eef0f6; border-radius:999px; overflow:hidden; margin-top:7px; }
 .lb-bar span { display:block; height:100%; background:linear-gradient(90deg,#6366f1,#22d3ee); border-radius:999px; }
 .lb-num { font-weight:800; font-size:20px; color:#0f172a; text-align:right; white-space:nowrap; }
@@ -257,6 +260,33 @@ def job_card(f: dict) -> str:
             f'<div class="fit" style="color:{fit_color(fit)}">{round(100 * fit)}%</div></div>'
             f'<div class="bar"><span style="width:{round(100 * fit)}%;background:{fit_color(fit)}"></span></div>'
             f'<div class="tags">{tags}</div><div class="job-foot">{badge}{link}</div></div>')
+
+
+@st.cache_data
+def load_courses() -> dict:
+    """Best courses per skill: picked by DeepSeek V4 Flash on ai&, every link verified (python courses.py)."""
+    try:
+        return json.load(open("demo/courses.json", encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
+
+def course_links(skill: str, n: int = 2) -> str:
+    import html as _h
+    out = []
+    import re as _re
+    for c in load_courses().get(skill, [])[:n]:
+        prov = _re.sub(r"\s*\(.*?\)", "", c["provider"]).strip()
+        prov = prov if len(prov) <= 24 else " ".join(prov.split()[:2])
+        t = c["title"]
+        for name in {c["provider"], prov}:
+            if t.lower().startswith(name.lower()):
+                t = t[len(name):].lstrip(" :–-")
+            t = _re.sub(r"\s*\(" + _re.escape(name) + r"\)\s*$", "", t)
+        t = t if len(t) <= 52 else t[:50] + "…"
+        out.append(f'<a class="cl" href="{_h.escape(c["url"])}" target="_blank" rel="noopener">{_h.escape(prov)}: {_h.escape(t)} ↗</a>'
+                   + ('<span class="free">free</span>' if c.get("free") else ""))
+    return " · ".join(out)
 
 
 def apply_skill(skill: str, level: int, source: str):
@@ -458,12 +488,15 @@ with st.container(border=True):
         rows = "".join(
             f'<div class="lb-row {"top" if i == 0 else ""}"><div class="lb-rank">{i + 1}</div>'
             f'<div><div class="lb-skill">{r["skill"]}{" (" + level_label(r["skill"], r["level"]) + ")" if r["skill"] in LEVEL_LABELS else ""}'
-            f'<span class="lb-course">{r["course"] or ""}</span></div>'
-            f'<div class="lb-bar"><span style="width:{max(4, round(100 * r["unlocks"] / max_unlocks))}%"></span></div></div>'
+            f'</div>'
+            f'<div class="lb-bar"><span style="width:{max(4, round(100 * r["unlocks"] / max_unlocks))}%"></span></div>'
+            f'<div class="lb-links">Learn it: {course_links(r["skill"]) or (r["course"] or "")}</div></div>'
             f'<div class="lb-num">+{r["unlocks"]}<small>jobs</small></div>'
             f'<div class="lb-days">{r["days"]}<small>days</small><br><small>{r["jobs_per_day"]:.2f} / day</small></div></div>'
             for i, r in enumerate(lb))
         st.markdown(f'<div class="lb">{rows}</div>', unsafe_allow_html=True)
+        st.markdown('<p class="note" style="margin-top:8px">Course picks by DeepSeek V4 Flash on ai& inference · every link checked before it is shown.</p>',
+                    unsafe_allow_html=True)
     else:
         st.success("No single skill would unlock more jobs at this cutoff — raise the bar with the slider.")
 
@@ -480,7 +513,7 @@ with st.container(border=True):
                     f'<p class="sub">{plan["base"]} → {total_after} qualifying postings at ≥ {cutoff_pct}% fit</p>', unsafe_allow_html=True)
         steps = "".join(
             f'<div class="step"><div class="day">Day {s["cumulative_days"]}</div><div class="sk">{s["skill"]}</div>'
-            f'<div class="m">+{s["unlocks"]} jobs · {s["days"]} days</div><div class="c">{s["course"] or ""}</div></div>'
+            f'<div class="m">+{s["unlocks"]} jobs · {s["days"]} days</div><div class="c">{course_links(s["skill"], 1) or (s["course"] or "")}</div></div>'
             for s in plan["steps"])
         st.markdown(f'<div class="path">{steps}</div>', unsafe_allow_html=True)
     else:
