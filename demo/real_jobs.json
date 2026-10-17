@@ -30,7 +30,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AI/ML technologies",
+   "packet captures",
+   "HTTP",
+   "SMTP",
+   "LDAP",
+   "FTP"
+  ]
  },
  {
   "source": "greenhouse",
@@ -103,7 +111,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "MongoDB",
+   "Database Systems",
+   "Orchestration"
+  ]
  },
  {
   "source": "greenhouse",
@@ -141,7 +154,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -174,7 +188,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "HTTP",
+   "SMTP",
+   "LDAP",
+   "FTP",
+   "FreeBSD",
+   "Wireshark"
+  ]
  },
  {
   "source": "greenhouse",
@@ -241,6 +263,14 @@
     "level": 3,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "distributed data systems",
+   "data engineering",
+   "analytics",
+   "data warehousing",
+   "AI/ML",
+   "cloud architectures"
   ]
  },
  {
@@ -304,7 +334,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Pre-sales",
+   "Enterprise software",
+   "Distributed systems",
+   "Cloud platforms",
+   "MongoDB Atlas",
+   "Database programming"
+  ]
  },
  {
   "source": "greenhouse",
@@ -376,6 +414,10 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Oracle",
+   "sharding (RAC/Vitess)"
   ]
  },
  {
@@ -414,7 +456,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Zendesk",
+   "Jira",
+   "Confluence"
+  ]
  },
  {
   "source": "greenhouse",
@@ -452,7 +499,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -480,7 +528,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -532,6 +581,11 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Scala",
+   "Data Engineering",
+   "ETL"
   ]
  },
  {
@@ -599,6 +653,14 @@
     "level": 3,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "pre-sales",
+   "post-sales",
+   "data engineering",
+   "data science",
+   "whiteboarding",
+   "Scala"
   ]
  },
  {
@@ -671,6 +733,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "pre-sales",
+   "Big Data",
+   "Cloud",
+   "SaaS",
+   "Data Engineering",
+   "Data Science"
   ]
  },
  {
@@ -744,7 +814,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Scala"
+  ]
  },
  {
   "source": "greenhouse",
@@ -812,7 +885,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "OLTP",
+   "Big Data",
+   "Lakehouse",
+   "AI ecosystems",
+   "disaster recovery",
+   "high availability"
+  ]
  },
  {
   "source": "greenhouse",
@@ -879,6 +960,11 @@
     "level": 3,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "Scala",
+   "cloud architectures",
+   "distributed data systems"
   ]
  },
  {
@@ -952,7 +1038,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Pre-sales",
+   "Post-sales",
+   "Data Platform engineer",
+   "SIEM augmentation"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1019,6 +1111,10 @@
     "level": 3,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "Data Warehousing",
+   "Redshift"
   ]
  },
  {
@@ -1091,6 +1187,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "CDP",
+   "MarTech",
+   "identity resolution",
+   "audience activation",
+   "composable-CDP",
+   "Salesforce Data Cloud"
   ]
  },
  {
@@ -1139,7 +1243,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -1187,7 +1292,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "macOS",
+   "ChromeOS",
+   "iOS",
+   "Android",
+   "Google Workspace",
+   "Slack"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1260,7 +1373,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -1333,7 +1447,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Flink",
+   "ClickHouse"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1396,7 +1514,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ClickHouse",
+   "Trino/Presto",
+   "Pinot",
+   "Apache Airflow",
+   "Hadoop",
+   "Hive"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1469,7 +1595,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -1541,6 +1668,13 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "ad tech",
+   "CTR prediction",
+   "recommendation systems",
+   "PyTorch",
+   "TensorFlow"
   ]
  },
  {
@@ -1574,7 +1708,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "system programming",
+   "low-latency systems",
+   "high-throughput systems",
+   "performance tuning",
+   "build systems"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1646,6 +1788,11 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "RTB ecosystem",
+   "PyTorch",
+   "TensorFlow"
   ]
  },
  {
@@ -1689,7 +1836,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "System Programming",
+   "Low-latency Systems",
+   "High-throughput Systems",
+   "Performance Tuning"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1761,6 +1915,11 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "iOS",
+   "Android",
+   "SDK"
   ]
  },
  {
@@ -1809,7 +1968,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "API",
+   "third-party product integration",
+   "network troubleshooting (HAR, Fiddler, W",
+   "log search/filter queries"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1881,6 +2046,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Cloud",
+   "SaaS",
+   "API",
+   "OAuth/SSO",
+   "SaaS Integration",
+   "Workflow Automation"
   ]
  },
  {
@@ -1919,7 +2092,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Pre-sales",
+   "Solution Architecture",
+   "IT Consulting",
+   "Cloud",
+   "SaaS",
+   "Enterprise Architecture"
+  ]
  },
  {
   "source": "greenhouse",
@@ -1991,6 +2172,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Pre-sales",
+   "Solution Architecture",
+   "IT Consulting",
+   "Cloud",
+   "SaaS",
+   "Enterprise Architecture"
   ]
  },
  {
@@ -2038,6 +2227,14 @@
     "level": 2,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "API",
+   "Web Technologies",
+   "Software Integrations",
+   "Log Analysis",
+   "Debugging",
+   "Root Cause Analysis"
   ]
  },
  {
@@ -2071,7 +2268,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AI tools (Claude, Cursor, ChatGPT, Box A",
+   "MCP",
+   "Zendesk",
+   "Confluence",
+   "API"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2144,7 +2348,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -2192,7 +2397,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "APIs"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2264,6 +2472,10 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++",
+   "Static Single Assignment intermediate re"
   ]
  },
  {
@@ -2336,6 +2548,11 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++",
+   "Static Single Assignment intermediate re",
+   "FPGA"
   ]
  },
  {
@@ -2404,7 +2621,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -2477,7 +2695,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Wazuh",
+   "Karma",
+   "CloudWatch"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2530,7 +2753,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Public Cloud",
+   "Platform Engineering"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2603,7 +2830,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Ruby",
+   "Apache",
+   "Tomcat"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2656,7 +2888,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "EDR",
+   "Vulnerability Management",
+   "MDM",
+   "Patch Management",
+   "Configuration Management"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2724,7 +2963,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -2787,7 +3027,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "React",
+   "C++",
+   "Rust",
+   "AI/LLM"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2840,7 +3086,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "x86 server",
+   "GPU server",
+   "hardware troubleshooting",
+   "IPMI",
+   "smartctl",
+   "nvidia-smi"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2873,7 +3127,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PyTorch",
+   "TensorFlow",
+   "JAX",
+   "C++",
+   "neural network architectures",
+   "training"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2916,7 +3178,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "C++",
+   "Clickhouse",
+   "CockroachDB",
+   "gRPC",
+   "LLM APIs"
+  ]
  },
  {
   "source": "greenhouse",
@@ -2984,7 +3254,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "JFSA",
+   "APPI",
+   "Vanta",
+   "SAST",
+   "DAST",
+   "BC/DR"
+  ]
  },
  {
   "source": "lever",
@@ -3056,6 +3334,9 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++"
   ]
  },
  {
@@ -3089,7 +3370,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "greenhouse",
@@ -3161,6 +3443,9 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++"
   ]
  },
  {
@@ -3209,7 +3494,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C",
+   "RTOS",
+   "RS-422",
+   "PCI",
+   "Ethernet",
+   "SpaceWire"
+  ]
  },
  {
   "source": "lever",
@@ -3282,7 +3575,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Extreme Networks",
+   "Ruckus",
+   "Physical Access Control",
+   "Nagios",
+   "Zabbix"
+  ]
  },
  {
   "source": "lever",
@@ -3349,6 +3649,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C",
+   "RTOS",
+   "RS-422",
+   "PCI",
+   "Ethernet",
+   "SpaceWire"
   ]
  },
  {
@@ -3422,7 +3730,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "lever",
@@ -3455,7 +3764,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Embedded Flight Software",
+   "FDIR",
+   "Mode Management",
+   "On-Board Executed Procedures",
+   "Spacecraft Subsystems",
+   "System Engineering"
+  ]
  },
  {
   "source": "lever",
@@ -3493,7 +3810,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "GNC",
+   "spacecraft systems engineering",
+   "C/C++",
+   "MIL",
+   "SIL",
+   "PIL"
+  ]
  },
  {
   "source": "lever",
@@ -3545,6 +3870,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "MIL/SIL/PIL/HIL",
+   "IMUs",
+   "star trackers",
+   "LiDARs",
+   "cameras and propulsion systems"
   ]
  },
  {
@@ -3593,7 +3926,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "network protocols",
+   "routing",
+   "async I/O"
+  ]
  },
  {
   "source": "lever",
@@ -3626,7 +3965,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Spacecraft Subsystem Design",
+   "Model-Based Systems Engineering",
+   "ECSS/MIL-STD",
+   "Requirements Management",
+   "FMECA/Reliability Analysis",
+   "Hardware-in-the-Loop Testing"
+  ]
  },
  {
   "source": "lever",
@@ -3659,7 +4006,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Propulsion",
+   "Matlab"
+  ]
  },
  {
   "source": "lever",
@@ -3707,7 +4058,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "C++"
+  ]
  },
  {
   "source": "lever",
@@ -3779,6 +4134,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "MATLAB/Simulink",
+   "6DOF Simulations",
+   "Kalman filter",
+   "PID control",
+   "thruster commanding"
   ]
  },
  {
@@ -3851,6 +4214,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Spacecraft subsystems",
+   "Mission analysis",
+   "Systems engineering",
+   "Proposal writing",
+   "GMAT",
+   "STK"
   ]
  },
  {
@@ -3923,6 +4294,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "6DOF simulations",
+   "trajectory optimization",
+   "guidance algorithms",
+   "attitude control algorithms",
+   "navigation algorithms"
   ]
  },
  {
@@ -3981,7 +4360,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "IEC 62443",
+   "CIS",
+   "CSPM",
+   "SBOM/HBOM",
+   "EU CRA",
+   "NIS 2 Framework"
+  ]
  },
  {
   "source": "lever",
@@ -4044,7 +4431,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++ compilation",
+   "CMake",
+   "Bazel",
+   "JHbuild",
+   "Gnome build tools",
+   "distributed build systems"
+  ]
  },
  {
   "source": "lever",
@@ -4077,7 +4472,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "RTOS",
+   "EtherCAT",
+   "robotic software development"
+  ]
  },
  {
   "source": "lever",
@@ -4149,6 +4550,13 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Pytest",
+   "Playwright",
+   "C++",
+   "ROS",
+   "simulation environments"
   ]
  },
  {
@@ -4216,6 +4624,9 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "DynamoDB"
   ]
  },
  {
@@ -4299,7 +4710,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "DynamoDB"
+  ]
  },
  {
   "source": "lever",
@@ -4352,7 +4766,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Gradle",
+   "Maven",
+   "Spring Boot",
+   "AMQP/MQTT",
+   "RabbitMQ",
+   "Podman"
+  ]
  },
  {
   "source": "lever",
@@ -4425,7 +4847,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "DynamoDB"
+  ]
  },
  {
   "source": "workable",
@@ -4473,7 +4898,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "LLM Integration",
+   "MCP Server",
+   "Agentic Tools",
+   "Penetration Testing",
+   "SBOM Scanning"
+  ]
  },
  {
   "source": "workable",
@@ -4545,6 +4977,11 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "SpringBoot",
+   "Hive",
+   "Flink"
   ]
  },
  {
@@ -4613,7 +5050,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "C#",
+   "Rust",
+   "Databricks"
+  ]
  },
  {
   "source": "workable",
@@ -4656,7 +5099,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "lever",
@@ -4703,6 +5149,9 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++"
   ]
  },
  {
@@ -4745,6 +5194,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "MATLAB/Simulink",
+   "embedded systems",
+   "real-time applications",
+   "vehicle dynamics control",
+   "ADAS driving planning"
   ]
  },
  {
@@ -4807,6 +5264,10 @@
     "level": 2,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "embedded software"
   ]
  },
  {
@@ -4869,6 +5330,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "PyTorch",
+   "Tensorflow",
+   "3D computer vision",
+   "scene reconstruction",
+   "spatial reasoning",
+   "generative AI"
   ]
  },
  {
@@ -4921,6 +5390,10 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "embedded software"
   ]
  },
  {
@@ -4959,7 +5432,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "lever",
@@ -5002,7 +5476,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PyTorch",
+   "TensorFlow",
+   "TensorRT",
+   "ONNX",
+   "LiDAR",
+   "depth cameras"
+  ]
  },
  {
   "source": "lever",
@@ -5075,7 +5557,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PyTorch/Tensorflow",
+   "MLLOps",
+   "Airflow",
+   "Flyte",
+   "Flink",
+   "Ray"
+  ]
  },
  {
   "source": "lever",
@@ -5113,7 +5603,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "IT solutions",
+   "urban infrastructure",
+   "data platforms",
+   "data lakes",
+   "data warehouses",
+   "cloud services"
+  ]
  },
  {
   "source": "lever",
@@ -5186,7 +5684,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PyTorch/Tensorflow",
+   "Mlops",
+   "Airflow",
+   "Flyte",
+   "Flink",
+   "Ray"
+  ]
  },
  {
   "source": "lever",
@@ -5229,7 +5735,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PyTorch",
+   "TensorFlow",
+   "物体検出",
+   "複数物体追跡",
+   "Perceptionパイプライン",
+   "カメラ内部・外部パラメータ"
+  ]
  },
  {
   "source": "lever",
@@ -5287,7 +5801,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "C#",
+   "Rust",
+   "Databricks",
+   "Hadoop"
+  ]
  },
  {
   "source": "lever",
@@ -5320,7 +5841,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud Platform Services",
+   "SaaS",
+   "Infrastructure Environment",
+   "Product Management",
+   "Technical Product Ownership",
+   "Technical Planning"
+  ]
  },
  {
   "source": "lever",
@@ -5348,7 +5877,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "lever",
@@ -5401,7 +5931,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AMQP/MQTT",
+   "RabbitMQ",
+   "Podman",
+   "OpenTelemetry",
+   "React"
+  ]
  },
  {
   "source": "lever",
@@ -5473,7 +6010,8 @@
     "level": 1,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workable",
@@ -5541,7 +6079,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CMS",
+   "Headless CMS",
+   "Static Site Generator",
+   "Cloudflare",
+   "Vercel",
+   "1Password"
+  ]
  },
  {
   "source": "lever",
@@ -5584,7 +6130,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workable",
@@ -5657,7 +6204,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco",
+   "Juniper",
+   "CCNP Enterprise",
+   "Public Cloud",
+   "GitOps"
+  ]
  },
  {
   "source": "lever",
@@ -5685,7 +6239,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "EV充電インフラ",
+   "V2X",
+   "PV",
+   "EMS",
+   "高圧・低圧受電設備",
+   "受変電設備"
+  ]
  },
  {
   "source": "workable",
@@ -5758,7 +6320,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "TiDB",
+   "AlloyDB",
+   "Spanner",
+   "Debezium",
+   "TiCDC"
+  ]
  },
  {
   "source": "workable",
@@ -5821,7 +6390,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "gRPC",
+   "REST"
+  ]
  },
  {
   "source": "workable",
@@ -5894,7 +6467,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Spanner",
+   "Pub/Sub"
+  ]
  },
  {
   "source": "workable",
@@ -5937,7 +6514,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "React"
+  ]
  },
  {
   "source": "workable",
@@ -5975,7 +6555,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AI coding tools",
+   "prototyping",
+   "measurement design",
+   "phased rollout"
+  ]
  },
  {
   "source": "workable",
@@ -6013,7 +6599,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AI-assisted development",
+   "Claude Code",
+   "Cursor",
+   "Copilot",
+   "API design",
+   "data model design"
+  ]
  },
  {
   "source": "workable",
@@ -6066,7 +6660,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Microservices",
+   "Third-party integration"
+  ]
  },
  {
   "source": "workable",
@@ -6129,7 +6727,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workable",
@@ -6172,7 +6771,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Data Pipelines",
+   "Backend Development",
+   "Catalog/Metadata Domain Modeling",
+   "Data Transformation/Enrichment",
+   "Event-driven Pipeline Patterns"
+  ]
  },
  {
   "source": "workable",
@@ -6235,7 +6841,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Lucene-based search engine",
+   "Distributed Systems"
+  ]
  },
  {
   "source": "workable",
@@ -6308,7 +6918,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Protocol Buffers",
+   "gRPC",
+   "Spanner",
+   "Pub/Sub"
+  ]
  },
  {
   "source": "workable",
@@ -6376,7 +6992,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Generative AI/LLMs",
+   "MCP Servers",
+   "AI Agents"
+  ]
  },
  {
   "source": "workable",
@@ -6474,7 +7095,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CDN",
+   "Envoy",
+   "HAProxy",
+   "Nginx",
+   "Claude",
+   "Cursor"
+  ]
  },
  {
   "source": "workable",
@@ -6546,6 +7175,13 @@
     "level": 2,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "Kotlin",
+   "Jetpack Compose",
+   "Android SDK",
+   "Gradle",
+   "Protocol Buffers"
   ]
  },
  {
@@ -6618,6 +7254,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Swift",
+   "SwiftUI",
+   "Swift Concurrency",
+   "Swift Testing",
+   "Bazel",
+   "fastlane"
   ]
  },
  {
@@ -6681,7 +7325,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "blameless post-mortem",
+   "databases",
+   "AI/LLMs"
+  ]
  },
  {
   "source": "workable",
@@ -6734,7 +7383,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP"
+  ]
  },
  {
   "source": "workable",
@@ -6806,7 +7458,8 @@
     "level": 2,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workable",
@@ -6878,6 +7531,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Playwright",
+   "Looker",
+   "Postman",
+   "TestRail",
+   "Cursor",
+   "Claude Code"
   ]
  },
  {
@@ -6951,7 +7612,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SLIs"
+  ]
  },
  {
   "source": "workable",
@@ -7024,7 +7688,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "microservice architecture",
+   "authentication/authorization",
+   "DesignDoc/ADR"
+  ]
  },
  {
   "source": "workable",
@@ -7061,6 +7730,14 @@
     "level": 2,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "Next.js",
+   "SvelteKit",
+   "Nuxt",
+   "Android",
+   "Embedded",
+   "DDIL environment"
   ]
  },
  {
@@ -7109,7 +7786,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Identity Management (IDaaS)",
+   "Vulnerability Assessment",
+   "Penetration Testing",
+   "Threat Intelligence"
+  ]
  },
  {
   "source": "workable",
@@ -7167,7 +7850,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "React",
+   "Next.js",
+   "Ruby"
+  ]
  },
  {
   "source": "workable",
@@ -7240,7 +7928,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "LLM API",
+   "LLMOps",
+   "LLM evaluation",
+   "AI agent frameworks",
+   "MCP",
+   "OpenTelemetry"
+  ]
  },
  {
   "source": "workable",
@@ -7313,7 +8009,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workable",
@@ -7360,6 +8057,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++",
+   "ROS",
+   "SMACH",
+   "Behavior Tree",
+   "RosPlan",
+   "multiagent systems"
   ]
  },
  {
@@ -7403,7 +8108,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco IOS",
+   "Wireshark",
+   "traceroute",
+   "nc",
+   "Building Construction Law",
+   "Radio Law"
+  ]
  },
  {
   "source": "workable",
@@ -7466,7 +8179,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workable",
@@ -7539,7 +8253,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AI/ML Systems",
+   "RAG pipelines",
+   "AI agents",
+   "MCP services",
+   "LLM applications",
+   "Multi-agent orchestration"
+  ]
  },
  {
   "source": "workable",
@@ -7611,6 +8333,10 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "pre-sales",
+   "warehouse automation"
   ]
  },
  {
@@ -7639,7 +8365,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "RTOS",
+   "ARM Cortex-M",
+   "I2C",
+   "SPI",
+   "CAN"
+  ]
  },
  {
   "source": "workable",
@@ -7691,6 +8425,11 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "ROS/ROS2",
+   "C++",
+   "robotic simulators (Isaac Sim, MuJoCo, P"
   ]
  },
  {
@@ -7754,7 +8493,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "FortiGate",
+   "Cisco Meraki",
+   "Subnet",
+   "Route Table",
+   "VPN",
+   "Direct Connect"
+  ]
  },
  {
   "source": "ashby",
@@ -7811,6 +8558,11 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "API",
+   "SaaS",
+   "scripting"
   ]
  },
  {
@@ -7849,7 +8601,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ROS/ROS2",
+   "robots",
+   "industrial automation equipment",
+   "mechatronic products",
+   "factory automation equipment",
+   "mobile robots"
+  ]
  },
  {
   "source": "workable",
@@ -7921,6 +8681,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C/C++",
+   "MCU",
+   "SoC",
+   "RTOS",
+   "ROS/ROS2",
+   "EtherCAT"
   ]
  },
  {
@@ -7993,7 +8761,8 @@
     "level": 1,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -8021,7 +8790,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -8094,7 +8864,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "ashby",
@@ -8152,7 +8925,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Data Center Facility Operations",
+   "NOC Operations",
+   "High-Density Compute",
+   "Liquid Cooling",
+   "UPS",
+   "Switchgear"
+  ]
  },
  {
   "source": "ashby",
@@ -8209,6 +8990,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "AUTOSAR",
+   "Classic AUTOSAR",
+   "Adaptive AUTOSAR",
+   "AUTOSAR toolchains",
+   "CAN",
+   "LIN"
   ]
  },
  {
@@ -8281,6 +9070,9 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++"
   ]
  },
  {
@@ -8353,6 +9145,13 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++",
+   "PyTorch",
+   "multi-object tracking",
+   "state estimation",
+   "3D geometry"
   ]
  },
  {
@@ -8426,7 +9225,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -8494,7 +9301,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -8562,7 +9370,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -8635,7 +9444,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -8708,7 +9525,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AlloyDB",
+   "Anthropic",
+   "OpenAI"
+  ]
  },
  {
   "source": "ashby",
@@ -8781,7 +9603,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -8819,7 +9649,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "APIs",
+   "Databases",
+   "System Design",
+   "Production Debugging",
+   "Third-party Integrations",
+   "Reliability"
+  ]
  },
  {
   "source": "ashby",
@@ -8857,7 +9695,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Full Stack",
+   "Web Frameworks",
+   "APIs",
+   "Databases",
+   "Production Systems",
+   "Fintech"
+  ]
  },
  {
   "source": "ashby",
@@ -8885,7 +9731,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Kotlin",
+   "Jetpack Compose",
+   "Android SDK",
+   "Coroutines & Flow",
+   "TensorFlow Lite"
+  ]
  },
  {
   "source": "ashby",
@@ -8947,7 +9800,8 @@
     "level": 3,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -8975,7 +9829,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Kotlin",
+   "Jetpack Compose",
+   "Android SDK",
+   "Coroutines & Flow",
+   "TensorFlow Lite"
+  ]
  },
  {
   "source": "lever",
@@ -9018,7 +9879,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Switching/Routing",
+   "Wireless LAN",
+   "Cloud-managed Networks",
+   "CLI",
+   "SNMP",
+   "Packet Analysis"
+  ]
  },
  {
   "source": "ashby",
@@ -9056,7 +9925,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -9114,7 +9984,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "REST APIs",
+   "IoT",
+   "WebRTC",
+   "IPsec"
+  ]
  },
  {
   "source": "ashby",
@@ -9187,7 +10063,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -9260,7 +10137,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Buildkite"
+  ]
  },
  {
   "source": "smartrecruiters",
@@ -9328,7 +10208,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SD-WAN",
+   "FinOps",
+   "ITIL"
+  ]
  },
  {
   "source": "lever",
@@ -9385,6 +10270,12 @@
     "level": 3,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "REST APIs",
+   "JSON",
+   "webhooks",
+   "Jira"
   ]
  },
  {
@@ -9453,7 +10344,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "Hypervisor"
+  ]
  },
  {
   "source": "workday",
@@ -9506,7 +10401,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Nutanix"
+  ]
  },
  {
   "source": "workday",
@@ -9544,7 +10442,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -9617,7 +10516,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "workday",
@@ -9670,7 +10572,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ML-based production systems",
+   "search",
+   "recommendation",
+   "ads ranking",
+   "personalization"
+  ]
  },
  {
   "source": "workday",
@@ -9743,7 +10652,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud Build"
+  ]
  },
  {
   "source": "workday",
@@ -9785,6 +10697,9 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "HTML/CSS/JS"
   ]
  },
  {
@@ -9833,7 +10748,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -9891,7 +10807,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PMP",
+   "ITIL Foundation/Expert"
+  ]
  },
  {
   "source": "workday",
@@ -9939,7 +10859,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Openframe7",
+   "Tibero",
+   "Oracle"
+  ]
  },
  {
   "source": "workday",
@@ -10011,6 +10936,11 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Salesforce",
+   "Agentforce",
+   "Data Cloud"
   ]
  },
  {
@@ -10059,7 +10989,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SD-WAN",
+   "Cato Networks"
+  ]
  },
  {
   "source": "workday",
@@ -10087,7 +11021,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CRM",
+   "Contact Center",
+   "Salesforce Service Cloud"
+  ]
  },
  {
   "source": "workday",
@@ -10120,7 +11059,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -10192,7 +11132,8 @@
     "level": 2,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -10264,7 +11205,8 @@
     "level": 1,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -10307,7 +11249,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "HTML",
+   "CSS",
+   "SSL"
+  ]
  },
  {
   "source": "workday",
@@ -10340,7 +11287,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Data Center",
+   "AI Infrastructure",
+   "Server System Builds",
+   "ODM/OEM Partner Management"
+  ]
  },
  {
   "source": "workday",
@@ -10388,7 +11341,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Generative AI",
+   "Deep Learning",
+   "SLURM",
+   "Transformer-based architectures",
+   "Agent-based systems"
+  ]
  },
  {
   "source": "workday",
@@ -10446,7 +11406,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -10518,6 +11479,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++",
+   "CUDA",
+   "PyTorch",
+   "Machine Learning Interatomic Potential (",
+   "MD simulations",
+   "DFT simulations"
   ]
  },
  {
@@ -10581,7 +11550,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Packet Core",
+   "GTP",
+   "SIP",
+   "RTP",
+   "IMS",
+   "EPC"
+  ]
  },
  {
   "source": "workday",
@@ -10624,7 +11601,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -10672,7 +11650,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -10745,7 +11724,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Robot Framework"
+  ]
  },
  {
   "source": "workday",
@@ -10818,7 +11800,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C++",
+   "Rust"
+  ]
  },
  {
   "source": "workday",
@@ -10891,7 +11877,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rook",
+   "MinIO",
+   "OpenZFS",
+   "CSI",
+   "Velero",
+   "Restic"
+  ]
  },
  {
   "source": "workday",
@@ -10934,7 +11928,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -10967,7 +11962,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -11039,6 +12035,10 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "AI tooling",
+   "Cursor"
   ]
  },
  {
@@ -11097,7 +12097,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "ashby",
@@ -11135,7 +12136,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SaaS troubleshooting"
+  ]
  },
  {
   "source": "ashby",
@@ -11173,7 +12177,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Data Center Hands-On Experience",
+   "GPU & HPC Hardware Familiarity",
+   "Hardware Troubleshooting",
+   "Cable Management"
+  ]
  },
  {
   "source": "ashby",
@@ -11206,7 +12216,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SDV",
+   "AD/ADAS",
+   "E/E architecture",
+   "AUTOSAR",
+   "ISO 26262",
+   "Automotive SPICE"
+  ]
  },
  {
   "source": "ashby",
@@ -11278,6 +12296,12 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Motion Planning",
+   "Trajectory Generation",
+   "C++",
+   "Real-time Systems"
   ]
  },
  {
@@ -11350,6 +12374,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "controls",
+   "autonomous vehicles",
+   "mobile robots",
+   "off-road terrain",
+   "nonlinear MPC",
+   "MPPI control"
   ]
  },
  {
@@ -11388,7 +12420,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CAN",
+   "LIN",
+   "Automotive Ethernet",
+   "SOME/IP",
+   "UDS",
+   "DoIP"
+  ]
  },
  {
   "source": "ashby",
@@ -11451,7 +12491,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ClickHouse DBMS",
+   "OLAP",
+   "Cloud/SaaS platforms",
+   "System Administration"
+  ]
  },
  {
   "source": "ashby",
@@ -11524,7 +12570,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ロードバランシング",
+   "GraphQL",
+   "LLM"
+  ]
  },
  {
   "source": "ashby",
@@ -11597,7 +12648,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Next.js",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -11669,6 +12728,14 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "pre-sales",
+   "CAD",
+   "CAE",
+   "Ansys",
+   "Altair",
+   "Siemens"
   ]
  },
  {
@@ -11732,7 +12799,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -11805,7 +12880,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -11878,7 +12961,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -11951,7 +13042,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -12008,6 +13107,10 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "React",
+   "Rust"
   ]
  },
  {
@@ -12076,7 +13179,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC",
+   "Connect RPC",
+   "GraphQL"
+  ]
  },
  {
   "source": "ashby",
@@ -12149,7 +13260,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AI Agent",
+   "LLM Tooling",
+   "Rust",
+   "React",
+   "Protocol Buffers",
+   "gRPC"
+  ]
  },
  {
   "source": "ashby",
@@ -12222,7 +13341,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Rust"
+  ]
  },
  {
   "source": "ashby",
@@ -12265,7 +13387,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "APIs",
+   "Databases",
+   "Authentication",
+   "Authorization",
+   "Queues",
+   "Jobs"
+  ]
  },
  {
   "source": "ashby",
@@ -12293,7 +13423,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Kotlin",
+   "Jetpack Compose",
+   "Android SDK",
+   "Coroutines & Flow",
+   "TensorFlow Lite"
+  ]
  },
  {
   "source": "ashby",
@@ -12365,7 +13502,8 @@
     "level": 3,
     "mandatory": true
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "lever",
@@ -12437,7 +13575,8 @@
     "level": 2,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "lever",
@@ -12480,7 +13619,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Switching/Routing",
+   "SD-WAN"
+  ]
  },
  {
   "source": "ashby",
@@ -12513,7 +13656,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Drone applications",
+   "Radio systems",
+   "Networks",
+   "Prototyping",
+   "Electronics",
+   "Small UAS regulatory"
+  ]
  },
  {
   "source": "ashby",
@@ -12586,7 +13737,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Podman",
+   "OpenTelemetry",
+   "Coder",
+   "FinOps"
+  ]
  },
  {
   "source": "ashby",
@@ -12649,7 +13806,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "Yocto",
+   "systemd",
+   "bootloaders",
+   "device trees",
+   "QNX Adaptive AUTOSAR"
+  ]
  },
  {
   "source": "ashby",
@@ -12697,7 +13862,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "QNX",
+   "AUTOSAR",
+   "SoC bring-up",
+   "CAN/Ethernet/PCIe/SPI/I2C"
+  ]
  },
  {
   "source": "ashby",
@@ -12735,7 +13907,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "vehicle diagnostics",
+   "fault triage",
+   "repair processes",
+   "fleet operations",
+   "automotive systems",
+   "ADAS technology"
+  ]
  },
  {
   "source": "smartrecruiters",
@@ -12798,7 +13978,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP",
+   "OLTP",
+   "OLAP",
+   "NAGIOS"
+  ]
  },
  {
   "source": "lever",
@@ -12871,7 +14057,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "smartrecruiters",
@@ -12904,7 +14091,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ServiceNow Platform",
+   "ServiceNow certifications"
+  ]
  },
  {
   "source": "smartrecruiters",
@@ -12976,6 +14167,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "C++",
+   "C#",
+   "Unity",
+   "Unreal",
+   "proprietary engine code",
+   "2D/3D math"
   ]
  },
  {
@@ -13048,6 +14247,9 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   ".NET"
   ]
  },
  {
@@ -13076,7 +14278,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -13148,7 +14351,8 @@
     "level": 1,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -13196,7 +14400,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Database Administrator",
+   "Oracle",
+   "MariaDB",
+   "MongoDB",
+   "Couchbase"
+  ]
  },
  {
   "source": "workday",
@@ -13234,7 +14445,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -13271,7 +14483,8 @@
     "level": 1,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -13344,7 +14557,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Oracle DB",
+   "Apache Cassandra"
+  ]
  },
  {
   "source": "workday",
@@ -13397,7 +14614,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP"
+  ]
  },
  {
   "source": "workday",
@@ -13445,7 +14665,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "JPA",
+   "RESTful APIs",
+   "automated testing"
+  ]
  },
  {
   "source": "workday",
@@ -13518,7 +14743,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "Blue Prism",
+   "ServiceNow",
+   "M365 Copilot"
+  ]
  },
  {
   "source": "workday",
@@ -13571,7 +14802,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud Strategy",
+   "DX Planning",
+   "FinOps",
+   "DORA Metrics",
+   "Vendor Strategy"
+  ]
  },
  {
   "source": "workday",
@@ -13644,7 +14882,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "RDS",
+   "DynamoDB"
+  ]
  },
  {
   "source": "workday",
@@ -13702,7 +14944,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SIEM",
+   "ArcSight",
+   "Microsoft Sentinel",
+   "Exabeam/LogRhythm/QRadar (SIEM tools not"
+  ]
  },
  {
   "source": "workday",
@@ -13740,7 +14988,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ITIL",
+   "ISO27001"
+  ]
  },
  {
   "source": "workday",
@@ -13812,6 +15064,11 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "PLM",
+   "Teamcenter",
+   "CAD"
   ]
  },
  {
@@ -13849,6 +15106,14 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "Oracle Cloud Infrastructure (OCI)",
+   "Oracle Database",
+   "Oracle On-Premise Applications",
+   "Cloud Native Services",
+   "SAP",
+   "ServiceNow"
   ]
  },
  {
@@ -13922,7 +15187,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Zabbix",
+   "ITSM",
+   "ITIL",
+   "CCNA"
+  ]
  },
  {
   "source": "workday",
@@ -13960,7 +15231,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -14018,7 +15290,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Informatica",
+   "Data Warehousing",
+   "Database",
+   "Business Intelligence",
+   "Data Management",
+   "MDM"
+  ]
  },
  {
   "source": "workday",
@@ -14080,6 +15360,13 @@
     "level": 1,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "OAuth",
+   "Single Sign On",
+   "Windows",
+   "Mac OS",
+   "APIs"
   ]
  },
  {
@@ -14152,7 +15439,8 @@
     "level": 1,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -14224,7 +15512,8 @@
     "level": 2,
     "mandatory": false
    }
-  ]
+  ],
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -14262,7 +15551,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "OpenUSD",
+   "C",
+   "C++",
+   "NVIDIA RTX",
+   "PhysX",
+   "CUDA"
+  ]
  },
  {
   "source": "workday",
@@ -14314,6 +15611,9 @@
     "level": 2,
     "mandatory": true
    }
+  ],
+  "other_requirements": [
+   "C/C++"
   ]
  },
  {
@@ -14386,6 +15686,12 @@
     "level": 2,
     "mandatory": false
    }
+  ],
+  "other_requirements": [
+   "XML",
+   "HTML",
+   "CSS",
+   ".Net"
   ]
  },
  {
@@ -14459,7 +15765,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "InfiniBand",
+   "Ethernet",
+   "LAN",
+   "EVPN",
+   "OSPF",
+   "VXLAN protocols"
+  ]
  },
  {
   "source": "workday",
@@ -14532,7 +15846,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "HPC/AI clusters",
+   "Slurm",
+   "Singularity",
+   "Lustre",
+   "GPFS",
+   "ZFS"
+  ]
  },
  {
   "source": "workday",
@@ -14595,7 +15917,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Pre-sales",
+   "Sales Engineering",
+   "Solution Architecture",
+   "Enterprise Architecture",
+   "Cloud"
+  ]
  },
  {
   "source": "workday",
@@ -14663,7 +15992,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Pre-sales",
+   "Enterprise Architecture",
+   "Cloud",
+   "RDBMS",
+   "Middleware"
+  ]
  },
  {
   "source": "workday",
@@ -14736,7 +16072,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Satellite",
+   "DevOps"
+  ]
  },
  {
   "source": "workday",
@@ -14809,7 +16149,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "YAML"
+  ]
  },
  {
   "source": "workday",
@@ -14872,7 +16215,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Packet Core"
+  ]
  },
  {
   "source": "workday",
@@ -14920,7 +16266,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "workday",
@@ -14993,7 +16340,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "LLMs/SLMs",
+   "fine-tuning",
+   "RAG",
+   "vector databases",
+   "prompt engineering",
+   "AI governance"
+  ]
  },
  {
   "source": "workday",
@@ -15041,7 +16396,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "kernel programming",
+   "user space programming",
+   "multithreading"
+  ]
  },
  {
   "source": "workday",
@@ -15114,7 +16475,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Microservices",
+   "API-first design"
+  ]
  },
  {
   "source": "workday",
@@ -15177,7 +16542,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "kernel programming",
+   "user space programming",
+   "multithreading"
+  ]
  },
  {
   "source": "jsearch",
@@ -15231,7 +16602,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -15285,7 +16657,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Availability Design"
+  ]
  },
  {
   "source": "jsearch",
@@ -15344,7 +16719,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -15408,7 +16784,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -15472,7 +16849,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -15541,7 +16919,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "コンテナ技術",
+   "モニタリング環境",
+   "Webアプリケーション開発/運用",
+   "サーバントリーダーシップ"
+  ]
  },
  {
   "source": "jsearch",
@@ -15575,7 +16959,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ウイルスバスターCorp/WSUS/メール",
+   "Zabbix/LanscopeCat",
+   "NW(Cisco/FITELnet等)",
+   "IBM DB2",
+   "Apache",
+   "IIS"
+  ]
  },
  {
   "source": "jsearch",
@@ -15629,7 +17021,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Hadoop",
+   "Apache Flink",
+   "Trino",
+   "Druid",
+   "ETL",
+   "データ品質"
+  ]
  },
  {
   "source": "jsearch",
@@ -15688,7 +17088,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "RDS",
+   "Aurora",
+   "CloudWatch"
+  ]
  },
  {
   "source": "jsearch",
@@ -15737,7 +17142,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C#",
+   "Scala",
+   "C++",
+   "Ruby"
+  ]
  },
  {
   "source": "jsearch",
@@ -15806,7 +17217,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Ruby",
+   "Ruby on Rails",
+   "SOC1/SOC2"
+  ]
  },
  {
   "source": "jsearch",
@@ -15870,7 +17286,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ECS"
+  ]
  },
  {
   "source": "jsearch",
@@ -15899,7 +17318,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -15938,7 +17358,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CDK",
+   "Vagrant",
+   "Serverspec",
+   "TestInfra",
+   "Goss",
+   "CodePipeline"
+  ]
  },
  {
   "source": "jsearch",
@@ -15977,7 +17405,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -16051,7 +17480,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Sentry",
+   "OpenTelemetry",
+   "NGINX"
+  ]
  },
  {
   "source": "jsearch",
@@ -16090,7 +17524,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud VDI"
+  ]
  },
  {
   "source": "jsearch",
@@ -16154,7 +17591,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "GPU Cluster",
+   "LLM Inference",
+   "MCP Server",
+   "Enterprise Auth/Gateway"
+  ]
  },
  {
   "source": "jsearch",
@@ -16218,7 +17661,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Jira",
+   "Confluence",
+   "Miro"
+  ]
  },
  {
   "source": "jsearch",
@@ -16277,7 +17725,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -16341,7 +17790,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -16400,7 +17850,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Vercel",
+   "Supabase",
+   "Railway",
+   "WordPress",
+   "FinOps"
+  ]
  },
  {
   "source": "jsearch",
@@ -16454,7 +17911,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Mission Critical Services",
+   "System Operations Management Tools",
+   "Scripting",
+   "Application Server",
+   "Web Server",
+   "Network"
+  ]
  },
  {
   "source": "jsearch",
@@ -16518,7 +17983,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -16592,7 +18058,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ECS",
+   "webアプリケーション開発"
+  ]
  },
  {
   "source": "jsearch",
@@ -16666,7 +18136,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Webアプリケーション開発",
+   "HTTP",
+   "TLS",
+   "ネットワーク",
+   "冗長化・分散手法"
+  ]
  },
  {
   "source": "jsearch",
@@ -16700,7 +18177,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Serverless Architecture",
+   "DynamoDB",
+   "Cognito",
+   "Backend Development"
+  ]
  },
  {
   "source": "jsearch",
@@ -16754,7 +18237,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Ruby on Rails",
+   "GraphQL",
+   "Protocol Buffers",
+   "React",
+   "Next.js",
+   "Flutter"
+  ]
  },
  {
   "source": "jsearch",
@@ -16813,7 +18304,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -16887,7 +18379,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP",
+   "Rails",
+   "UnitTest"
+  ]
  },
  {
   "source": "jsearch",
@@ -16961,7 +18458,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -16995,7 +18493,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco",
+   "L2/L3スイッチ",
+   "Fortinet",
+   "ファイアウォール",
+   "OSPF",
+   "YAMAHA"
+  ]
  },
  {
   "source": "jsearch",
@@ -17069,7 +18575,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "QA"
+  ]
  },
  {
   "source": "jsearch",
@@ -17123,7 +18632,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17157,7 +18667,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17196,7 +18707,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco ACI",
+   "CCNA",
+   "CCNP"
+  ]
  },
  {
   "source": "jsearch",
@@ -17240,7 +18756,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Aurora",
+   "ECS"
+  ]
  },
  {
   "source": "jsearch",
@@ -17299,7 +18819,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ネットワーク設計",
+   "データセンターネットワーク",
+   "L2/L3ネットワーク技術",
+   "STP",
+   "OSPF",
+   "EVPN"
+  ]
  },
  {
   "source": "jsearch",
@@ -17343,7 +18871,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17372,7 +18901,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17436,7 +18966,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "RDS/Aurora"
+  ]
  },
  {
   "source": "jsearch",
@@ -17470,7 +19003,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows",
+   "JP1",
+   "Zabbix"
+  ]
  },
  {
   "source": "jsearch",
@@ -17509,7 +19047,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17553,7 +19092,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "オンプレ",
+   "仮想化基盤",
+   "インフラエンジニア"
+  ]
  },
  {
   "source": "jsearch",
@@ -17602,7 +19146,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17631,7 +19176,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Ruby"
+  ]
  },
  {
   "source": "jsearch",
@@ -17660,7 +19208,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "BMS",
+   "EPMS",
+   "DCIM",
+   "1級電気通信工事施工管理技師",
+   "1級電気施工管理技術"
+  ]
  },
  {
   "source": "jsearch",
@@ -17689,7 +19244,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CCNA",
+   "CCNP",
+   "LinuC1",
+   "LPIC",
+   "基本情報技術者"
+  ]
  },
  {
   "source": "jsearch",
@@ -17718,7 +19280,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17762,7 +19325,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17811,7 +19375,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -17845,7 +19410,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C#.net",
+   "Flash",
+   "Oracle",
+   "ServiceCloud",
+   "APEX"
+  ]
  },
  {
   "source": "jsearch",
@@ -17919,7 +19491,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Webアプリケーション設計開発",
+   "オブジェクト指向設計",
+   "単体テスト",
+   "PHP",
+   "フレームワーク/ライブラリ問題解決",
+   "技術選定/アーキテクチャ設計"
+  ]
  },
  {
   "source": "jsearch",
@@ -17983,7 +19563,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "Oracle"
+  ]
  },
  {
   "source": "jsearch",
@@ -18017,7 +19601,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18076,7 +19661,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows"
+  ]
  },
  {
   "source": "jsearch",
@@ -18120,7 +19708,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18169,7 +19758,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "RDB"
+  ]
  },
  {
   "source": "jsearch",
@@ -18233,7 +19825,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows"
+  ]
  },
  {
   "source": "jsearch",
@@ -18292,7 +19887,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18356,7 +19952,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Logstash",
+   "Hadoop"
+  ]
  },
  {
   "source": "jsearch",
@@ -18410,7 +20010,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18474,7 +20075,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Infrastructure as Code",
+   "Team Management",
+   "Ruby",
+   "Ruby on Rails"
+  ]
  },
  {
   "source": "jsearch",
@@ -18523,7 +20130,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18557,7 +20165,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "仮想OS",
+   "コンテナ",
+   "GIS"
+  ]
  },
  {
   "source": "jsearch",
@@ -18616,7 +20229,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Team Management",
+   "Requirements Definition",
+   "Basic Design",
+   "Backup/Restore",
+   "Disaster Recovery Design"
+  ]
  },
  {
   "source": "jsearch",
@@ -18665,7 +20285,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "IaaS",
+   "SaaS",
+   "Zero Trust Network",
+   "EDR",
+   "CASB",
+   "ID Management"
+  ]
  },
  {
   "source": "jsearch",
@@ -18734,7 +20362,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18763,7 +20392,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "OCI"
+  ]
  },
  {
   "source": "jsearch",
@@ -18802,7 +20434,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -18841,7 +20474,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows",
+   "Cisco",
+   "Juniper",
+   "F5"
+  ]
  },
  {
   "source": "jsearch",
@@ -18915,7 +20554,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Pre-sales",
+   "Compute Engine",
+   "Organization"
+  ]
  },
  {
   "source": "jsearch",
@@ -18984,7 +20628,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Gemini",
+   "Vertex AI",
+   "Google Workspace"
+  ]
  },
  {
   "source": "jsearch",
@@ -19043,7 +20692,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Spring Boot",
+   "DevOps"
+  ]
  },
  {
   "source": "jsearch",
@@ -19082,7 +20735,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "SSH",
+   "Office"
+  ]
  },
  {
   "source": "jsearch",
@@ -19146,7 +20803,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "GoogleCloud"
+  ]
  },
  {
   "source": "jsearch",
@@ -19190,7 +20850,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "M365"
+  ]
  },
  {
   "source": "jsearch",
@@ -19229,7 +20892,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "GIS",
+   "仮想OS",
+   "コンテナ"
+  ]
  },
  {
   "source": "jsearch",
@@ -19278,7 +20946,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Airflow",
+   "Composer",
+   "Redshift"
+  ]
  },
  {
   "source": "jsearch",
@@ -19332,7 +21005,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Web Server (Apache/nginx)"
+  ]
  },
  {
   "source": "jsearch",
@@ -19371,7 +21047,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -19410,7 +21087,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "eBPF"
+  ]
  },
  {
   "source": "jsearch",
@@ -19469,7 +21149,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "データベース設計構築"
+  ]
  },
  {
   "source": "jsearch",
@@ -19503,7 +21186,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -19577,7 +21261,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "jsearch",
@@ -19631,7 +21318,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ClickHouse",
+   "Databend",
+   "Snowflake",
+   "Langfuse",
+   "Valkey"
+  ]
  },
  {
   "source": "jsearch",
@@ -19680,7 +21374,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CloudWatch"
+  ]
  },
  {
   "source": "jsearch",
@@ -19754,7 +21451,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "kubectl"
+  ]
  },
  {
   "source": "jsearch",
@@ -19788,7 +21488,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C#"
+  ]
  },
  {
   "source": "jsearch",
@@ -19852,7 +21555,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud Spanner"
+  ]
  },
  {
   "source": "jsearch",
@@ -19886,7 +21592,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "マルチクラウドクラスター"
+  ]
  },
  {
   "source": "jsearch",
@@ -19960,7 +21669,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CKA",
+   "C++"
+  ]
  },
  {
   "source": "jsearch",
@@ -20024,7 +21737,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -20093,7 +21807,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CNCF",
+   "CKA",
+   "CKS"
+  ]
  },
  {
   "source": "jsearch",
@@ -20142,7 +21861,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -20191,7 +21911,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Podman",
+   "ROSA"
+  ]
  },
  {
   "source": "jsearch",
@@ -20265,7 +21989,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud Functions",
+   "Anthos Config Management"
+  ]
  },
  {
   "source": "jsearch",
@@ -20339,7 +22067,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Tekton"
+  ]
  },
  {
   "source": "jsearch",
@@ -20398,7 +22129,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Webアプリケーション開発",
+   "コンテナアプリケーション開発・運用"
+  ]
  },
  {
   "source": "jsearch",
@@ -20442,7 +22177,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ソフトウェア制御/品質管理"
+  ]
  },
  {
   "source": "jsearch",
@@ -20491,7 +22229,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "コンテナ環境"
+  ]
  },
  {
   "source": "jsearch",
@@ -20550,7 +22291,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "SRM",
+   "IDS",
+   "IPS",
+   "DDoS対策",
+   "CDN"
+  ]
  },
  {
   "source": "jsearch",
@@ -20584,7 +22333,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "On-premise"
+  ]
  },
  {
   "source": "jsearch",
@@ -20633,7 +22385,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "MATLAB/Simulink",
+   "Windows"
+  ]
  },
  {
   "source": "jsearch",
@@ -20697,7 +22454,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "日常英会話",
+   "システム運用設計"
+  ]
  },
  {
   "source": "jsearch",
@@ -20771,7 +22532,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Kustomize",
+   "CloudWatch"
+  ]
  },
  {
   "source": "jsearch",
@@ -20810,7 +22575,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -20864,7 +22630,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Webアプリケーションの設計・開発経験",
+   "BSS/OSS開発経験",
+   "生成AIを用いた開発経験"
+  ]
  },
  {
   "source": "jsearch",
@@ -20918,7 +22689,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Perl",
+   "Oracle",
+   "JP1"
+  ]
  },
  {
   "source": "jsearch",
@@ -20972,7 +22748,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -21036,7 +22813,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Jira/Confluence/Miro"
+  ]
  },
  {
   "source": "jsearch",
@@ -21095,7 +22875,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP",
+   "Kotlin",
+   "C#",
+   "React",
+   "Next.js",
+   "Jest"
+  ]
  },
  {
   "source": "jsearch",
@@ -21149,7 +22937,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -21198,7 +22987,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "FPGA",
+   "GPU",
+   "ARM",
+   "x86",
+   "LLM",
+   "MCP"
+  ]
  },
  {
   "source": "jsearch",
@@ -21242,7 +23039,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "C/C++",
+   "On-premise"
+  ]
  },
  {
   "source": "jsearch",
@@ -21316,7 +23117,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Proxmox",
+   "BookStack",
+   "LiteLLM"
+  ]
  },
  {
   "source": "jsearch",
@@ -21345,7 +23151,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "L2/L3 switching",
+   "routing",
+   "Cisco",
+   "Juniper",
+   "Arista",
+   "Yamaha"
+  ]
  },
  {
   "source": "jsearch",
@@ -21394,7 +23208,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -21468,7 +23283,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "jsearch",
@@ -21532,7 +23350,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Maven"
+  ]
  },
  {
   "source": "jsearch",
@@ -21571,7 +23392,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "運用・監視業務"
+  ]
  },
  {
   "source": "jsearch",
@@ -21620,7 +23444,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ネットワーク設計",
+   "セキュリティ製品",
+   "コンサルティング",
+   "LAN/WAN",
+   "クラウド連携",
+   "監視データ分析"
+  ]
  },
  {
   "source": "jsearch",
@@ -21654,7 +23486,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CCNA",
+   "LinuC",
+   "LPIC",
+   "基本情報技術者"
+  ]
  },
  {
   "source": "jsearch",
@@ -21693,7 +23531,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "脆弱性診断",
+   "ペネトレーションテスト",
+   "Burp Suite",
+   "AppScan",
+   "Nessus",
+   "Webアプリケーション開発"
+  ]
  },
  {
   "source": "jsearch",
@@ -21732,7 +23578,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco",
+   "L2/L3スイッチ",
+   "有線/無線LAN"
+  ]
  },
  {
   "source": "jsearch",
@@ -21761,7 +23612,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco",
+   "NEC",
+   "network equipment",
+   "LAN",
+   "WAN",
+   "server construction"
+  ]
  },
  {
   "source": "jsearch",
@@ -21795,7 +23654,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Network Design",
+   "Network Construction",
+   "Requirements Definition",
+   "Basic Design",
+   "Config Creation",
+   "Verification"
+  ]
  },
  {
   "source": "jsearch",
@@ -21839,7 +23706,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -21868,7 +23736,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -21912,7 +23781,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "インフラエンジニアの構築経験"
+  ]
  },
  {
   "source": "jsearch",
@@ -21966,7 +23838,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "FortiGateVM",
+   "Google Workspace",
+   "SSO",
+   "ID管理システム",
+   "Windows",
+   "生成AI"
+  ]
  },
  {
   "source": "jsearch",
@@ -22040,7 +23920,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -22099,7 +23980,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Infrastructure as Code",
+   "AIソリューション",
+   "エージェント型システム",
+   "ワークフローオーケストレーション"
+  ]
  },
  {
   "source": "jsearch",
@@ -22138,7 +24025,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "システムリスク管理",
+   "ITガバナンス体勢構築",
+   "プロジェクトマネジメント",
+   "チームマネジメント"
+  ]
  },
  {
   "source": "jsearch",
@@ -22177,7 +24070,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "WAF"
+  ]
  },
  {
   "source": "jsearch",
@@ -22231,7 +24127,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "React.js",
+   "HTTP",
+   "MQTT"
+  ]
  },
  {
   "source": "jsearch",
@@ -22260,7 +24161,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ネットワーク構築",
+   "ネットワーク保守運用"
+  ]
  },
  {
   "source": "jsearch",
@@ -22299,7 +24204,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "サーバ・ネットワーク（構築・運用・保守）",
+   "要件定義工程",
+   "PL/PM",
+   "対顧客調整",
+   "スケジュール管理",
+   "タスク管理業務"
+  ]
  },
  {
   "source": "jsearch",
@@ -22348,7 +24261,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cisco",
+   "Juniper",
+   "Arista",
+   "Nokia",
+   "LPWA"
+  ]
  },
  {
   "source": "jsearch",
@@ -22392,7 +24312,14 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "DDD",
+   "Design Patterns",
+   "SaaS/Multi-tenant Design",
+   "Authentication/Authorization",
+   "Technical Standardization/Governance"
+  ]
  },
  {
   "source": "jsearch",
@@ -22441,7 +24368,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -22500,7 +24428,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "AWSセキュリティサービス"
+  ]
  },
  {
   "source": "jsearch",
@@ -22564,7 +24495,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "DWH",
+   "BIツール"
+  ]
  },
  {
   "source": "jsearch",
@@ -22618,7 +24553,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -22652,7 +24588,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Snowflake",
+   "Airflow",
+   "Webクローリング基盤",
+   "Webアプリケーション・APIの本番開発"
+  ]
  },
  {
   "source": "jsearch",
@@ -22681,7 +24623,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "jsearch",
@@ -22755,7 +24700,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -22804,7 +24750,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "FinOps"
+  ]
  },
  {
   "source": "jsearch",
@@ -22858,7 +24807,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP",
+   "Ruby",
+   "Vue.js",
+   "React"
+  ]
  },
  {
   "source": "jsearch",
@@ -22927,7 +24882,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Databricks",
+   "dbt"
+  ]
  },
  {
   "source": "jsearch",
@@ -22971,7 +24930,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -23010,7 +24970,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Ruby on Rails"
+  ]
  },
  {
   "source": "jsearch",
@@ -23084,7 +25047,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Platform Engineering"
+  ]
  },
  {
   "source": "jsearch",
@@ -23148,7 +25114,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Cloud Cost Analysis/Optimization",
+   "Data Warehouse",
+   "Cross-team Consensus Building",
+   "FinOps",
+   "Data Catalog/Metadata Management",
+   "Data Governance"
+  ]
  },
  {
   "source": "jsearch",
@@ -23202,7 +25176,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -23271,7 +25246,11 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Ruby",
+   "DevOps"
+  ]
  },
  {
   "source": "jsearch",
@@ -23335,7 +25314,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "React",
+   "Next.js"
+  ]
  },
  {
   "source": "jsearch",
@@ -23374,7 +25357,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "pre-sales"
+  ]
  },
  {
   "source": "jsearch",
@@ -23408,7 +25394,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -23472,7 +25459,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "React"
+  ]
  },
  {
   "source": "jsearch",
@@ -23531,7 +25521,13 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ECS/Fargate",
+   "Route53",
+   "ClientVPN",
+   "Transit Gateway"
+  ]
  },
  {
   "source": "jsearch",
@@ -23580,7 +25576,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "RDS",
+   "ALB"
+  ]
  },
  {
   "source": "jsearch",
@@ -23609,7 +25609,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -23668,7 +25669,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Amazon ECS",
+   "Amazon RDS",
+   "Amazon CloudWatch"
+  ]
  },
  {
   "source": "jsearch",
@@ -23702,7 +25708,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows"
+  ]
  },
  {
   "source": "jsearch",
@@ -23751,7 +25760,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -23800,7 +25810,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "RDS",
+   "ALB",
+   "Auto Scaling"
+  ]
  },
  {
   "source": "jsearch",
@@ -23844,7 +25859,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CloudWatch",
+   "ネットワーク"
+  ]
  },
  {
   "source": "jsearch",
@@ -23903,7 +25922,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CodePipeline",
+   "ECS",
+   "PHP"
+  ]
  },
  {
   "source": "jsearch",
@@ -23977,7 +26001,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Amazon Bedrock",
+   "Kiro",
+   "Gemini"
+  ]
  },
  {
   "source": "jsearch",
@@ -24016,7 +26045,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24070,7 +26100,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "GitOps"
+  ]
  },
  {
   "source": "jsearch",
@@ -24104,7 +26137,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24138,7 +26172,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "GIS"
+  ]
  },
  {
   "source": "jsearch",
@@ -24202,7 +26239,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24246,7 +26284,14 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CloudWatch",
+   "EventBridge",
+   "Step Functions",
+   "Systems Manager",
+   "SNS"
+  ]
  },
  {
   "source": "jsearch",
@@ -24290,7 +26335,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows",
+   "インフラ設計",
+   "インフラ構築",
+   "プロジェクト管理"
+  ]
  },
  {
   "source": "jsearch",
@@ -24324,7 +26375,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24388,7 +26440,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Infrastructure as Code"
+  ]
  },
  {
   "source": "jsearch",
@@ -24422,7 +26477,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24486,7 +26542,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24550,7 +26607,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Scala",
+   "Kotlin",
+   "PagerDuty"
+  ]
  },
  {
   "source": "jsearch",
@@ -24619,7 +26681,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Service Mesh"
+  ]
  },
  {
   "source": "jsearch",
@@ -24653,7 +26718,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "サーバー構築",
+   "ネットワーク設計構築",
+   "官公庁・大企業向けの大規模システム構築"
+  ]
  },
  {
   "source": "jsearch",
@@ -24697,7 +26767,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows",
+   "Middleware"
+  ]
  },
  {
   "source": "jsearch",
@@ -24766,7 +26840,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "AIX",
+   "Oracle",
+   "Apache/Nginx/Tomcat/WebLogic"
+  ]
  },
  {
   "source": "jsearch",
@@ -24795,7 +26875,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -24834,7 +26915,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "VoIP",
+   "セッション制御系のサーバシステム",
+   "方式検討",
+   "構築経験"
+  ]
  },
  {
   "source": "jsearch",
@@ -24873,7 +26960,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Database"
+  ]
  },
  {
   "source": "jsearch",
@@ -24917,7 +27007,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "DB"
+  ]
  },
  {
   "source": "jsearch",
@@ -24946,7 +27039,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "サーバー構築/運用",
+   "WEBサーバー"
+  ]
  },
  {
   "source": "jsearch",
@@ -24995,7 +27092,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows"
+  ]
  },
  {
   "source": "jsearch",
@@ -25054,7 +27154,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -25103,7 +27204,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -25132,7 +27234,8 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -25191,7 +27294,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "スクリプト製造"
+  ]
  },
  {
   "source": "jsearch",
@@ -25230,7 +27336,15 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "IIS",
+   "Apache",
+   "ロードバランサ",
+   "Zabbix",
+   "SiteScope"
+  ]
  },
  {
   "source": "jsearch",
@@ -25259,7 +27373,12 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ホストインフラ保守運用",
+   "オープン系インフラ保守運用",
+   "ネットワーク保守運用"
+  ]
  },
  {
   "source": "jsearch",
@@ -25328,7 +27447,10 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "ECS"
+  ]
  },
  {
   "source": "jsearch",
@@ -25372,7 +27494,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "オンプレ",
+   "クラウド",
+   "基本設計書作成",
+   "非機能要件",
+   "DBの構築",
+   "SIプロジェクト"
+  ]
  },
  {
   "source": "jsearch",
@@ -25426,7 +27556,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "Zabbix"
+  ]
  },
  {
   "source": "jsearch",
@@ -25470,7 +27604,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "サーバーエンジニア",
+   "ネットワーク環境",
+   "情報資産管理",
+   "トラブルシューティング",
+   "在庫管理",
+   "マニュアル作成"
+  ]
  },
  {
   "source": "jsearch",
@@ -25524,7 +27666,8 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  },
  {
   "source": "jsearch",
@@ -25578,7 +27721,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Windows Server",
+   "Middleware",
+   "Ruby",
+   "PHP"
+  ]
  },
  {
   "source": "jsearch",
@@ -25632,7 +27781,12 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "PHP",
+   "BEAR.Sunday",
+   "Next.js"
+  ]
  },
  {
   "source": "jsearch",
@@ -25686,7 +27840,15 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "HA",
+   "オートスケーリング",
+   "冗長化",
+   "負荷分散",
+   "キャッシュ戦略",
+   "CDN"
+  ]
  },
  {
   "source": "jsearch",
@@ -25755,7 +27917,10 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "CDK"
+  ]
  },
  {
   "source": "jsearch",
@@ -25799,7 +27964,11 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "オンプレミス",
+   "サーバ設計・構築・運用"
+  ]
  },
  {
   "source": "jsearch",
@@ -25838,7 +28007,13 @@
     "mandatory": true
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": [
+   "Core Network Engineer",
+   "O&M Engineer",
+   "Hardware Engineer",
+   "Network Engineer"
+  ]
  },
  {
   "source": "jsearch",
@@ -25907,6 +28082,7 @@
     "mandatory": false
    }
   ],
-  "extractor": "moonshotai/kimi-k3"
+  "extractor": "moonshotai/kimi-k3",
+  "other_requirements": []
  }
 ]

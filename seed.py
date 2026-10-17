@@ -53,6 +53,7 @@ def load_real_jobs() -> list[dict]:
             "id": f"real-{i:03d}", "title": j["title"].strip(), "company": j["company"], "location": j["location"] or "Tokyo, Japan",
             "posted_days_ago": 7, "role": role_for(j["title"]), "source": "real", "url": j.get("url", ""),
             "board": j.get("board", ""), "requires": j["requires"],
+            "other_requirements": j.get("other_requirements", []), "other_required": len(j.get("other_requirements", [])),
         })
     return jobs
 
@@ -121,7 +122,7 @@ def build_corpus(max_real: int = 150, total: int = TOTAL) -> list[dict]:
 # ---- pure-python mirror of the Cypher scoring, for fast tuning without round-trips -------------
 
 def fit(job: dict, have: dict[str, int]) -> float:
-    got = tot = 0.0
+    got, tot = 0.0, 1.0 * job.get("other_required", 0)   # uncovered must-haves count as unmet mandatory requirements
     for r in job["requires"]:
         w = 2.0 if r["mandatory"] else 1.0
         h = have.get(r["skill"])

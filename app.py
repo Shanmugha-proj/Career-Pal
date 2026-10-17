@@ -222,8 +222,10 @@ def job_card(f: dict) -> str:
     fit = f["fit"]
     ok = [s for s in f["matched"][:4]]
     gaps = f["gaps"][:3]
+    other = (f.get("other") or [])[:3]
     tags = "".join(f'<span class="tag ok">{short(s)}</span>' for s in ok) + "".join(
-        f'<span class="tag {"part" if g["m"] > 0 else "miss"}">{"↑ " if g["m"] > 0 else "+ "}{short(g["s"])}</span>' for g in gaps)
+        f'<span class="tag {"part" if g["m"] > 0 else "miss"}">{"↑ " if g["m"] > 0 else "+ "}{short(g["s"])}</span>' for g in gaps) + "".join(
+        f'<span class="tag miss">+ {o}</span>' for o in other)
     real = f.get("source") == "real"
     badge = '<span class="badge">● Real posting</span>' if real else '<span class="badge syn">synthetic</span>'
     link = f'<a class="apply" href="{f["url"]}" target="_blank">Apply ↗</a>' if f.get("url") else ""
@@ -257,7 +259,7 @@ with st.sidebar:
     model = st.selectbox("Model (ai& inference)", model_ids, index=model_ids.index(llm.MODEL) if llm.MODEL in model_ids else 0,
                          format_func=lambda m: llm.MODELS[m][0])
     st.session_state["model"] = model
-    cutoff_pct = st.slider("Minimum fit to count as *qualified*", 40, 90, 60, 5, format="%d%%")
+    cutoff_pct = st.slider("Minimum fit to count as *qualified*", 30, 90, 50, 5, format="%d%%")
     cutoff = cutoff_pct / 100
     budget = st.slider("Learning budget (days)", 14, 120, 45, 1)
     st.divider()
@@ -389,7 +391,8 @@ with st.container(border=True):
     with st.expander(f"All {n_q} qualifying postings"):
         df = pd.DataFrame([{
             "Fit": round(100 * f["fit"]), "Title": f["title"], "Company": f["company"], "Location": f["location"],
-            "Link": f.get("url") or None, "Missing": ", ".join(f'{g["s"]}{"" if g["m"] == 0 else " ↑"}' for g in f["gaps"]) or "—",
+            "Link": f.get("url") or None,
+            "Missing": ", ".join([f'{g["s"]}{"" if g["m"] == 0 else " ↑"}' for g in f["gaps"]] + list(f.get("other") or [])) or "—",
         } for f in sorted(qualified, key=lambda f: -f["fit"])])
         st.dataframe(df, hide_index=True, width="stretch", height=360, column_config={
             "Fit": st.column_config.ProgressColumn("Fit", format="%d%%", min_value=0, max_value=100),

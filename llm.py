@@ -164,6 +164,52 @@ def extract_job_requirements(title: str, description: str, model: str | None = N
     return list(best.values())
 
 
+OTHER_SCHEMA = {
+    "type": "object",
+    "properties": {"other_requirements": {"type": "array", "items": {"type": "string"}, "maxItems": 8}},
+    "required": ["other_requirements"],
+    "additionalProperties": False,
+}
+
+OTHER_SYSTEM = f"""You list the REQUIRED technical skills in a job posting that are NOT covered by this taxonomy:
+{', '.join(CANONICAL_SKILLS)}
+
+Rules:
+- Only must-have / minimum-qualification technical skills, technologies or domains (e.g. "C/C++", "RTOS", "ROS2", "React",
+  "Swift", "Spark", "Salesforce", "SAP", "pre-sales", "embedded firmware", "FPGA"). Short labels, 1-3 words each, max 8.
+- Skip anything that maps to a taxonomy item (e.g. GKE -> Kubernetes, EC2 -> AWS, GitHub Actions -> CI/CD, RHEL -> Linux,
+  Grafana -> Prometheus/Grafana, Vault -> Secrets Management, Istio -> Service Mesh).
+- Skip soft skills, degrees, years of experience, human languages (Japanese/English), and preferred / nice-to-have items.
+- Return an empty list if every required skill is covered by the taxonomy."""
+
+
+def extract_other_requirements(title: str, description: str, model: str = "deepseek-ai/deepseek-v4-flash") -> list[str]:
+    """Required skills outside the taxonomy - each counts as an unmet mandatory requirement in the fit score."""
+    r = client().chat.completions.create(
+        model=model, max_tokens=1500, temperature=0, reasoning_effort=effort_for(model),
+        response_format={"type": "json_schema", "json_schema": {"name": "other", "schema": OTHER_SCHEMA, "strict": True}},
+        messages=[{"role": "system", "content": OTHER_SYSTEM}, {"role": "user", "content": f"TITLE: {title}\n\n{description[:12000]}"}],
+    )
+    items = json.loads(r.choices[0].message.content)["other_requirements"]
+    seen, out = set(), []
+    for x in items:
+        x = str(x).strip()[:40]
+        if x and x.lower() not in seen and x not in CANONICAL_SKILLS and not COVERED_RE.search(x):
+            seen.add(x.lower()); out.append(x)
+    return out[:6]
+
+
+import re as _re
+# things the model sometimes lists that ARE covered by a taxonomy item
+COVERED_RE = _re.compile(
+    r"gke|eks|aks|k8s|kubernetes|openshift|helm|docker|container|istio|linkerd|terraform|cloudformation|pulumi|iac|ansible|chef|puppet|"
+    r"\baws\b|ec2|\bs3\b|lambda|\bvpc\b|\biam\b|gcp|google cloud|bigquery|azure|linux|rhel|ubuntu|centos|unix|bash|shell|python|golang|"
+    r"\bgo\b|java\b|typescript|javascript|node|sql|postgres|mysql|kafka|redis|spark|git\b|github|gitlab|jenkins|argo|flux|ci/cd|cicd|"
+    r"prometheus|grafana|datadog|elk|elastic|kibana|loki|splunk|new ?relic|observab|monitoring|vault|security|iam|sre|slo|on-call|"
+    r"incident|networking|tcp/ip|dns|bgp|vlan|firewall|load balanc|openstack|vmware|kvm|hyper-v|virtualiz|ceph|san\b|storage|"
+    r"5g|ran\b|telecom|japanese|english|leadership|mentor|agile|scrum|documentation|communication", _re.I)
+
+
 AGENT_TOOLS = [{
     "type": "function",
     "function": {

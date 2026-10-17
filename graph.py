@@ -71,7 +71,8 @@ def upsert_jobs(jobs: list[dict]):
         MERGE (job:Job {id: j.id})
         SET job.title = j.title, job.company = j.company, job.location = j.location,
             job.posted_days_ago = j.posted_days_ago, job.role = j.role,
-            job.source = coalesce(j.source, 'synthetic'), job.url = coalesce(j.url, ''), job.board = coalesce(j.board, '')
+            job.source = coalesce(j.source, 'synthetic'), job.url = coalesce(j.url, ''), job.board = coalesce(j.board, ''),
+            job.other_required = coalesce(j.other_required, 0), job.other_requirements = coalesce(j.other_requirements, [])
         WITH job, j
         UNWIND j.requires AS r
         MATCH (s:Skill {name: r.skill})
@@ -123,11 +124,13 @@ FIT_CYPHER = """
 MATCH (j:Job)-[r:REQUIRES]->(s:Skill)
 OPTIONAL MATCH (:Candidate {id: $cid})-[h:HAS]->(s)
 WITH j, s, r, CASE WHEN h IS NULL THEN 0.0 WHEN h.level >= r.level THEN 1.0 ELSE 0.5 END AS m
-WITH j, sum(r.weight * m) / sum(r.weight) AS fit,
+// required skills outside the taxonomy (e.g. C/C++, RTOS) count as unmet mandatory requirements (weight 1.0 each)
+WITH j, sum(r.weight * m) / (sum(r.weight) + 1.0 * coalesce(j.other_required, 0)) AS fit,
      [x IN collect({s: s.name, m: m, lvl: r.level, mand: r.mandatory}) WHERE x.m = 1.0 | x.s] AS matched,
      [x IN collect({s: s.name, m: m, lvl: r.level, mand: r.mandatory}) WHERE x.m < 1.0 | x] AS gaps
 RETURN j.id AS id, j.title AS title, j.company AS company, j.location AS location, j.role AS role,
-       j.posted_days_ago AS posted_days_ago, j.source AS source, j.url AS url, fit, matched, gaps
+       j.posted_days_ago AS posted_days_ago, j.source AS source, j.url AS url, fit, matched, gaps,
+       coalesce(j.other_requirements, []) AS other
 ORDER BY fit DESC, j.title
 """
 
@@ -143,7 +146,7 @@ OPTIONAL MATCH (:Candidate {id: $cid})-[h:HAS]->(s)
 WITH j, s, r, CASE WHEN h IS NULL THEN 0.0 WHEN h.level >= r.level THEN 1.0 ELSE 0.5 END AS m
 WITH j, collect({skill: s, w: r.weight, m: m, lvl: r.level}) AS reqs
 WITH j, reqs, reduce(a = 0.0, x IN reqs | a + x.w * x.m) AS got,
-              reduce(a = 0.0, x IN reqs | a + x.w)       AS tot
+              reduce(a = 0.0, x IN reqs | a + x.w) + 1.0 * coalesce(j.other_required, 0) AS tot   // + uncovered must-haves
 WHERE got / tot < $cutoff                                  // jobs the candidate does NOT yet qualify for
 UNWIND [x IN reqs WHERE x.m < 1.0 AND NOT x.skill.name IN $exclude] AS gap   // each skill they lack (soft skills excluded)
 WITH gap.skill AS skill, gap.lvl AS lvl, j, (got + gap.w * (1.0 - gap.m)) / tot AS fit_if_learned
@@ -171,7 +174,7 @@ def qualify_count(cid: str, cutoff: float) -> dict:
         MATCH (j:Job)-[r:REQUIRES]->(s:Skill)
         OPTIONAL MATCH (:Candidate {id: $cid})-[h:HAS]->(s)
         WITH j, r, CASE WHEN h IS NULL THEN 0.0 WHEN h.level >= r.level THEN 1.0 ELSE 0.5 END AS m
-        WITH j, sum(r.weight * m) / sum(r.weight) AS fit
+        WITH j, sum(r.weight * m) / (sum(r.weight) + 1.0 * coalesce(j.other_required, 0)) AS fit
         RETURN count(*) AS total, sum(CASE WHEN fit >= $cutoff THEN 1 ELSE 0 END) AS qualify
     """, cid=cid, cutoff=cutoff)[0]
 
