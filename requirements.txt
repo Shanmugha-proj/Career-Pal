@@ -1,0 +1,5 @@
+streamlit>=1.38
+neo4j>=5.20
+openai>=1.40
+python-dotenv>=1.0
+pypdf>=4.0

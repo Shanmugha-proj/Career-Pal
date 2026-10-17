@@ -1,0 +1,51 @@
+SHANMUGHA NADHA REDDY N
+CLOUD INFRASTRUCTURE ENGINEER | KUBERNETES PLATFORM | BARE-METAL | RAN AUTOMATION
+Tokyo, Japan  ·  nshanmugha123@gmail.com  ·  linkedin.com/in/shanmugha-a17232134
+TECHNICAL PROFILE
+CKA-certified Platform / Cloud Engineer with hands-on delivery of distributed Kubernetes infrastructure on RHEL and bare-metal
+servers. Cloud-side workstream lead for a strategic migration spanning ~1,100 edge Kubernetes clusters, ~12,800 Quanta/Supermicro
+servers, and infrastructure supporting ~16,500 4G sites. Combines migration execution across ~200 –250 clusters with L2/L3
+troubleshooting, Python/Bash/Ansible automation, incident support, and day-to-day leadership of 7–8 engineers.
+TECHNICAL EXPERTISE
+Platform: Kubernetes, Robin Cloud Native Platform (CNP), RHEL, Linux & Bare-Metal cluster provisioning, Helm
+Automation & Config: Python, Bash, Ansible, Git — cluster config, pre/post checks, validation, reporting
+Infrastructure Ops: Cluster migration/build/upgrade, ToR/VLAN changes, L2/L3 troubleshooting, incident RCA
+PROFESSIONAL EXPERIENCE
+RAKUTEN MOBILE, INC. — Tokyo, Japan
+Cloud Infrastructure Engineer May 2024 – Present
+• Led the cloud-side workstream for a strategic migration from Cisco CVIM to Rakuten Cloud Platform, guiding 7 –8 engineers across a
+program covering roughly 1,100 edge Kubernetes clusters, 12,800 bare-metal servers, and the infrastructure behind about 16,500
+4G sites.
+• Performed hands-on migration and cluster work across roughly 200–250 GCs, then moved into a program-wide role covering L2/L3
+escalations, automation, validation, and workflow optimization. Supervised execution and resolved issues raised by L1 engineers.
+• Re-engineered the migration workflow using Python, Bash, and Ansible to embed post-migration configuration and checks, cutting
+execution time from about 4.5 hours to 3 hours (~33%). The updated workflow was rolled out across roughly 600 GCs .
+• Owned the bare-metal server lifecycle end to end: ToR/VLAN setup, BIOS/BMC/FPGA/NIC firmware upgrades, RHEL installation,
+Robin CNP/Kubernetes deployment, patching, tagging, user and network configuration, validation, and handoff to SRE.
+• Developed Ansible automation for consistent Robin cluster configuration across the infrastructure, including repeatable post-
+configuration, server/cluster vaulting, and updating inventory to Git.
+• Supported RAN workload deployments onto migrated clusters during maintenance windows and documented issues and
+workarounds as a reference for other engineers.
+• Coordinated remediation with SRE, RAN, operations, architecture, and vendor teams, and contributed to incident
+RCA/postmortems and management reporting. Also mentored four junior engineers .
+RAN Network Automation Engineer Jan 2024 – Apr 2024
+• Supported end-to-end integration of newly commissioned Open RAN sites and troublesho ot activation issues with field, network
+operations, and cloud teams.
+• Automated a production RAN patch workflow across ~4,000 sites, enabling a two-person team to complete execution in ~1 week
+versus ~1 month previously.
+• Built Python automation for PCI, EIRP, and Gain parameter changes, on-air health/traffic audits, site documentation, and ATP 1B/1C
+report generation.
+HYUNDAI MOBIS — ADAS Software Division, Hyderabad, India
+Research Engineer Jul 2019 – Jul 2021
+• Contributed to R&D for safety-critical ADAS software such as SCC&FCA, collaborating across system design, development,
+validation, and engineering reviews in a reliability-focused environment.
+EDUCATION
+Indian Institute of Technology (IIT), Kanpur 2021 – 2023
+M.Tech, Signal Processing & Communications | CGPA: 8.5/10
+Sri Venkateswara University, Tirupati 2015 – 2019
+B.Tech, Electronics & Communication Engineering | CGPA: 7.91/10
+CERTIFICATIONS & RECOGNITION
+• Certified Kubernetes Administrator (CKA) — Cloud Native Computing Foundation
+• Best New Graduate Award, Rakuten Mobile (2024) — among ~7–8 awardees from a cohort of ~400–500 new graduates
+• GATE ECE 2021 — All India Rank 399 among 81,000+ candidates
+• Teaching Assistant, EE670A Wireless Communications, IIT Kanpur | Languages: English, Hindi, Telugu  
