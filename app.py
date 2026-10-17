@@ -313,11 +313,11 @@ with st.sidebar:
                          format_func=lambda m: llm.MODELS[m][0],
                          help="The open-weight model on ai& inference (hosted in Japan) that extracts your skills and runs the agent.")
     st.session_state["model"] = model
-    cutoff_pct = st.slider("Minimum fit to count as *qualified*", 30, 90, 50, 5, format="%d%%",
-                           help="A posting counts as qualified when your weighted coverage of its required skills is at least this much.")
+    cutoff_pct = st.slider("Job Description Match %", 30, 90, 50, 5, format="%d%%",
+                           help="You count as a match for a job when your skills cover at least this much of its job description.")
     cutoff = cutoff_pct / 100
-    budget = st.slider("Learning budget (days)", 14, 120, 45, 1,
-                       help="Days the path planner may spend. It greedily picks the skills that unlock the most postings per day of learning.")
+    budget = st.slider("How quickly you want to move in your career (days)", 14, 120, 45, 1,
+                       help="How many days of learning you can invest. The plan picks the skills that unlock the most jobs per day.")
     st.divider()
     st.markdown("**Live status**")
     status = st.empty()
@@ -365,7 +365,7 @@ kpis = ""
 if skills:
     kpi_jobs = f'<div class="kpi"><div class="k">Real postings analysed</div><div class="v">{len(fits)}<small>{n_companies} companies</small></div></div>'
     d = f'<span class="d">{"+" if delta_jobs > 0 else ""}{delta_jobs}</span>' if delta_jobs else ""
-    kpi_q = f'<div class="kpi"><div class="k">You qualify for</div><div class="v">{n_q}{d}<small>≥ {cutoff_pct}% fit</small></div></div>'
+    kpi_q = f'<div class="kpi"><div class="k">You qualify for</div><div class="v">{n_q}{d}<small>≥ {cutoff_pct}% JD match</small></div></div>'
     kpi_next = (f'<div class="kpi"><div class="k">Best next move</div><div class="v">{short(top["skill"])}<small>+{top["unlocks"]} jobs · {top["days"]}d</small></div></div>'
                 if top else '<div class="kpi"><div class="k">Best next move</div><div class="v">—</div></div>')
     kpi_path = (f'<div class="kpi"><div class="k">Fastest path</div><div class="v">{plan["total_days"]} days<small>→ +{plan["total_unlocked"]} jobs</small></div></div>'
@@ -455,13 +455,13 @@ with st.container(border=True):
     section(2, "Where you stand", f"{n_real} real postings · {n_companies} companies · scored in Neo4j")
     d_html = f'<span class="delta">{"+" if delta_jobs > 0 else ""}{delta_jobs}</span>' if delta_jobs else ""
     st.markdown(f'<p class="big">You qualify for <em>{n_q}</em> of {len(fits)} jobs{d_html}</p>'
-                f'<p class="sub">at ≥ {cutoff_pct}% fit · Tokyo infrastructure / cloud / platform roles · '
+                f'<p class="sub">at ≥ {cutoff_pct}% job description match · Tokyo infrastructure / cloud / platform roles · '
                 f'fit = weighted coverage of each posting’s required skills, explainable skill by skill</p>', unsafe_allow_html=True)
     show = sorted(qualified, key=lambda f: -f["fit"])[:9]
     if show:
         st.markdown('<div class="jobs">' + "".join(job_card(f) for f in show) + "</div>", unsafe_allow_html=True)
     else:
-        st.warning("No postings at this cutoff — lower the bar in the sidebar.")
+        st.warning("No jobs at this match % — lower the Job Description Match % in the sidebar.")
     with st.expander(f"All {n_q} qualifying postings"):
         df = pd.DataFrame([{
             "Fit": round(100 * f["fit"]), "Title": f["title"], "Company": f["company"], "Location": f["location"],
@@ -498,26 +498,26 @@ with st.container(border=True):
         st.markdown('<p class="note" style="margin-top:8px">Course picks by DeepSeek V4 Flash on ai& inference · every link checked before it is shown.</p>',
                     unsafe_allow_html=True)
     else:
-        st.success("No single skill would unlock more jobs at this cutoff — raise the bar with the slider.")
+        st.success("No single skill would unlock more jobs at this match % — raise the Job Description Match % in the sidebar.")
 
 # ----------------------------------------------------------------------------- 4 · fastest path
 
 with st.container(border=True):
-    section(4, f"Your fastest path — {budget}-day budget", "greedy search over the skill graph, on a scratch copy of you")
+    section(4, f"Your fastest path — in {budget} days", "greedy search over the skill graph, on a scratch copy of you")
     if plan and plan["steps"]:
         total_after = plan["base"] + plan["total_unlocked"]
         prev = before.get("plan") if (before and before["sig"] != sig) else None
         d_days = (f'<span class="delta" style="color:#059669">{prev["total_days"]} → {plan["total_days"]} days</span>'
                   if prev and prev.get("steps") and prev["total_days"] != plan["total_days"] else "")
         st.markdown(f'<p class="big"><em>{plan["total_days"]} days</em> → +{plan["total_unlocked"]} jobs{d_days}</p>'
-                    f'<p class="sub">{plan["base"]} → {total_after} qualifying postings at ≥ {cutoff_pct}% fit</p>', unsafe_allow_html=True)
+                    f'<p class="sub">{plan["base"]} → {total_after} matching jobs at ≥ {cutoff_pct}% JD match</p>', unsafe_allow_html=True)
         steps = "".join(
             f'<div class="step"><div class="day">Day {s["cumulative_days"]}</div><div class="sk">{s["skill"]}</div>'
             f'<div class="m">+{s["unlocks"]} jobs · {s["days"]} days</div><div class="c">{course_links(s["skill"], 1) or (s["course"] or "")}</div></div>'
             for s in plan["steps"])
         st.markdown(f'<div class="path">{steps}</div>', unsafe_allow_html=True)
     else:
-        st.info("Nothing learnable within this budget moves you past the cutoff — raise the budget or lower the bar.")
+        st.info("Nothing learnable in this many days gets you more matches — give it more days or lower the Job Description Match %.")
 
 # ----------------------------------------------------------------------------- 5 · agent
 
