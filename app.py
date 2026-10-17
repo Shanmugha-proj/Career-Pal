@@ -4,6 +4,7 @@ Run: python -m streamlit run app.py
 """
 import hashlib
 import json
+import os
 import sys
 
 import pandas as pd
@@ -16,7 +17,7 @@ from skills import LEVEL_LABELS
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
-CID = "demo"
+CID = os.environ.get("CAREERPAL_CID", "demo")
 
 st.set_page_config(page_title="Career-Pal · what should I learn next?", page_icon="🧭", layout="wide",
                    initial_sidebar_state="expanded")
