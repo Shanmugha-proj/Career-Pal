@@ -70,7 +70,8 @@ def upsert_jobs(jobs: list[dict]):
         UNWIND $jobs AS j
         MERGE (job:Job {id: j.id})
         SET job.title = j.title, job.company = j.company, job.location = j.location,
-            job.posted_days_ago = j.posted_days_ago, job.role = j.role
+            job.posted_days_ago = j.posted_days_ago, job.role = j.role,
+            job.source = coalesce(j.source, 'synthetic'), job.url = coalesce(j.url, ''), job.board = coalesce(j.board, '')
         WITH job, j
         UNWIND j.requires AS r
         MATCH (s:Skill {name: r.skill})
@@ -126,7 +127,7 @@ WITH j, sum(r.weight * m) / sum(r.weight) AS fit,
      [x IN collect({s: s.name, m: m, lvl: r.level, mand: r.mandatory}) WHERE x.m = 1.0 | x.s] AS matched,
      [x IN collect({s: s.name, m: m, lvl: r.level, mand: r.mandatory}) WHERE x.m < 1.0 | x] AS gaps
 RETURN j.id AS id, j.title AS title, j.company AS company, j.location AS location, j.role AS role,
-       j.posted_days_ago AS posted_days_ago, fit, matched, gaps
+       j.posted_days_ago AS posted_days_ago, j.source AS source, j.url AS url, fit, matched, gaps
 ORDER BY fit DESC, j.title
 """
 

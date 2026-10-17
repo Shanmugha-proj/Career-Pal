@@ -29,6 +29,12 @@ st.markdown("""
   .new { outline: 3px solid #ff4b4b; }
   .lat   { font-family: ui-monospace, monospace; font-size: 13px; opacity: .85; }
   .step  { font-size: 18px; }
+  .path  { display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; margin: 8px 0 4px; }
+  .card  { flex:1 1 170px; min-width:170px; border:1px solid rgba(128,128,128,.35); border-radius:12px; padding:12px 14px; }
+  .card-day   { font-size:13px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
+  .card-skill { font-size:22px; font-weight:700; line-height:1.15; margin:4px 0 6px; overflow-wrap:anywhere; }
+  .card-meta  { font-size:15px; } .card-course { font-size:12px; opacity:.65; }
+  .arrow { align-self:center; font-size:28px; opacity:.5; }
   h2 { margin-top: 1.2rem !important; }
 </style>
 """, unsafe_allow_html=True)
@@ -41,6 +47,27 @@ def load_resume_text() -> str:
         return open("demo/resume.txt", encoding="utf-8").read()
     except FileNotFoundError:
         return ""
+
+
+def read_resume_file(up) -> str:
+    """Extract plain text from an uploaded PDF / DOCX / TXT."""
+    import io
+    import re
+    name = up.name.lower()
+    data = up.getvalue()
+    if name.endswith(".pdf"):
+        from pypdf import PdfReader
+        text = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages)
+    elif name.endswith(".docx"):
+        from docx import Document
+        doc = Document(io.BytesIO(data))
+        parts = [p.text for p in doc.paragraphs]
+        parts += [c.text for t in doc.tables for row in t.rows for c in row.cells]
+        text = "\n".join(parts)
+    else:
+        text = data.decode("utf-8", errors="replace")
+    text = text.replace("\ufffd", "-").replace(" -", "-")
+    return re.sub(r"[ \t]+\n", "\n", text).strip()
 
 
 def cached_skills() -> list[dict]:
@@ -110,8 +137,9 @@ with st.sidebar:
         for k in ("fits_cache", "plan_cache", "before", "highlight", "chat", "extract_secs", "extract_note"):
             st.session_state.pop(k, None)
         st.rerun()
-    st.caption("Demo corpus: 300 synthetic Tokyo infra/cloud postings generated from role templates. "
-               "Sources: METI IT HR Supply & Demand Survey (2019); Recruit Works Institute Future Predictions 2040.")
+    st.caption("Corpus: real Tokyo postings pulled from public job-board APIs (Greenhouse, Lever, Workable, Ashby, JSearch) "
+               "and extracted with ai&, topped up with synthetic postings generated from role templates. "
+               "Stat sources: METI IT HR Supply & Demand Survey (2019); Recruit Works Institute Future Predictions 2040.")
 
 
 # ----------------------------------------------------------------------------- header
@@ -125,8 +153,17 @@ st.markdown('<p class="sub">Japan is short <b>~790,000 IT workers by 2030</b> (M
 skills = skills_from_graph()
 
 st.header("1 · Your resume")
-with st.expander("Paste resume", expanded=not skills):
-    resume_text = st.text_area("Resume text", load_resume_text(), height=220, label_visibility="collapsed")
+with st.expander("Upload or paste resume", expanded=not skills):
+    up = st.file_uploader("Upload resume (PDF, DOCX or TXT)", type=["pdf", "docx", "txt"], label_visibility="collapsed")
+    if up is not None and st.session_state.get("uploaded_name") != up.name:
+        try:
+            st.session_state["resume_text"] = read_resume_file(up)
+            st.session_state["uploaded_name"] = up.name
+            st.toast(f"Loaded {up.name} · {len(st.session_state['resume_text'].split())} words")
+        except Exception as e:  # noqa: BLE001
+            st.error(f"Could not read {up.name}: {e}")
+    resume_text = st.text_area("Resume text", st.session_state.get("resume_text") or load_resume_text(), height=220,
+                               label_visibility="collapsed")
     c1, c2 = st.columns([1, 3])
     if c1.button("Analyze with ai& ⚡", type="primary", width="stretch"):
         note = ""
@@ -173,9 +210,14 @@ if before and before["sig"] != sig:
     if n_before != n_q:
         delta_txt = f' <em>({"+" if n_q > n_before else ""}{n_q - n_before})</em>'
 
+n_real = sum(1 for f in fits if f.get("source") == "real")
+n_real_q = sum(1 for f in qualified if f.get("source") == "real")
+real_boards = sorted({f["company"] for f in fits if f.get("source") == "real"})
+
 st.header("2 · Where you stand")
-st.markdown(f'<p class="big">You qualify for <em>{n_q}</em> of {TOTAL_JOBS} jobs{delta_txt}</p>'
-            f'<p class="sub">at ≥ {cutoff_pct}% fit · Tokyo infra / cloud / platform roles posted in the last 30 days</p>',
+st.markdown(f'<p class="big">You qualify for <em>{n_q}</em> of {len(fits)} jobs{delta_txt}</p>'
+            f'<p class="sub">at ≥ {cutoff_pct}% fit · Tokyo infra / cloud / platform roles · '
+            f'<b>{n_real} real postings</b> pulled today from public job boards ({n_real_q} qualified) + {len(fits) - n_real} synthetic</p>',
             unsafe_allow_html=True)
 
 by_role = pd.DataFrame(fits).assign(q=lambda d: d["fit"] >= cutoff).groupby("role")["q"].agg(["sum", "count"])
@@ -184,10 +226,12 @@ cols = st.columns([3, 2])
 with cols[0]:
     df = pd.DataFrame([{
         "Fit": round(100 * f["fit"]), "Title": f["title"], "Company": f["company"], "Location": f["location"],
+        "Real": "🟢 real" if f.get("source") == "real" else "synthetic", "Link": f.get("url") or None,
         "Missing": ", ".join(f'{g["s"]}{"" if g["m"] == 0 else " ↑"}' for g in f["gaps"]) or "—",
-    } for f in qualified[:60]])
+    } for f in sorted(qualified, key=lambda f: (f.get("source") != "real", -f["fit"]))[:80]])
     st.dataframe(df, hide_index=True, width="stretch", height=330, column_config={
         "Fit": st.column_config.ProgressColumn("Fit", format="%d%%", min_value=0, max_value=100),
+        "Link": st.column_config.LinkColumn("Link", display_text="apply ↗"),
     })
 with cols[1]:
     st.caption("Qualified share by role")
@@ -229,9 +273,14 @@ if plan["steps"]:
         prev = st.session_state.get("plan_cache_prev")
     st.markdown(f'<p class="big"><em>{plan["total_days"]} days</em> → +{plan["total_unlocked"]} jobs</p>'
                 f'<p class="sub">{plan["base"]} → {total_after} qualified jobs at ≥ {cutoff_pct}% fit</p>', unsafe_allow_html=True)
-    pcols = st.columns(len(plan["steps"]))
-    for col, s in zip(pcols, plan["steps"]):
-        col.metric(f'Day {s["cumulative_days"]}', s["skill"], f'+{s["unlocks"]} jobs · {s["days"]}d')
+    cards = "".join(
+        f'<div class="card"><div class="card-day">Day {s["cumulative_days"]}</div>'
+        f'<div class="card-skill">{s["skill"]}</div>'
+        f'<div class="card-meta">+{s["unlocks"]} jobs · {s["days"]} days<br><span class="card-course">{s["course"] or ""}</span></div></div>'
+        + ('<div class="arrow">→</div>' if i < len(plan["steps"]) - 1 else "")
+        for i, s in enumerate(plan["steps"])
+    )
+    st.markdown(f'<div class="path">{cards}</div>', unsafe_allow_html=True)
     st.session_state["plan_cache_prev"] = plan
 else:
     st.info("Nothing learnable within this budget moves you past the cutoff — raise the budget or lower the bar.")

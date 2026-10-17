@@ -16,11 +16,49 @@ from skills import CANONICAL_SKILLS, COMPANIES, COURSES, LEARN_DAYS, ROLE_TEMPLA
 SEED = 42
 
 
-def generate_jobs(seed: int = SEED) -> list[dict]:
+TOTAL = 300
+TITLE_TO_ROLE = [
+    (r"sre|reliability", "Site Reliability Engineer"), (r"platform", "Platform Engineer (Kubernetes)"),
+    (r"devops", "DevOps Engineer"), (r"network", "Telecom Cloud Engineer (Open RAN / 5G Core)"),
+    (r"security", "Cloud Security Engineer"), (r"data ?cent|datacenter", "Data Center Infrastructure Engineer"),
+    (r"data|database|dbre|spark|analytics", "Data Platform Engineer"), (r"manager|lead|head", "Infrastructure Team Lead"),
+    (r"backend|back-end|software|product engineer|forward deployed", "Backend Engineer (Go/Python)"),
+    (r"cloud|infra|systems|solution|support|field|technical account|it ", "Cloud Infrastructure Engineer"),
+]
+
+
+def role_for(title: str) -> str:
+    import re
+    t = title.lower()
+    for pat, role in TITLE_TO_ROLE:
+        if re.search(pat, t):
+            return role
+    return "Cloud Infrastructure Engineer"
+
+
+def load_real_jobs() -> list[dict]:
+    """Real postings pulled from public job-board APIs and extracted with ai& (python real_jobs.py extract)."""
+    try:
+        raw = json.load(open("demo/real_jobs.json", encoding="utf-8"))
+    except FileNotFoundError:
+        return []
+    jobs = []
+    for i, j in enumerate(raw, 1):
+        jobs.append({
+            "id": f"real-{i:03d}", "title": j["title"].strip(), "company": j["company"], "location": j["location"] or "Tokyo, Japan",
+            "posted_days_ago": 7, "role": role_for(j["title"]), "source": "real", "url": j.get("url", ""),
+            "board": j.get("board", ""), "requires": j["requires"],
+        })
+    return jobs
+
+
+def generate_jobs(seed: int = SEED, n_synthetic: int | None = None) -> list[dict]:
+    import math
     rng = random.Random(seed)
     jobs, n = [], 0
+    scale = 1.0 if n_synthetic is None else n_synthetic / TOTAL
     for tpl in ROLE_TEMPLATES:
-        for _ in range(tpl["count"]):
+        for _ in range(math.ceil(tpl["count"] * scale)):
             n += 1
             reqs = {s: (lvl, mand) for s, lvl, mand in tpl["core"]}
             for s, lvl, p in tpl["optional"]:
@@ -40,9 +78,19 @@ def generate_jobs(seed: int = SEED) -> list[dict]:
                 "location": f"{ward}, Tokyo" if ward not in ("Kawasaki", "Yokohama") else f"{ward}, Kanagawa",
                 "posted_days_ago": rng.randint(1, 30),
                 "role": tpl["title"],
+                "source": "synthetic", "url": "", "board": "",
                 "requires": [{"skill": s, "level": lvl, "mandatory": mand} for s, (lvl, mand) in reqs.items()],
             })
     rng.shuffle(jobs)
+    return jobs if n_synthetic is None else jobs[:n_synthetic]
+
+
+def build_corpus() -> list[dict]:
+    """Real jobs first (up to TOTAL), synthetic fills the remainder with role counts scaled proportionally."""
+    real = load_real_jobs()[:TOTAL]
+    synthetic = generate_jobs(n_synthetic=TOTAL - len(real))
+    jobs = real + synthetic
+    random.Random(SEED).shuffle(jobs)
     return jobs
 
 
@@ -77,7 +125,8 @@ def leaderboard_py(jobs, have, cutoff):
 
 
 def preview(jobs: list[dict]):
-    print(f"{len(jobs)} jobs | roles: {dict(Counter(j['role'] for j in jobs))}")
+    src = Counter(j["source"] for j in jobs)
+    print(f"{len(jobs)} jobs | {src.get('real', 0)} real + {src.get('synthetic', 0)} synthetic | roles: {dict(Counter(j['role'] for j in jobs))}")
     jp2 = sum(1 for j in jobs if any(r['skill'] == 'Japanese' and r['level'] >= 2 for r in j['requires']))
     print(f"Japanese N2+ required by {jp2} jobs ({100*jp2/len(jobs):.0f}%)")
     skill_freq = Counter(r["skill"] for j in jobs for r in j["requires"])
@@ -100,7 +149,7 @@ def preview(jobs: list[dict]):
 def seed(reset: bool):
     import graph
 
-    jobs = generate_jobs()
+    jobs = build_corpus()
     if reset:
         print("wiping database ...")
         graph.wipe_all()
@@ -126,6 +175,6 @@ if __name__ == "__main__":
     ap.add_argument("--reset", action="store_true")
     a = ap.parse_args()
     if a.dry_run:
-        preview(generate_jobs())
+        preview(build_corpus())
     else:
         seed(a.reset)

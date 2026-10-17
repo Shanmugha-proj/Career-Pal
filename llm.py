@@ -87,6 +87,67 @@ def extract_skills(resume_text: str) -> tuple[list[dict], float]:
     return skills, time.perf_counter() - t
 
 
+JOB_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "requires": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "skill": {"type": "string", "enum": CANONICAL_SKILLS},
+                    "level": {"type": "integer", "minimum": 1, "maximum": 3},
+                    "mandatory": {"type": "boolean"},
+                },
+                "required": ["skill", "level", "mandatory"],
+                "additionalProperties": False,
+            },
+        }
+    },
+    "required": ["requires"],
+    "additionalProperties": False,
+}
+
+JOB_SYSTEM = f"""You extract the skill requirements of a job posting into a fixed taxonomy.
+
+TAXONOMY (use these exact names, nothing else):
+{chr(10).join('- ' + s for s in CANONICAL_SKILLS)}
+
+Rules:
+- Include every taxonomy skill the posting asks for (required OR preferred), each at most once, at most 12 skills.
+- mandatory = true for AT MOST 5 skills: the ones listed under required / must-have / minimum qualifications that are
+  central to the role. Everything else (preferred, nice-to-have, plus, 'familiarity with') is mandatory = false.
+- Levels: 1 = familiarity or exposure, 2 = professional hands-on experience, 3 = deep expertise / senior / 5+ years / lead.
+- 'Japanese' is a QUALIFICATION, not the posting's language. Include it ONLY if the posting explicitly lists Japanese
+  ability as required or preferred: business-level / JLPT N2 = 2, native / N1 = 3, conversational / basic / N3 = 1.
+  If it says Japanese is not required, or only English is required, or it is a bilingual posting with no stated
+  Japanese requirement, DO NOT include Japanese. 'English': business = 2, fluent/native = 3.
+- Containers/Docker/K8s -> Docker and/or Kubernetes. Terraform/IaC -> Terraform. AWS/GCP/Azure -> the named cloud(s).
+- Monitoring/observability tools -> Prometheus/Grafana, Datadog or Logging (ELK/Loki) as named. On-call/SLOs -> SRE Practices.
+- Ignore generic soft skills except Team Leadership (managing/leading engineers) and Mentoring."""
+
+
+def extract_job_requirements(title: str, description: str) -> list[dict]:
+    """Return [{skill, level, mandatory}] for a real job posting."""
+    r = client().chat.completions.create(
+        model=MODEL,
+        max_tokens=1500,
+        temperature=0,
+        reasoning_effort="none",
+        response_format={"type": "json_schema", "json_schema": {"name": "job", "schema": JOB_SCHEMA, "strict": True}},
+        messages=[{"role": "system", "content": JOB_SYSTEM},
+                  {"role": "user", "content": f"TITLE: {title}\n\n{description[:12000]}"}],
+    )
+    data = json.loads(r.choices[0].message.content)
+    best: dict[str, dict] = {}
+    for s in data["requires"]:
+        if s["skill"] in CANONICAL_SKILLS:
+            prev = best.get(s["skill"])
+            if not prev or s["level"] > prev["level"]:
+                best[s["skill"]] = {"skill": s["skill"], "level": int(s["level"]), "mandatory": bool(s["mandatory"]) or bool(prev and prev["mandatory"])}
+    return list(best.values())
+
+
 AGENT_TOOLS = [{
     "type": "function",
     "function": {
