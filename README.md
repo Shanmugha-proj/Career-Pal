@@ -7,16 +7,16 @@ concentrated in cloud / AI / data skills — it is a **skills** gap, not a headc
 *"which jobs fit me?"*. Career-Pal inverts the question: **what is the cheapest change to *me* that fits the most jobs?**
 
 I am the user: a CKA-certified Kubernetes engineer in Tokyo. Everyone says "learn Japanese first".
-The graph says: **Terraform first — +40 jobs in 10 days, vs. +18 jobs in 365 days for Japanese N2.**
+The graph says: **CI/CD first — +41 jobs in 7 days, vs. +25 jobs in 365 days for Japanese N2.**
 
 ## What it does (3-minute demo)
 
 1. **Paste a resume** → ai& inference (DeepSeek V4 Flash, structured output) extracts skills into a 44-skill taxonomy → they become `HAS` edges in a Neo4j memory graph.
-2. **"You qualify for 78 of 300 Tokyo jobs at ≥ 60% fit"** — fit is a weighted coverage score over each job's `REQUIRES` edges.
+2. **"You qualify for 69 of 300 Tokyo jobs at ≥ 60% fit"** — fit is a weighted coverage score over each job's `REQUIRES` edges.
 3. **Drag the cutoff slider** → everything recomputes live.
 4. **Learn-next leaderboard** — one Cypher query answers *"which single skill, if learned, flips the most jobs over the threshold, and how many days does it cost?"*
-5. **Fastest path** — greedy search over the graph on a scratch copy of the candidate: *43 days → +169 jobs*.
-6. **Memory moment** — tell the agent *"I finished the Terraform course"*. ai& tool-calling → `mark_skill_acquired` → one new edge in Neo4j → leaderboard, count and path re-plan. **The graph is the agent's memory.**
+5. **Fastest path** — greedy search over the graph on a scratch copy of the candidate: *43 days → +142 jobs*.
+6. **Memory moment** — tell the agent *"I finished the GitHub Actions course"*. ai& tool-calling → `mark_skill_acquired` → one new edge in Neo4j → leaderboard, count and path re-plan. **The graph is the agent's memory.**
 
 ## How the sponsor tools are used
 
@@ -55,9 +55,12 @@ RETURN skill.name, unlocks, min(k.days) AS days ORDER BY unlocks DESC
 
 ## Data
 
-The job corpus is **synthetic**: 300 Tokyo infra / cloud / platform postings generated from 10 role templates
-(`skills.py`, `seed.py`) with realistic skill mixes and a ~40% share requiring Japanese N2. The graph does not care where
-jobs come from — swapping the generator for a live feed (JSearch, Greenhouse, TokyoDev) is the first next step.
+**150 real + 150 synthetic postings.** The real half was pulled on hackathon day from the public job-board APIs of
+Greenhouse, Lever, Workable, Ashby, SmartRecruiters and Workday (`real_jobs.py`): 267 Japan-located engineering postings from
+57 company boards — Mercari, Woven by Toyota, Rakuten, NVIDIA, Salesforce, Sony Interactive, Sakana AI, Mujin, Wayve, Red Hat,
+xAI, OpenAI, ai& and more — each run through the same ai& structured extraction as the resume to turn the job text into
+`REQUIRES` edges (skill, level, mandatory). The most infrastructure-relevant 150 are in the corpus, each with its apply link.
+The synthetic half is generated from 10 role templates (`skills.py`, `seed.py`) and labelled as such in the UI.
 Learning-time estimates per skill are hand-curated. Match scores describe evidence coverage, not hiring probability.
 
 ## Run it
@@ -67,8 +70,9 @@ pip install -r requirements.txt
 cp .env.example .env            # Neo4j Aura credentials + ai& API key
 python check.py                 # both pipes alive?
 python llm.py                   # extract + cache your resume skills (demo/resume.txt)
+python real_jobs.py extract     # pull real Japan postings from public ATS boards + extract requirements with ai&
 python seed.py --dry-run        # preview the numbers; then
-python seed.py                  # seed Aura once
+python seed.py --real 150       # seed Aura once (150 real + 150 synthetic)
 python -m streamlit run app.py
 ```
 
@@ -79,7 +83,8 @@ python -m streamlit run app.py
 | `skills.py` | 44-skill canonical taxonomy, learning-time estimates, courses, job role templates |
 | `llm.py` | ai& client: structured skill extraction, tool-calling agent turn |
 | `graph.py` | Neo4j layer: schema, seeding, fit / leaderboard / path queries, agent memory writes |
-| `seed.py` | one-time synthetic job-market seed with a Python dry-run that mirrors the Cypher scoring |
+| `real_jobs.py` | real postings from Greenhouse / Lever / Workable / Ashby / SmartRecruiters / Workday public APIs + ai& requirement extraction |
+| `seed.py` | one-time corpus seed (real + synthetic) with a Python dry-run that mirrors the Cypher scoring |
 | `app.py` | the Streamlit demo |
 | `check.py` | pre-demo health check |
 

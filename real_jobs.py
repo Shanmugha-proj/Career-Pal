@@ -25,9 +25,28 @@ GREENHOUSE = [
     "bitflyer", "lycorp", "line", "preferrednetworks", "cadence", "arm", "sumologic", "splunk", "f5", "arista",
     "scylladb", "redis", "vercel", "netlify", "snowflake", "atlassian", "github", "wise", "revolut", "nium",
     "anthropic", "openai", "scaleai", "cohere", "huggingface", "weightsandbiases",
+    # discovered via site: searches for Tokyo/Japan postings
+    "6sense", "adyen", "alpaca", "andurilindustries", "appier", "appliedintuition", "axs", "blacksky", "boku", "boxinc",
+    "coupanginternal", "cresta", "crunchyroll", "deepmind", "dialpad", "figma", "gatikaiinc", "hyphenconnect", "jamf",
+    "lazarusenterprises", "manychat", "moon", "neo4j", "paypaycard", "point72", "queracomputinginc", "route06",
+    "sambanovasystems", "sayari", "siei", "spacex", "speechify", "tenstorrent", "wantedly", "waymo", "wayve", "wework", "xai",
 ]
 LEVER = ["palantir", "mercari", "smartnews", "paypay", "moneyforward", "ubie", "kakehashi", "shippio", "tier4", "mujin",
-         "woven", "autify", "plaid", "netlify", "mistral", "figma", "notion", "whatnot", "rippling", "brex"]
+         "woven", "autify", "plaid", "netlify", "mistral", "figma", "notion", "whatnot", "rippling", "brex",
+         "binance", "cic", "csit", "extremenetworks", "ispace-inc", "limitbreak", "matchgroup", "mujininc", "shakudo",
+         "verygoodsecurity", "woven-by-toyota", "xsolla", "yuno", "zilliz"]
+SMARTRECRUITERS = ["AFRY", "ApplusIDIADA1", "aristanetworks", "BoschGroup", "continental", "HitachiSolutions", "IFS1",
+                   "KeywordsStudios", "LingoNetwork", "mirantis", "Nagarro1", "nearmap", "NECSWS", "nextdc", "psicro",
+                   "RenesasElectronics", "santen", "servicenow", "tomra", "utac", "wabtec", "Rakuten", "Visa", "Ubisoft"]
+# Workday tenants: (tenant, wdN, site)
+WORKDAY = [("rakuten", "wd1", "RakutenInc"), ("rakuten", "wd1", "RakutenMobile"), ("rakuten", "wd1", "RakutenSymphony"),
+           ("rakuten", "wd1", "RakutenSymphonyJapan"), ("rakuten", "wd1", "RakutenAsia"), ("dxctechnology", "wd1", "DXCJobs"),
+           ("nvidia", "wd5", "NVIDIAExternalCareerSite"), ("salesforce", "wd12", "External_Career_Site"),
+           ("adobe", "wd5", "external_experienced"), ("snowflake", "wd5", "Snowflake_Careers"), ("servicenow", "wd1", "ServiceNow"),
+           ("autodesk", "wd1", "Ext"), ("workday", "wd5", "Workday"), ("hitachi", "wd1", "hitachi"), ("intel", "wd1", "External"),
+           ("amd", "wd1", "External"), ("redhat", "wd5", "jobs"), ("broadcom", "wd1", "External_Career"),
+           ("equinix", "wd1", "Equinix_Careers"), ("akamai", "wd1", "Akamai_Careers"), ("netapp", "wd1", "NetApp_Careers"),
+           ("nutanix", "wd1", "Nutanix_Careers"), ("paloaltonetworks", "wd1", "PaloAltoNetworks_Careers")]
 
 JP_RE = re.compile(r"tokyo|japan|東京|日本|osaka|kanagawa|yokohama|apac.*japan", re.I)
 TITLE_RE = re.compile(r"platform|infrastructure|infra\b|\bsre\b|site reliability|devops|cloud|kubernetes|network|"
@@ -73,10 +92,63 @@ def fetch_lever(company: str) -> list[dict]:
 
 WORKABLE = ["mercari", "smartnews", "hennge", "kyash", "zeals", "cookpad", "sakana", "bitkey", "telexistence", "pksha", "abeja",
             "legalon", "smarthr", "freee", "sansan", "cybozu", "estie", "luup", "timee", "andpad", "caddi", "mujin-corp",
-            "rapyuta", "tier-iv", "shippio", "ubie", "kakehashi", "autify-inc", "wovenbytoyota", "paypay-corp"]
+            "rapyuta", "tier-iv", "shippio", "ubie", "kakehashi", "autify-inc", "wovenbytoyota", "paypay-corp",
+            "exotec", "rapyuta-robotics", "sakana-ai", "ai-robot-association", "polymer-capital-japan"]
 ASHBY = ["openai", "notion", "sakana-ai", "sakana", "scale", "elevenlabs", "perplexity", "supabase", "cursor", "anysphere",
          "vercel", "deel", "rippling", "posthog", "retool", "cohere", "glean", "writer", "sierra", "harvey", "mercor",
-         "woven-by-toyota", "paypay", "smartnews", "mercari", "autify", "mujin", "tier4"]
+         "woven-by-toyota", "paypay", "smartnews", "mercari", "autify", "mujin", "tier4",
+         "aiand", "applied", "bjakcareer", "carnot-ai", "cerebras", "clickhouse", "crusoe", "liquid-ai", "neuralconcept",
+         "sierra-jp", "signoz", "skydio", "stack-infrastructure-apac-pte-ltd", "tailor", "twelve-labs", "wayve"]
+
+
+def fetch_smartrecruiters(company: str) -> list[dict]:
+    r = requests.get(f"https://api.smartrecruiters.com/v1/companies/{company}/postings", params={"limit": 100}, timeout=20)
+    if r.status_code != 200:
+        return []
+    out = []
+    for p in r.json().get("content", []):
+        loc = p.get("location") or {}
+        loc_s = ", ".join(x for x in (loc.get("city", ""), loc.get("region", ""), loc.get("country", "")) if x)
+        if not JP_RE.search(loc_s + " " + p.get("name", "")):
+            continue
+        d = requests.get(f"https://api.smartrecruiters.com/v1/companies/{company}/postings/{p['id']}", timeout=20)
+        if d.status_code != 200:
+            continue
+        sections = (d.json().get("jobAd") or {}).get("sections") or {}
+        desc = "\n".join(strip_html(s.get("text", "")) for s in sections.values() if isinstance(s, dict))
+        out.append({"source": "smartrecruiters", "board": company, "title": p["name"], "company": company, "location": loc_s,
+                    "url": p.get("ref", "").replace("api.smartrecruiters.com/v1/companies", "jobs.smartrecruiters.com") or
+                           f"https://jobs.smartrecruiters.com/{company}/{p['id']}",
+                    "description": desc, "updated": p.get("releasedDate", "")})
+    return out
+
+
+def fetch_workday(tenant: str, wd: str, site: str) -> list[dict]:
+    base = f"https://{tenant}.{wd}.myworkdayjobs.com/wday/cxs/{tenant}/{site}"
+    out, offset = [], 0
+    hdr = {"Accept": "application/json", "Content-Type": "application/json"}
+    while offset < 200:
+        r = requests.post(f"{base}/jobs", json={"appliedFacets": {}, "limit": 20, "offset": offset, "searchText": "Tokyo"},
+                          headers=hdr, timeout=25)
+        if r.status_code != 200:
+            break
+        posts = r.json().get("jobPostings", [])
+        if not posts:
+            break
+        for p in posts:
+            loc = p.get("locationsText", "")
+            if not JP_RE.search(loc) or not TITLE_RE.search(p.get("title", "")):
+                continue
+            d = requests.get(f"{base}{p['externalPath']}", headers=hdr, timeout=25)
+            if d.status_code != 200:
+                continue
+            info = d.json().get("jobPostingInfo") or {}
+            out.append({"source": "workday", "board": f"{tenant}/{site}", "title": info.get("title", p["title"]),
+                        "company": tenant, "location": info.get("location", loc),
+                        "url": info.get("externalUrl") or f"https://{tenant}.{wd}.myworkdayjobs.com/{site}{p['externalPath']}",
+                        "description": strip_html(info.get("jobDescription", "")), "updated": info.get("startDate", "")})
+        offset += 20
+    return out
 
 
 def fetch_workable(account: str) -> list[dict]:
@@ -152,6 +224,8 @@ def fetch_all() -> list[dict]:
         futs.update({ex.submit(fetch_lever, c): ("lever", c) for c in LEVER})
         futs.update({ex.submit(fetch_workable, c): ("workable", c) for c in WORKABLE})
         futs.update({ex.submit(fetch_ashby, c): ("ashby", c) for c in ASHBY})
+        futs.update({ex.submit(fetch_smartrecruiters, c): ("smartrecruiters", c) for c in SMARTRECRUITERS})
+        futs.update({ex.submit(fetch_workday, *w): ("workday", w[0] + "/" + w[2]) for w in WORKDAY})
         if os.environ.get("RAPIDAPI_KEY"):
             futs[ex.submit(fetch_jsearch, os.environ["RAPIDAPI_KEY"])] = ("jsearch", "*")
         else:
@@ -191,12 +265,25 @@ COMPANY_NAMES = {
     "digitalocean": "DigitalOcean", "pingcap": "PingCAP", "scylladb": "ScyllaDB", "mongodb": "MongoDB", "gitlab": "GitLab",
     "github": "GitHub", "hashicorp": "HashiCorp", "pagerduty": "PagerDuty", "crowdstrike": "CrowdStrike",
     "doordash": "DoorDash", "bitflyer": "bitFlyer", "weightsandbiases": "Weights & Biases", "huggingface": "Hugging Face",
-    "scaleai": "Scale AI", "openai": "OpenAI", "sumologic": "Sumo Logic",
+    "scaleai": "Scale AI", "openai": "OpenAI", "sumologic": "Sumo Logic", "aiand": "ai&", "siei": "Sony Interactive Entertainment",
+    "coupanginternal": "Coupang", "mujininc": "Mujin", "ispace-inc": "ispace", "matchgroup": "Match Group", "limitbreak": "Limit Break",
+    "extremenetworks": "Extreme Networks", "sierra-jp": "Sierra", "bjakcareer": "Bjak", "neuralconcept": "Neural Concept",
+    "appliedintuition": "Applied Intuition", "boxinc": "Box", "andurilindustries": "Anduril", "paypaycard": "PayPay Card",
+    "sambanovasystems": "SambaNova", "queracomputinginc": "QuEra", "hyphenconnect": "Hyphen Connect", "xai": "xAI",
+    "deepmind": "Google DeepMind", "rakuten": "Rakuten", "dxctechnology": "DXC Technology", "renesaselectronics": "Renesas",
+    "hitachisolutions": "Hitachi Solutions", "necsws": "NEC Software Solutions", "aristanetworks": "Arista Networks",
+    "nagarro1": "Nagarro", "ifs1": "IFS", "ai-robot-association": "AI Robot Association", "rapyuta-robotics": "Rapyuta Robotics",
+    "sakana-ai": "Sakana AI", "polymer-capital-japan": "Polymer Capital", "stack-infrastructure-apac-pte-ltd": "STACK Infrastructure",
+    "twelve-labs": "Twelve Labs", "liquid-ai": "Liquid AI", "carnot-ai": "Carnot AI", "clickhouse": "ClickHouse",
+    "verygoodsecurity": "Very Good Security", "route06": "ROUTE06", "lazarusenterprises": "Lazarus", "gatikaiinc": "Gatik",
+    "keywordsstudios": "Keywords Studios", "applusidiada1": "Applus IDIADA", "boschgroup": "Bosch", "lingonetwork": "Lingo",
+    "systemcanadatechnologies": "System Canada Technologies", "servicenow": "ServiceNow", "nextdc": "NEXTDC",
 }
 
 
 def pretty_company(board: str) -> str:
-    return COMPANY_NAMES.get(board, board.capitalize())
+    key = board.split("/")[0].lower()
+    return COMPANY_NAMES.get(key, key.capitalize())
 
 
 if __name__ == "__main__":

@@ -85,10 +85,16 @@ def generate_jobs(seed: int = SEED, n_synthetic: int | None = None) -> list[dict
     return jobs if n_synthetic is None else jobs[:n_synthetic]
 
 
-def build_corpus() -> list[dict]:
-    """Real jobs first (up to TOTAL), synthetic fills the remainder with role counts scaled proportionally."""
-    real = load_real_jobs()[:TOTAL]
-    synthetic = generate_jobs(n_synthetic=TOTAL - len(real))
+INFRA_RE = __import__("re").compile(r"platform|infra|sre|reliability|devops|cloud|kubernetes|network|security|data ?cent|"
+                                     r"systems? engineer|linux|storage|database|dbre|observab", __import__("re").I)
+
+
+def build_corpus(max_real: int = 150, total: int = TOTAL) -> list[dict]:
+    """Real jobs first (most infra-relevant titles first, up to max_real), synthetic fills the remainder."""
+    real = load_real_jobs()
+    real.sort(key=lambda j: (0 if INFRA_RE.search(j["title"]) else 1, j["id"]))
+    real = real[:max_real]
+    synthetic = generate_jobs(n_synthetic=total - len(real))
     jobs = real + synthetic
     random.Random(SEED).shuffle(jobs)
     return jobs
@@ -146,10 +152,10 @@ def preview(jobs: list[dict]):
             print(f"  {s:38s} +{n:3d}   {LEARN_DAYS[s]:4d} days")
 
 
-def seed(reset: bool):
+def seed(reset: bool, max_real: int = 150, total: int = TOTAL):
     import graph
 
-    jobs = build_corpus()
+    jobs = build_corpus(max_real, total)
     if reset:
         print("wiping database ...")
         graph.wipe_all()
@@ -173,8 +179,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--reset", action="store_true")
+    ap.add_argument("--real", type=int, default=150, help="max real postings to include")
+    ap.add_argument("--total", type=int, default=TOTAL)
     a = ap.parse_args()
     if a.dry_run:
-        preview(build_corpus())
+        preview(build_corpus(a.real, a.total))
     else:
-        seed(a.reset)
+        seed(a.reset, a.real, a.total)

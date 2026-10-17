@@ -145,7 +145,7 @@ WITH j, collect({skill: s, w: r.weight, m: m, lvl: r.level}) AS reqs
 WITH j, reqs, reduce(a = 0.0, x IN reqs | a + x.w * x.m) AS got,
               reduce(a = 0.0, x IN reqs | a + x.w)       AS tot
 WHERE got / tot < $cutoff                                  // jobs the candidate does NOT yet qualify for
-UNWIND [x IN reqs WHERE x.m < 1.0] AS gap                   // each skill they lack (or have at a lower level)
+UNWIND [x IN reqs WHERE x.m < 1.0 AND NOT x.skill.name IN $exclude] AS gap   // each skill they lack (soft skills excluded)
 WITH gap.skill AS skill, gap.lvl AS lvl, j, (got + gap.w * (1.0 - gap.m)) / tot AS fit_if_learned
 WHERE fit_if_learned >= $cutoff                             // learning this ONE skill crosses the line
 WITH skill, max(lvl) AS level, count(DISTINCT j) AS unlocks, collect(DISTINCT j.title)[..3] AS examples
@@ -156,9 +156,12 @@ LIMIT $limit
 """
 
 
+SOFT_SKILLS = ["Technical Documentation", "Agile/Scrum", "Mentoring", "English"]
+
+
 def leaderboard(cid: str, cutoff: float, limit: int = 10) -> list[dict]:
     """'Learn X -> unlock N more jobs in D days' - the question a vector index cannot answer."""
-    return run("leaderboard", LEADERBOARD_CYPHER, cid=cid, cutoff=cutoff, limit=limit)
+    return run("leaderboard", LEADERBOARD_CYPHER, cid=cid, cutoff=cutoff, limit=limit, exclude=SOFT_SKILLS)
 
 
 def qualify_count(cid: str, cutoff: float) -> dict:
