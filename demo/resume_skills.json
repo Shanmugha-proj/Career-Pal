@@ -1,0 +1,66 @@
+{
+  "skills": [
+    {
+      "name": "Bare-metal Provisioning",
+      "level": 3
+    },
+    {
+      "name": "English",
+      "level": 3
+    },
+    {
+      "name": "Kubernetes",
+      "level": 3
+    },
+    {
+      "name": "Linux",
+      "level": 3
+    },
+    {
+      "name": "Networking (L2/L3)",
+      "level": 3
+    },
+    {
+      "name": "Ansible",
+      "level": 2
+    },
+    {
+      "name": "Bash",
+      "level": 2
+    },
+    {
+      "name": "Git",
+      "level": 2
+    },
+    {
+      "name": "Helm",
+      "level": 2
+    },
+    {
+      "name": "Incident Management/RCA",
+      "level": 2
+    },
+    {
+      "name": "Mentoring",
+      "level": 2
+    },
+    {
+      "name": "Open RAN/5G",
+      "level": 2
+    },
+    {
+      "name": "OpenStack",
+      "level": 2
+    },
+    {
+      "name": "Python",
+      "level": 2
+    },
+    {
+      "name": "Team Leadership",
+      "level": 2
+    }
+  ],
+  "seconds": 1.95,
+  "model": "deepseek-ai/deepseek-v4-flash"
+}
