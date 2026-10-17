@@ -38,7 +38,8 @@
    "SMTP",
    "LDAP",
    "FTP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -116,7 +117,8 @@
    "MongoDB",
    "Database Systems",
    "Orchestration"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -155,7 +157,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -196,7 +199,8 @@
    "FTP",
    "FreeBSD",
    "Wireshark"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -271,7 +275,8 @@
    "data warehousing",
    "AI/ML",
    "cloud architectures"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -342,7 +347,8 @@
    "Cloud platforms",
    "MongoDB Atlas",
    "Database programming"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -418,7 +424,8 @@
   "other_requirements": [
    "Oracle",
    "sharding (RAC/Vitess)"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -461,7 +468,8 @@
    "Zendesk",
    "Jira",
    "Confluence"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -500,7 +508,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -529,7 +538,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -586,7 +596,8 @@
    "Scala",
    "Data Engineering",
    "ETL"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -661,7 +672,8 @@
    "data science",
    "whiteboarding",
    "Scala"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -741,7 +753,8 @@
    "SaaS",
    "Data Engineering",
    "Data Science"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -817,7 +830,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Scala"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -893,7 +907,8 @@
    "AI ecosystems",
    "disaster recovery",
    "high availability"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -965,7 +980,8 @@
    "Scala",
    "cloud architectures",
    "distributed data systems"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1044,7 +1060,8 @@
    "Post-sales",
    "Data Platform engineer",
    "SIEM augmentation"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1115,7 +1132,8 @@
   "other_requirements": [
    "Data Warehousing",
    "Redshift"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1195,7 +1213,8 @@
    "audience activation",
    "composable-CDP",
    "Salesforce Data Cloud"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -1244,7 +1263,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1300,7 +1320,8 @@
    "Android",
    "Google Workspace",
    "Slack"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -1374,7 +1395,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1451,7 +1473,8 @@
   "other_requirements": [
    "Flink",
    "ClickHouse"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1522,7 +1545,8 @@
    "Apache Airflow",
    "Hadoop",
    "Hive"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1596,7 +1620,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1675,7 +1700,8 @@
    "recommendation systems",
    "PyTorch",
    "TensorFlow"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "greenhouse",
@@ -1716,7 +1742,8 @@
    "high-throughput systems",
    "performance tuning",
    "build systems"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -1793,7 +1820,8 @@
    "RTB ecosystem",
    "PyTorch",
    "TensorFlow"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "greenhouse",
@@ -1843,7 +1871,8 @@
    "Low-latency Systems",
    "High-throughput Systems",
    "Performance Tuning"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "greenhouse",
@@ -1920,7 +1949,8 @@
    "iOS",
    "Android",
    "SDK"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -1974,7 +2004,8 @@
    "third-party product integration",
    "network troubleshooting (HAR, Fiddler, W",
    "log search/filter queries"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2054,7 +2085,8 @@
    "OAuth/SSO",
    "SaaS Integration",
    "Workflow Automation"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -2100,7 +2132,8 @@
    "Cloud",
    "SaaS",
    "Enterprise Architecture"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -2180,7 +2213,8 @@
    "Cloud",
    "SaaS",
    "Enterprise Architecture"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -2235,7 +2269,8 @@
    "Log Analysis",
    "Debugging",
    "Root Cause Analysis"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -2275,7 +2310,8 @@
    "Zendesk",
    "Confluence",
    "API"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "greenhouse",
@@ -2349,7 +2385,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2400,7 +2437,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "APIs"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2476,7 +2514,8 @@
   "other_requirements": [
    "C++",
    "Static Single Assignment intermediate re"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "greenhouse",
@@ -2553,7 +2592,8 @@
    "C++",
    "Static Single Assignment intermediate re",
    "FPGA"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "greenhouse",
@@ -2622,7 +2662,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2700,7 +2741,8 @@
    "Wazuh",
    "Karma",
    "CloudWatch"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2757,7 +2799,8 @@
   "other_requirements": [
    "Public Cloud",
    "Platform Engineering"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2835,7 +2878,8 @@
    "Ruby",
    "Apache",
    "Tomcat"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2895,7 +2939,8 @@
    "MDM",
    "Patch Management",
    "Configuration Management"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -2964,7 +3009,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -3033,7 +3079,8 @@
    "C++",
    "Rust",
    "AI/LLM"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -3094,7 +3141,8 @@
    "IPMI",
    "smartctl",
    "nvidia-smi"
-  ]
+  ],
+  "domain": "non_software_engineering"
  },
  {
   "source": "greenhouse",
@@ -3135,7 +3183,8 @@
    "C++",
    "neural network architectures",
    "training"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "greenhouse",
@@ -3186,7 +3235,8 @@
    "CockroachDB",
    "gRPC",
    "LLM APIs"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "greenhouse",
@@ -3262,7 +3312,8 @@
    "SAST",
    "DAST",
    "BC/DR"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -3337,7 +3388,8 @@
   ],
   "other_requirements": [
    "C++"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -3371,7 +3423,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "hardware_embedded"
  },
  {
   "source": "greenhouse",
@@ -3446,7 +3499,8 @@
   ],
   "other_requirements": [
    "C++"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -3502,7 +3556,8 @@
    "PCI",
    "Ethernet",
    "SpaceWire"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -3582,7 +3637,8 @@
    "Physical Access Control",
    "Nagios",
    "Zabbix"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -3657,7 +3713,8 @@
    "PCI",
    "Ethernet",
    "SpaceWire"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -3731,7 +3788,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -3772,7 +3830,8 @@
    "On-Board Executed Procedures",
    "Spacecraft Subsystems",
    "System Engineering"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -3818,7 +3877,8 @@
    "MIL",
    "SIL",
    "PIL"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -3878,7 +3938,8 @@
    "star trackers",
    "LiDARs",
    "cameras and propulsion systems"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -3932,7 +3993,8 @@
    "network protocols",
    "routing",
    "async I/O"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -3973,7 +4035,8 @@
    "Requirements Management",
    "FMECA/Reliability Analysis",
    "Hardware-in-the-Loop Testing"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -4010,7 +4073,8 @@
   "other_requirements": [
    "Propulsion",
    "Matlab"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -4062,7 +4126,8 @@
   "other_requirements": [
    "Rust",
    "C++"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4142,7 +4207,8 @@
    "Kalman filter",
    "PID control",
    "thruster commanding"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -4222,7 +4288,8 @@
    "Proposal writing",
    "GMAT",
    "STK"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "lever",
@@ -4302,7 +4369,8 @@
    "guidance algorithms",
    "attitude control algorithms",
    "navigation algorithms"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4368,7 +4436,8 @@
    "SBOM/HBOM",
    "EU CRA",
    "NIS 2 Framework"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4439,7 +4508,8 @@
    "JHbuild",
    "Gnome build tools",
    "distributed build systems"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4478,7 +4548,8 @@
    "RTOS",
    "EtherCAT",
    "robotic software development"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4557,7 +4628,8 @@
    "C++",
    "ROS",
    "simulation environments"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4627,7 +4699,8 @@
   ],
   "other_requirements": [
    "DynamoDB"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -4713,7 +4786,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "DynamoDB"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4774,7 +4848,8 @@
    "AMQP/MQTT",
    "RabbitMQ",
    "Podman"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -4850,7 +4925,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "DynamoDB"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -4905,7 +4981,8 @@
    "Agentic Tools",
    "Penetration Testing",
    "SBOM Scanning"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -4982,7 +5059,8 @@
    "SpringBoot",
    "Hive",
    "Flink"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -5056,7 +5134,8 @@
    "C#",
    "Rust",
    "Databricks"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -5102,7 +5181,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -5152,7 +5232,8 @@
   ],
   "other_requirements": [
    "C/C++"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -5202,7 +5283,8 @@
    "real-time applications",
    "vehicle dynamics control",
    "ADAS driving planning"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -5268,7 +5350,8 @@
   "other_requirements": [
    "C/C++",
    "embedded software"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "lever",
@@ -5338,7 +5421,8 @@
    "scene reconstruction",
    "spatial reasoning",
    "generative AI"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -5394,7 +5478,8 @@
   "other_requirements": [
    "C/C++",
    "embedded software"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -5433,7 +5518,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "lever",
@@ -5484,7 +5570,8 @@
    "ONNX",
    "LiDAR",
    "depth cameras"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -5565,7 +5652,8 @@
    "Flyte",
    "Flink",
    "Ray"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -5611,7 +5699,8 @@
    "data lakes",
    "data warehouses",
    "cloud services"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "lever",
@@ -5692,7 +5781,8 @@
    "Flyte",
    "Flink",
    "Ray"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -5743,7 +5833,8 @@
    "複数物体追跡",
    "Perceptionパイプライン",
    "カメラ内部・外部パラメータ"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -5808,7 +5899,8 @@
    "Rust",
    "Databricks",
    "Hadoop"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -5849,7 +5941,8 @@
    "Product Management",
    "Technical Product Ownership",
    "Technical Planning"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "lever",
@@ -5878,7 +5971,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "lever",
@@ -5938,7 +6032,8 @@
    "Podman",
    "OpenTelemetry",
    "React"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -6011,7 +6106,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6087,7 +6183,8 @@
    "Cloudflare",
    "Vercel",
    "1Password"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -6131,7 +6228,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_software_engineering"
  },
  {
   "source": "workable",
@@ -6211,7 +6309,8 @@
    "CCNP Enterprise",
    "Public Cloud",
    "GitOps"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -6247,7 +6346,8 @@
    "EMS",
    "高圧・低圧受電設備",
    "受変電設備"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workable",
@@ -6327,7 +6427,8 @@
    "Spanner",
    "Debezium",
    "TiCDC"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -6394,7 +6495,8 @@
   "other_requirements": [
    "gRPC",
    "REST"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6471,7 +6573,8 @@
   "other_requirements": [
    "Spanner",
    "Pub/Sub"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6517,7 +6620,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "React"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6561,7 +6665,8 @@
    "prototyping",
    "measurement design",
    "phased rollout"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6607,7 +6712,8 @@
    "Copilot",
    "API design",
    "data model design"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6664,7 +6770,8 @@
   "other_requirements": [
    "Microservices",
    "Third-party integration"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6728,7 +6835,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -6778,7 +6886,8 @@
    "Catalog/Metadata Domain Modeling",
    "Data Transformation/Enrichment",
    "Event-driven Pipeline Patterns"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -6845,7 +6954,8 @@
   "other_requirements": [
    "Lucene-based search engine",
    "Distributed Systems"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -6924,7 +7034,8 @@
    "gRPC",
    "Spanner",
    "Pub/Sub"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -6997,7 +7108,8 @@
    "Generative AI/LLMs",
    "MCP Servers",
    "AI Agents"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7103,7 +7215,8 @@
    "Nginx",
    "Claude",
    "Cursor"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7182,7 +7295,8 @@
    "Android SDK",
    "Gradle",
    "Protocol Buffers"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -7262,7 +7376,8 @@
    "Swift Testing",
    "Bazel",
    "fastlane"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -7330,7 +7445,8 @@
    "blameless post-mortem",
    "databases",
    "AI/LLMs"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7386,7 +7502,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "PHP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7459,7 +7576,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7539,7 +7657,8 @@
    "TestRail",
    "Cursor",
    "Claude Code"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7615,7 +7734,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "SLIs"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7693,7 +7813,8 @@
    "microservice architecture",
    "authentication/authorization",
    "DesignDoc/ADR"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7738,7 +7859,8 @@
    "Android",
    "Embedded",
    "DDIL environment"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -7792,7 +7914,8 @@
    "Vulnerability Assessment",
    "Penetration Testing",
    "Threat Intelligence"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -7855,7 +7978,8 @@
    "React",
    "Next.js",
    "Ruby"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -7936,7 +8060,8 @@
    "AI agent frameworks",
    "MCP",
    "OpenTelemetry"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -8010,7 +8135,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -8065,7 +8191,8 @@
    "Behavior Tree",
    "RosPlan",
    "multiagent systems"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workable",
@@ -8116,7 +8243,8 @@
    "nc",
    "Building Construction Law",
    "Radio Law"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -8180,7 +8308,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -8261,7 +8390,8 @@
    "MCP services",
    "LLM applications",
    "Multi-agent orchestration"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -8337,7 +8467,8 @@
   "other_requirements": [
    "pre-sales",
    "warehouse automation"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workable",
@@ -8373,7 +8504,8 @@
    "I2C",
    "SPI",
    "CAN"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "workable",
@@ -8430,7 +8562,8 @@
    "ROS/ROS2",
    "C++",
    "robotic simulators (Isaac Sim, MuJoCo, P"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "workable",
@@ -8501,7 +8634,8 @@
    "Route Table",
    "VPN",
    "Direct Connect"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -8563,7 +8697,8 @@
    "API",
    "SaaS",
    "scripting"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workable",
@@ -8609,7 +8744,8 @@
    "mechatronic products",
    "factory automation equipment",
    "mobile robots"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "workable",
@@ -8689,7 +8825,8 @@
    "RTOS",
    "ROS/ROS2",
    "EtherCAT"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "ashby",
@@ -8762,7 +8899,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -8791,7 +8929,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_software_engineering"
  },
  {
   "source": "ashby",
@@ -8867,7 +9006,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -8933,7 +9073,8 @@
    "Liquid Cooling",
    "UPS",
    "Switchgear"
-  ]
+  ],
+  "domain": "non_software_engineering"
  },
  {
   "source": "ashby",
@@ -8998,7 +9139,8 @@
    "AUTOSAR toolchains",
    "CAN",
    "LIN"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9073,7 +9215,8 @@
   ],
   "other_requirements": [
    "C++"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -9152,7 +9295,8 @@
    "multi-object tracking",
    "state estimation",
    "3D geometry"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9233,7 +9377,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9302,7 +9447,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -9371,7 +9517,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -9452,7 +9599,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9530,7 +9678,8 @@
    "AlloyDB",
    "Anthropic",
    "OpenAI"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -9611,7 +9760,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9657,7 +9807,8 @@
    "Production Debugging",
    "Third-party Integrations",
    "Reliability"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9703,7 +9854,8 @@
    "Databases",
    "Production Systems",
    "Fintech"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9738,7 +9890,8 @@
    "Android SDK",
    "Coroutines & Flow",
    "TensorFlow Lite"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9801,7 +9954,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9836,7 +9990,8 @@
    "Android SDK",
    "Coroutines & Flow",
    "TensorFlow Lite"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -9887,7 +10042,8 @@
    "CLI",
    "SNMP",
    "Packet Analysis"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -9926,7 +10082,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -9990,7 +10147,8 @@
    "IoT",
    "WebRTC",
    "IPsec"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -10064,7 +10222,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -10140,7 +10299,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Buildkite"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "smartrecruiters",
@@ -10213,7 +10373,8 @@
    "SD-WAN",
    "FinOps",
    "ITIL"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -10276,7 +10437,8 @@
    "JSON",
    "webhooks",
    "Jira"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -10348,7 +10510,8 @@
   "other_requirements": [
    "Windows Server",
    "Hypervisor"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -10404,7 +10567,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Nutanix"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -10443,7 +10607,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -10519,7 +10684,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -10579,7 +10745,8 @@
    "recommendation",
    "ads ranking",
    "personalization"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workday",
@@ -10655,7 +10822,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Cloud Build"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -10700,7 +10868,8 @@
   ],
   "other_requirements": [
    "HTML/CSS/JS"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -10749,7 +10918,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -10811,7 +10981,8 @@
   "other_requirements": [
    "PMP",
    "ITIL Foundation/Expert"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -10864,7 +11035,8 @@
    "Openframe7",
    "Tibero",
    "Oracle"
-  ]
+  ],
+  "domain": "non_software_engineering"
  },
  {
   "source": "workday",
@@ -10941,7 +11113,8 @@
    "Salesforce",
    "Agentforce",
    "Data Cloud"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -10993,7 +11166,8 @@
   "other_requirements": [
    "SD-WAN",
    "Cato Networks"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11026,7 +11200,8 @@
    "CRM",
    "Contact Center",
    "Salesforce Service Cloud"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11060,7 +11235,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11133,7 +11309,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11206,7 +11383,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11254,7 +11432,8 @@
    "HTML",
    "CSS",
    "SSL"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11293,7 +11472,8 @@
    "AI Infrastructure",
    "Server System Builds",
    "ODM/OEM Partner Management"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11348,7 +11528,8 @@
    "SLURM",
    "Transformer-based architectures",
    "Agent-based systems"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11407,7 +11588,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -11487,7 +11669,8 @@
    "Machine Learning Interatomic Potential (",
    "MD simulations",
    "DFT simulations"
-  ]
+  ],
+  "domain": "non_software_engineering"
  },
  {
   "source": "workday",
@@ -11558,7 +11741,8 @@
    "RTP",
    "IMS",
    "EPC"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11602,7 +11786,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_development"
  },
  {
   "source": "workday",
@@ -11651,7 +11836,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11727,7 +11913,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Robot Framework"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11804,7 +11991,8 @@
   "other_requirements": [
    "C++",
    "Rust"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11885,7 +12073,8 @@
    "CSI",
    "Velero",
    "Restic"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -11929,7 +12118,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -11963,7 +12153,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -12039,7 +12230,8 @@
   "other_requirements": [
    "AI tooling",
    "Cursor"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -12098,7 +12290,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -12139,7 +12332,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "SaaS troubleshooting"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -12183,7 +12377,8 @@
    "GPU & HPC Hardware Familiarity",
    "Hardware Troubleshooting",
    "Cable Management"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -12224,7 +12419,8 @@
    "AUTOSAR",
    "ISO 26262",
    "Automotive SPICE"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -12302,7 +12498,8 @@
    "Trajectory Generation",
    "C++",
    "Real-time Systems"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -12382,7 +12579,8 @@
    "off-road terrain",
    "nonlinear MPC",
    "MPPI control"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -12428,7 +12626,8 @@
    "SOME/IP",
    "UDS",
    "DoIP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -12497,7 +12696,8 @@
    "OLAP",
    "Cloud/SaaS platforms",
    "System Administration"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -12575,7 +12775,8 @@
    "ロードバランシング",
    "GraphQL",
    "LLM"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -12656,7 +12857,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -12736,7 +12938,8 @@
    "Ansys",
    "Altair",
    "Siemens"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -12807,7 +13010,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -12888,7 +13092,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -12969,7 +13174,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -13050,7 +13256,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -13111,7 +13318,8 @@
   "other_requirements": [
    "React",
    "Rust"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -13187,7 +13395,8 @@
    "gRPC",
    "Connect RPC",
    "GraphQL"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -13268,7 +13477,8 @@
    "React",
    "Protocol Buffers",
    "gRPC"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -13344,7 +13554,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Rust"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -13395,7 +13606,8 @@
    "Authorization",
    "Queues",
    "Jobs"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -13430,7 +13642,8 @@
    "Android SDK",
    "Coroutines & Flow",
    "TensorFlow Lite"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "ashby",
@@ -13503,7 +13716,8 @@
     "mandatory": true
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_development"
  },
  {
   "source": "lever",
@@ -13576,7 +13790,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -13623,7 +13838,8 @@
   "other_requirements": [
    "Switching/Routing",
    "SD-WAN"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -13664,7 +13880,8 @@
    "Prototyping",
    "Electronics",
    "Small UAS regulatory"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "ashby",
@@ -13743,7 +13960,8 @@
    "OpenTelemetry",
    "Coder",
    "FinOps"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "ashby",
@@ -13814,7 +14032,8 @@
    "bootloaders",
    "device trees",
    "QNX Adaptive AUTOSAR"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "ashby",
@@ -13869,7 +14088,8 @@
    "AUTOSAR",
    "SoC bring-up",
    "CAN/Ethernet/PCIe/SPI/I2C"
-  ]
+  ],
+  "domain": "hardware_embedded"
  },
  {
   "source": "ashby",
@@ -13915,7 +14135,8 @@
    "fleet operations",
    "automotive systems",
    "ADAS technology"
-  ]
+  ],
+  "domain": "non_software_engineering"
  },
  {
   "source": "smartrecruiters",
@@ -13984,7 +14205,8 @@
    "OLTP",
    "OLAP",
    "NAGIOS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "lever",
@@ -14058,7 +14280,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_development"
  },
  {
   "source": "smartrecruiters",
@@ -14095,7 +14318,8 @@
   "other_requirements": [
    "ServiceNow Platform",
    "ServiceNow certifications"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "smartrecruiters",
@@ -14175,7 +14399,8 @@
    "Unreal",
    "proprietary engine code",
    "2D/3D math"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workday",
@@ -14250,7 +14475,8 @@
   ],
   "other_requirements": [
    ".NET"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14279,7 +14505,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_software_engineering"
  },
  {
   "source": "workday",
@@ -14352,7 +14579,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_software_engineering"
  },
  {
   "source": "workday",
@@ -14407,7 +14635,8 @@
    "MariaDB",
    "MongoDB",
    "Couchbase"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14446,7 +14675,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -14484,7 +14714,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -14561,7 +14792,8 @@
   "other_requirements": [
    "Oracle DB",
    "Apache Cassandra"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14617,7 +14849,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "PHP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14670,7 +14903,8 @@
    "JPA",
    "RESTful APIs",
    "automated testing"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workday",
@@ -14749,7 +14983,8 @@
    "Blue Prism",
    "ServiceNow",
    "M365 Copilot"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14809,7 +15044,8 @@
    "FinOps",
    "DORA Metrics",
    "Vendor Strategy"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14886,7 +15122,8 @@
   "other_requirements": [
    "RDS",
    "DynamoDB"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14950,7 +15187,8 @@
    "ArcSight",
    "Microsoft Sentinel",
    "Exabeam/LogRhythm/QRadar (SIEM tools not"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -14992,7 +15230,8 @@
   "other_requirements": [
    "ITIL",
    "ISO27001"
-  ]
+  ],
+  "domain": "other"
  },
  {
   "source": "workday",
@@ -15069,7 +15308,8 @@
    "PLM",
    "Teamcenter",
    "CAD"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15114,7 +15354,8 @@
    "Cloud Native Services",
    "SAP",
    "ServiceNow"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15193,7 +15434,8 @@
    "ITSM",
    "ITIL",
    "CCNA"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15232,7 +15474,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15298,7 +15541,8 @@
    "Business Intelligence",
    "Data Management",
    "MDM"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15367,7 +15611,8 @@
    "Windows",
    "Mac OS",
    "APIs"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15440,7 +15685,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15513,7 +15759,8 @@
     "mandatory": false
    }
   ],
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15559,7 +15806,8 @@
    "NVIDIA RTX",
    "PhysX",
    "CUDA"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15614,7 +15862,8 @@
   ],
   "other_requirements": [
    "C/C++"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15692,7 +15941,8 @@
    "HTML",
    "CSS",
    ".Net"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15773,7 +16023,8 @@
    "EVPN",
    "OSPF",
    "VXLAN protocols"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15854,7 +16105,8 @@
    "Lustre",
    "GPFS",
    "ZFS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -15924,7 +16176,8 @@
    "Solution Architecture",
    "Enterprise Architecture",
    "Cloud"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -15999,7 +16252,8 @@
    "Cloud",
    "RDBMS",
    "Middleware"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -16076,7 +16330,8 @@
   "other_requirements": [
    "Satellite",
    "DevOps"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -16152,7 +16407,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "YAML"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "workday",
@@ -16218,7 +16474,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Packet Core"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -16267,7 +16524,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -16348,7 +16606,8 @@
    "vector databases",
    "prompt engineering",
    "AI governance"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "workday",
@@ -16402,7 +16661,8 @@
    "kernel programming",
    "user space programming",
    "multithreading"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workday",
@@ -16479,7 +16739,8 @@
   "other_requirements": [
    "Microservices",
    "API-first design"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "workday",
@@ -16548,7 +16809,8 @@
    "kernel programming",
    "user space programming",
    "multithreading"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -16603,7 +16865,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -16660,7 +16923,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Availability Design"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -16720,7 +16984,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -16785,7 +17050,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -16850,7 +17116,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -16925,7 +17192,8 @@
    "モニタリング環境",
    "Webアプリケーション開発/運用",
    "サーバントリーダーシップ"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -16967,7 +17235,8 @@
    "IBM DB2",
    "Apache",
    "IIS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17029,7 +17298,8 @@
    "Druid",
    "ETL",
    "データ品質"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17093,7 +17363,8 @@
    "RDS",
    "Aurora",
    "CloudWatch"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17148,7 +17419,8 @@
    "Scala",
    "C++",
    "Ruby"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17222,7 +17494,8 @@
    "Ruby",
    "Ruby on Rails",
    "SOC1/SOC2"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17289,7 +17562,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "ECS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17319,7 +17593,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "non_engineering"
  },
  {
   "source": "jsearch",
@@ -17366,7 +17641,8 @@
    "TestInfra",
    "Goss",
    "CodePipeline"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17406,7 +17682,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17485,7 +17762,8 @@
    "Sentry",
    "OpenTelemetry",
    "NGINX"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17527,7 +17805,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Cloud VDI"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17597,7 +17876,8 @@
    "LLM Inference",
    "MCP Server",
    "Enterprise Auth/Gateway"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17666,7 +17946,8 @@
    "Jira",
    "Confluence",
    "Miro"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17726,7 +18007,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17791,7 +18073,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17857,7 +18140,8 @@
    "Railway",
    "WordPress",
    "FinOps"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17919,7 +18203,8 @@
    "Application Server",
    "Web Server",
    "Network"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -17984,7 +18269,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18062,7 +18348,8 @@
   "other_requirements": [
    "ECS",
    "webアプリケーション開発"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18143,7 +18430,8 @@
    "TLS",
    "ネットワーク",
    "冗長化・分散手法"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18183,7 +18471,8 @@
    "DynamoDB",
    "Cognito",
    "Backend Development"
-  ]
+  ],
+  "domain": "other"
  },
  {
   "source": "jsearch",
@@ -18245,7 +18534,8 @@
    "React",
    "Next.js",
    "Flutter"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18305,7 +18595,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18384,7 +18675,8 @@
    "PHP",
    "Rails",
    "UnitTest"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18459,7 +18751,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18501,7 +18794,8 @@
    "ファイアウォール",
    "OSPF",
    "YAMAHA"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18578,7 +18872,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "QA"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18633,7 +18928,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18668,7 +18964,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18712,7 +19009,8 @@
    "Cisco ACI",
    "CCNA",
    "CCNP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18760,7 +19058,8 @@
   "other_requirements": [
    "Aurora",
    "ECS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18827,7 +19126,8 @@
    "STP",
    "OSPF",
    "EVPN"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18872,7 +19172,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18902,7 +19203,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -18969,7 +19271,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "RDS/Aurora"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19008,7 +19311,8 @@
    "Windows",
    "JP1",
    "Zabbix"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19048,7 +19352,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19097,7 +19402,8 @@
    "オンプレ",
    "仮想化基盤",
    "インフラエンジニア"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19147,7 +19453,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19179,7 +19486,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Ruby"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -19215,7 +19523,8 @@
    "DCIM",
    "1級電気通信工事施工管理技師",
    "1級電気施工管理技術"
-  ]
+  ],
+  "domain": "non_software_engineering"
  },
  {
   "source": "jsearch",
@@ -19251,7 +19560,8 @@
    "LinuC1",
    "LPIC",
    "基本情報技術者"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19281,7 +19591,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19326,7 +19637,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19376,7 +19688,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19417,7 +19730,8 @@
    "Oracle",
    "ServiceCloud",
    "APEX"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19499,7 +19813,8 @@
    "PHP",
    "フレームワーク/ライブラリ問題解決",
    "技術選定/アーキテクチャ設計"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -19567,7 +19882,8 @@
   "other_requirements": [
    "Windows Server",
    "Oracle"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19602,7 +19918,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19664,7 +19981,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Windows"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19709,7 +20027,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19761,7 +20080,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "RDB"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19828,7 +20148,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Windows"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19888,7 +20209,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -19956,7 +20278,8 @@
   "other_requirements": [
    "Logstash",
    "Hadoop"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20011,7 +20334,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20081,7 +20405,8 @@
    "Team Management",
    "Ruby",
    "Ruby on Rails"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20131,7 +20456,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20170,7 +20496,8 @@
    "仮想OS",
    "コンテナ",
    "GIS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20236,7 +20563,8 @@
    "Basic Design",
    "Backup/Restore",
    "Disaster Recovery Design"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20293,7 +20621,8 @@
    "EDR",
    "CASB",
    "ID Management"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20363,7 +20692,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20395,7 +20725,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "OCI"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20435,7 +20766,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20480,7 +20812,8 @@
    "Cisco",
    "Juniper",
    "F5"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20559,7 +20892,8 @@
    "Pre-sales",
    "Compute Engine",
    "Organization"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20633,7 +20967,8 @@
    "Gemini",
    "Vertex AI",
    "Google Workspace"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20696,7 +21031,8 @@
   "other_requirements": [
    "Spring Boot",
    "DevOps"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -20739,7 +21075,8 @@
   "other_requirements": [
    "SSH",
    "Office"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20806,7 +21143,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "GoogleCloud"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20853,7 +21191,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "M365"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20897,7 +21236,8 @@
    "GIS",
    "仮想OS",
    "コンテナ"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -20951,7 +21291,8 @@
    "Airflow",
    "Composer",
    "Redshift"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21008,7 +21349,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Web Server (Apache/nginx)"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21048,7 +21390,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21090,7 +21433,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "eBPF"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21152,7 +21496,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "データベース設計構築"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21187,7 +21532,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21264,7 +21610,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21325,7 +21672,8 @@
    "Snowflake",
    "Langfuse",
    "Valkey"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21377,7 +21725,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "CloudWatch"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21454,7 +21803,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "kubectl"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21491,7 +21841,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "C#"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21558,7 +21909,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Cloud Spanner"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21595,7 +21947,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "マルチクラウドクラスター"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21673,7 +22026,8 @@
   "other_requirements": [
    "CKA",
    "C++"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21738,7 +22092,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21812,7 +22167,8 @@
    "CNCF",
    "CKA",
    "CKS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21862,7 +22218,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21915,7 +22272,8 @@
   "other_requirements": [
    "Podman",
    "ROSA"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -21993,7 +22351,8 @@
   "other_requirements": [
    "Cloud Functions",
    "Anthos Config Management"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22070,7 +22429,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Tekton"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22133,7 +22493,8 @@
   "other_requirements": [
    "Webアプリケーション開発",
    "コンテナアプリケーション開発・運用"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22180,7 +22541,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "ソフトウェア制御/品質管理"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22232,7 +22594,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "コンテナ環境"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22299,7 +22662,8 @@
    "IPS",
    "DDoS対策",
    "CDN"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22336,7 +22700,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "On-premise"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22390,7 +22755,8 @@
    "C/C++",
    "MATLAB/Simulink",
    "Windows"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22458,7 +22824,8 @@
   "other_requirements": [
    "日常英会話",
    "システム運用設計"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22536,7 +22903,8 @@
   "other_requirements": [
    "Kustomize",
    "CloudWatch"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22576,7 +22944,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22635,7 +23004,8 @@
    "Webアプリケーションの設計・開発経験",
    "BSS/OSS開発経験",
    "生成AIを用いた開発経験"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22694,7 +23064,8 @@
    "Perl",
    "Oracle",
    "JP1"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22749,7 +23120,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22816,7 +23188,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Jira/Confluence/Miro"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22883,7 +23256,8 @@
    "React",
    "Next.js",
    "Jest"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22938,7 +23312,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -22995,7 +23370,8 @@
    "x86",
    "LLM",
    "MCP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23043,7 +23419,8 @@
   "other_requirements": [
    "C/C++",
    "On-premise"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23122,7 +23499,8 @@
    "Proxmox",
    "BookStack",
    "LiteLLM"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23159,7 +23537,8 @@
    "Juniper",
    "Arista",
    "Yamaha"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23209,7 +23588,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23286,7 +23666,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23353,7 +23734,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Maven"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23395,7 +23777,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "運用・監視業務"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23452,7 +23835,8 @@
    "LAN/WAN",
    "クラウド連携",
    "監視データ分析"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23492,7 +23876,8 @@
    "LinuC",
    "LPIC",
    "基本情報技術者"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23539,7 +23924,8 @@
    "AppScan",
    "Nessus",
    "Webアプリケーション開発"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "jsearch",
@@ -23583,7 +23969,8 @@
    "Cisco",
    "L2/L3スイッチ",
    "有線/無線LAN"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23620,7 +24007,8 @@
    "LAN",
    "WAN",
    "server construction"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23662,7 +24050,8 @@
    "Basic Design",
    "Config Creation",
    "Verification"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23707,7 +24096,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23737,7 +24127,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23784,7 +24175,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "インフラエンジニアの構築経験"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23846,7 +24238,8 @@
    "ID管理システム",
    "Windows",
    "生成AI"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23921,7 +24314,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -23986,7 +24380,8 @@
    "AIソリューション",
    "エージェント型システム",
    "ワークフローオーケストレーション"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24031,7 +24426,8 @@
    "ITガバナンス体勢構築",
    "プロジェクトマネジメント",
    "チームマネジメント"
-  ]
+  ],
+  "domain": "non_engineering"
  },
  {
   "source": "jsearch",
@@ -24073,7 +24469,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "WAF"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24132,7 +24529,8 @@
    "React.js",
    "HTTP",
    "MQTT"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24165,7 +24563,8 @@
   "other_requirements": [
    "ネットワーク構築",
    "ネットワーク保守運用"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24212,7 +24611,8 @@
    "対顧客調整",
    "スケジュール管理",
    "タスク管理業務"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24268,7 +24668,8 @@
    "Arista",
    "Nokia",
    "LPWA"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24319,7 +24720,8 @@
    "SaaS/Multi-tenant Design",
    "Authentication/Authorization",
    "Technical Standardization/Governance"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24369,7 +24771,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24431,7 +24834,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "AWSセキュリティサービス"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24499,7 +24903,8 @@
   "other_requirements": [
    "DWH",
    "BIツール"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24554,7 +24959,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24594,7 +25000,8 @@
    "Airflow",
    "Webクローリング基盤",
    "Webアプリケーション・APIの本番開発"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24626,7 +25033,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24701,7 +25109,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24753,7 +25162,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "FinOps"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24813,7 +25223,8 @@
    "Ruby",
    "Vue.js",
    "React"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -24886,7 +25297,8 @@
   "other_requirements": [
    "Databricks",
    "dbt"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24931,7 +25343,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -24973,7 +25386,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Ruby on Rails"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25050,7 +25464,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Platform Engineering"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25122,7 +25537,8 @@
    "FinOps",
    "Data Catalog/Metadata Management",
    "Data Governance"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25177,7 +25593,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25250,7 +25667,8 @@
   "other_requirements": [
    "Ruby",
    "DevOps"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25318,7 +25736,8 @@
   "other_requirements": [
    "React",
    "Next.js"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -25360,7 +25779,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "pre-sales"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25395,7 +25815,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25462,7 +25883,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "React"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25527,7 +25949,8 @@
    "Route53",
    "ClientVPN",
    "Transit Gateway"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25580,7 +26003,8 @@
   "other_requirements": [
    "RDS",
    "ALB"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25610,7 +26034,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25674,7 +26099,8 @@
    "Amazon ECS",
    "Amazon RDS",
    "Amazon CloudWatch"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25711,7 +26137,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Windows"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25761,7 +26188,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25815,7 +26243,8 @@
    "RDS",
    "ALB",
    "Auto Scaling"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25863,7 +26292,8 @@
   "other_requirements": [
    "CloudWatch",
    "ネットワーク"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -25927,7 +26357,8 @@
    "CodePipeline",
    "ECS",
    "PHP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26006,7 +26437,8 @@
    "Amazon Bedrock",
    "Kiro",
    "Gemini"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26046,7 +26478,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26103,7 +26536,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "GitOps"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26138,7 +26572,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26175,7 +26610,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "GIS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26240,7 +26676,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26291,7 +26728,8 @@
    "Step Functions",
    "Systems Manager",
    "SNS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26341,7 +26779,8 @@
    "インフラ設計",
    "インフラ構築",
    "プロジェクト管理"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26376,7 +26815,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26443,7 +26883,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Infrastructure as Code"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26478,7 +26919,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26543,7 +26985,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26612,7 +27055,8 @@
    "Scala",
    "Kotlin",
    "PagerDuty"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26684,7 +27128,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Service Mesh"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26723,7 +27168,8 @@
    "サーバー構築",
    "ネットワーク設計構築",
    "官公庁・大企業向けの大規模システム構築"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26771,7 +27217,8 @@
   "other_requirements": [
    "Windows",
    "Middleware"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26846,7 +27293,8 @@
    "AIX",
    "Oracle",
    "Apache/Nginx/Tomcat/WebLogic"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26876,7 +27324,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26921,7 +27370,8 @@
    "セッション制御系のサーバシステム",
    "方式検討",
    "構築経験"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -26963,7 +27413,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Database"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27010,7 +27461,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "DB"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27043,7 +27495,8 @@
   "other_requirements": [
    "サーバー構築/運用",
    "WEBサーバー"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27095,7 +27548,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "Windows"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27155,7 +27609,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27205,7 +27660,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27235,7 +27691,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27297,7 +27754,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "スクリプト製造"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27344,7 +27802,8 @@
    "ロードバランサ",
    "Zabbix",
    "SiteScope"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27378,7 +27837,8 @@
    "ホストインフラ保守運用",
    "オープン系インフラ保守運用",
    "ネットワーク保守運用"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27450,7 +27910,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "ECS"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27502,7 +27963,8 @@
    "非機能要件",
    "DBの構築",
    "SIプロジェクト"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27560,7 +28022,8 @@
   "other_requirements": [
    "Windows Server",
    "Zabbix"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27612,7 +28075,8 @@
    "トラブルシューティング",
    "在庫管理",
    "マニュアル作成"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27667,7 +28131,8 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27727,7 +28192,8 @@
    "Middleware",
    "Ruby",
    "PHP"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27786,7 +28252,8 @@
    "PHP",
    "BEAR.Sunday",
    "Next.js"
-  ]
+  ],
+  "domain": "software_development"
  },
  {
   "source": "jsearch",
@@ -27848,7 +28315,8 @@
    "負荷分散",
    "キャッシュ戦略",
    "CDN"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27920,7 +28388,8 @@
   "extractor": "moonshotai/kimi-k3",
   "other_requirements": [
    "CDK"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -27968,7 +28437,8 @@
   "other_requirements": [
    "オンプレミス",
    "サーバ設計・構築・運用"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -28013,7 +28483,8 @@
    "O&M Engineer",
    "Hardware Engineer",
    "Network Engineer"
-  ]
+  ],
+  "domain": "software_infrastructure"
  },
  {
   "source": "jsearch",
@@ -28083,6 +28554,7 @@
    }
   ],
   "extractor": "moonshotai/kimi-k3",
-  "other_requirements": []
+  "other_requirements": [],
+  "domain": "software_infrastructure"
  }
 ]

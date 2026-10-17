@@ -381,7 +381,7 @@ with st.container(border=True):
 
 if not skills:
     st.markdown('<p class="note" style="text-align:center;font-size:14px;margin-top:6px">Upload a resume (PDF / DOCX / TXT) and click '
-                '<b>Analyze with ai&</b>. Your skills become edges in a Neo4j memory graph, scored against 420 real Tokyo postings.</p>',
+                '<b>Analyze with ai&</b>. Your skills become edges in a Neo4j memory graph, scored against 370 real Tokyo postings.</p>',
                 unsafe_allow_html=True)
     st.stop()
 

@@ -210,6 +210,33 @@ COVERED_RE = _re.compile(
     r"5g|ran\b|telecom|japanese|english|leadership|mentor|agile|scrum|documentation|communication", _re.I)
 
 
+DOMAINS = ["software_infrastructure", "software_development", "hardware_embedded", "non_software_engineering", "non_engineering"]
+SOFTWARE_DOMAINS = {"software_infrastructure", "software_development"}
+
+DOMAIN_SCHEMA = {"type": "object", "properties": {"domain": {"type": "string", "enum": DOMAINS}},
+                 "required": ["domain"], "additionalProperties": False}
+
+DOMAIN_SYSTEM = """Classify the job by what the person will actually DO day to day. Ignore buzzwords and company descriptions.
+- software_infrastructure: cloud, platform, SRE, DevOps, Kubernetes, networks, data centers, IT infrastructure, system administration,
+  cybersecurity, database administration, technical support / solutions engineering FOR SOFTWARE OR CLOUD PRODUCTS.
+- software_development: backend, frontend, mobile, full-stack, data engineering, ML/AI engineering, QA automation, game development.
+- hardware_embedded: firmware, embedded C/C++, RTOS, electronics, FPGA/chip design, robotics hardware, PCB.
+- non_software_engineering: electrical power / substations / switchgear, mechanical, civil, chemical, automotive (non-software),
+  manufacturing, HVAC, facilities, field service of physical equipment.
+- non_engineering: sales, pre-sales, consulting, account management, recruiting, marketing, finance, HR, customer success, operations."""
+
+
+def classify_domain(title: str, description: str, model: str = "deepseek-ai/deepseek-v4-flash") -> str:
+    """Primary domain of a posting - used to keep only software/infra roles in the corpus."""
+    r = client().chat.completions.create(
+        model=model, max_tokens=200, temperature=0, reasoning_effort=effort_for(model),
+        response_format={"type": "json_schema", "json_schema": {"name": "domain", "schema": DOMAIN_SCHEMA, "strict": True}},
+        messages=[{"role": "system", "content": DOMAIN_SYSTEM},
+                  {"role": "user", "content": "TITLE: " + title + "\n\n" + description[:6000]}],
+    )
+    return json.loads(r.choices[0].message.content)["domain"]
+
+
 AGENT_TOOLS = [{
     "type": "function",
     "function": {

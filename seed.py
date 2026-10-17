@@ -45,9 +45,18 @@ def load_real_jobs() -> list[dict]:
     import re
     non_software = re.compile(r"propulsion|spacecraft|mechanical|tire|electrical|facility|facilities|GNC|guidance|thermal|"
                               r"structural|manufacturing|hardware|chiplet|physical design|verification engineer|field service", re.I)
+    software_domains = {"software_infrastructure", "software_development"}
+    physical = re.compile(r"switchgear|substation|voltage|hvac|mechanical|cad|pcb|schematic|welding|hydraulic", re.I)
+    soft = {"Technical Documentation", "Agile/Scrum", "Mentoring", "English"}
     jobs = []
     for i, j in enumerate(raw, 1):
         if non_software.search(j["title"]):
+            continue
+        if j.get("domain", "other") not in software_domains:          # not a software / infra role at all
+            continue
+        if any(physical.search(x) for x in j.get("other_requirements", [])):
+            continue
+        if sum(1 for r in j["requires"] if r["skill"] not in soft) < 3:   # too thin an extraction to score honestly
             continue
         jobs.append({
             "id": f"real-{i:03d}", "title": j["title"].strip(), "company": j["company"], "location": j["location"] or "Tokyo, Japan",
@@ -121,9 +130,14 @@ def build_corpus(max_real: int = 150, total: int = TOTAL) -> list[dict]:
 
 # ---- pure-python mirror of the Cypher scoring, for fast tuning without round-trips -------------
 
+SOFT = {"Technical Documentation", "Agile/Scrum", "Mentoring", "English"}
+
+
 def fit(job: dict, have: dict[str, int]) -> float:
     got, tot = 0.0, 1.0 * job.get("other_required", 0)   # uncovered must-haves count as unmet mandatory requirements
     for r in job["requires"]:
+        if r["skill"] in SOFT:
+            continue
         w = 2.0 if r["mandatory"] else 1.0
         h = have.get(r["skill"])
         m = 0.0 if h is None else (1.0 if h >= r["level"] else 0.5)

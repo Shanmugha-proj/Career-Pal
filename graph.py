@@ -121,7 +121,7 @@ def candidate_skills(cid: str) -> list[dict]:
 # --------------------------------------------------------------------------- the three demo queries
 
 FIT_CYPHER = """
-MATCH (j:Job)-[r:REQUIRES]->(s:Skill)
+MATCH (j:Job)-[r:REQUIRES]->(s:Skill) WHERE NOT s.name IN $soft      // soft skills never count toward fit
 OPTIONAL MATCH (:Candidate {id: $cid})-[h:HAS]->(s)
 WITH j, s, r, CASE WHEN h IS NULL THEN 0.0 WHEN h.level >= r.level THEN 1.0 ELSE 0.5 END AS m
 // required skills outside the taxonomy (e.g. C/C++, RTOS) count as unmet mandatory requirements (weight 1.0 each)
@@ -137,11 +137,11 @@ ORDER BY fit DESC, j.title
 
 def job_fits(cid: str) -> list[dict]:
     """Every job with its fit score for the candidate. Cutoff filtering happens client-side (instant slider)."""
-    return run("job_fits", FIT_CYPHER, cid=cid)
+    return run("job_fits", FIT_CYPHER, cid=cid, soft=SOFT_SKILLS)
 
 
 LEADERBOARD_CYPHER = """
-MATCH (j:Job)-[r:REQUIRES]->(s:Skill)
+MATCH (j:Job)-[r:REQUIRES]->(s:Skill) WHERE NOT s.name IN $soft
 OPTIONAL MATCH (:Candidate {id: $cid})-[h:HAS]->(s)
 WITH j, s, r, CASE WHEN h IS NULL THEN 0.0 WHEN h.level >= r.level THEN 1.0 ELSE 0.5 END AS m
 WITH j, collect({skill: s, w: r.weight, m: m, lvl: r.level}) AS reqs
@@ -161,22 +161,22 @@ LIMIT $limit
 """
 
 
-SOFT_SKILLS = ["Technical Documentation", "Agile/Scrum", "Mentoring", "English"]
+SOFT_SKILLS = ["Technical Documentation", "Agile/Scrum", "Mentoring", "English"]   # never count toward fit or unlocks
 
 
 def leaderboard(cid: str, cutoff: float, limit: int = 10) -> list[dict]:
     """'Learn X -> unlock N more jobs in D days' - the question a vector index cannot answer."""
-    return run("leaderboard", LEADERBOARD_CYPHER, cid=cid, cutoff=cutoff, limit=limit, exclude=SOFT_SKILLS)
+    return run("leaderboard", LEADERBOARD_CYPHER, cid=cid, cutoff=cutoff, limit=limit, exclude=SOFT_SKILLS, soft=SOFT_SKILLS)
 
 
 def qualify_count(cid: str, cutoff: float) -> dict:
     return run("qualify_count", """
-        MATCH (j:Job)-[r:REQUIRES]->(s:Skill)
+        MATCH (j:Job)-[r:REQUIRES]->(s:Skill) WHERE NOT s.name IN $soft
         OPTIONAL MATCH (:Candidate {id: $cid})-[h:HAS]->(s)
         WITH j, r, CASE WHEN h IS NULL THEN 0.0 WHEN h.level >= r.level THEN 1.0 ELSE 0.5 END AS m
         WITH j, sum(r.weight * m) / (sum(r.weight) + 1.0 * coalesce(j.other_required, 0)) AS fit
         RETURN count(*) AS total, sum(CASE WHEN fit >= $cutoff THEN 1 ELSE 0 END) AS qualify
-    """, cid=cid, cutoff=cutoff)[0]
+    """, cid=cid, cutoff=cutoff, soft=SOFT_SKILLS)[0]
 
 
 # --------------------------------------------------------------------------- learning path (greedy, on a scratch copy)
