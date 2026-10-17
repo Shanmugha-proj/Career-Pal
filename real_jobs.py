@@ -48,11 +48,12 @@ WORKDAY = [("rakuten", "wd1", "RakutenInc"), ("rakuten", "wd1", "RakutenMobile")
            ("equinix", "wd1", "Equinix_Careers"), ("akamai", "wd1", "Akamai_Careers"), ("netapp", "wd1", "NetApp_Careers"),
            ("nutanix", "wd1", "Nutanix_Careers"), ("paloaltonetworks", "wd1", "PaloAltoNetworks_Careers")]
 
-JP_RE = re.compile(r"tokyo|japan|東京|日本|osaka|kanagawa|yokohama|apac.*japan", re.I)
+JP_RE = re.compile(r"tokyo|japan|東京|日本|osaka|kanagawa|yokohama|apac.*japan|\bJP\b", re.I)
 TITLE_RE = re.compile(r"platform|infrastructure|infra\b|\bsre\b|site reliability|devops|cloud|kubernetes|network|"
                       r"systems? engineer|security engineer|data ?cent|solutions? (architect|engineer)|backend|back-end|"
                       r"software engineer|production engineer|reliability|observability|database|storage|linux|"
-                      r"technical account|support engineer|customer engineer|field engineer", re.I)
+                      r"technical account|support engineer|customer engineer|field engineer|"
+                      r"インフラ|クラウド|プラットフォーム|ネットワーク|サーバ|基盤|運用|セキュリティ|エンジニア", re.I)
 
 
 def strip_html(s: str) -> str:
@@ -186,30 +187,40 @@ JSEARCH_QUERIES = [
     "Backend Engineer Go Tokyo", "Security Engineer cloud Tokyo", "Telecom cloud engineer 5G Japan",
     "インフラエンジニア 東京", "SRE 東京",
 ]
+JSEARCH_QUERIES_2 = [
+    "クラウドエンジニア 東京", "Kubernetes エンジニア 東京", "DevOpsエンジニア 東京", "ネットワークエンジニア 東京",
+    "プラットフォームエンジニア 東京", "AWS エンジニア 東京", "インフラエンジニア Kubernetes", "サーバーエンジニア 東京",
+    "Cloud engineer Japan English speaking", "Infrastructure engineer Japan remote", "Kubernetes SRE Japan English",
+    "Terraform engineer Tokyo", "GCP engineer Tokyo", "OpenStack engineer Japan", "5G core network engineer Tokyo",
+]
 
 
-def fetch_jsearch(key: str, queries=JSEARCH_QUERIES, pages: int = 2) -> list[dict]:
-    """Real postings aggregated from Google for Jobs (Indeed, LinkedIn, company sites). Needs RAPIDAPI_KEY."""
+def fetch_jsearch(key: str, queries=JSEARCH_QUERIES, pages: int = 1) -> list[dict]:
+    """Real postings aggregated from Google for Jobs (Indeed, LinkedIn, agencies, company sites). Needs RAPIDAPI_KEY.
+    JSearch v5: endpoint /search-v2, results under data.jobs. Pulled in both Japanese and English."""
     out = []
 
-    def one(q):
-        r = requests.get("https://jsearch.p.rapidapi.com/search",
-                         params={"query": q, "page": "1", "num_pages": str(pages), "country": "jp", "date_posted": "month"},
-                         headers={"X-RapidAPI-Key": key, "X-RapidAPI-Host": "jsearch.p.rapidapi.com"}, timeout=30)
+    def one(args):
+        q, lang = args
+        r = requests.get("https://jsearch.p.rapidapi.com/search-v2",
+                         params={"query": q, "page": "1", "num_pages": str(pages), "country": "jp", "language": lang, "date_posted": "month"},
+                         headers={"X-RapidAPI-Key": key, "X-RapidAPI-Host": "jsearch.p.rapidapi.com"}, timeout=40)
         if r.status_code != 200:
-            print("  ! jsearch", q, r.status_code, r.text[:120], file=sys.stderr)
+            print("  ! jsearch", q, lang, r.status_code, r.text[:120], file=sys.stderr)
             return []
+        data = r.json().get("data") or {}
+        items = data.get("jobs", []) if isinstance(data, dict) else data
         res = []
-        for j in r.json().get("data", []):
+        for j in items:
             loc = ", ".join(x for x in (j.get("job_city") or "", j.get("job_state") or "", j.get("job_country") or "") if x)
             res.append({"source": "jsearch", "board": (j.get("job_publisher") or "web").lower(), "title": j.get("job_title", ""),
-                        "company": j.get("employer_name", ""), "location": loc or "Japan",
+                        "company": j.get("employer_name", ""), "location": loc or "Japan", "lang": lang,
                         "url": j.get("job_apply_link", ""), "description": j.get("job_description", ""),
                         "updated": j.get("job_posted_at_datetime_utc", "")})
         return res
 
     with ThreadPoolExecutor(4) as ex:
-        for res in ex.map(one, queries):
+        for res in ex.map(one, [(q, lang) for q in queries for lang in ("ja", "en")]):
             out.extend(res)
     return out
 

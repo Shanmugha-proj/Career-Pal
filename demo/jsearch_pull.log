@@ -1,0 +1,6 @@
+jsearch raw: 77 in 76s
+japan engineering after filter: 26
+new vs existing corpus: 26
+  25 extracted, errors={}, 47s
+extracted 26/26 new postings with Kimi K3 in 48s; errors={}
+saved demo/real_jobs.json with 288 real postings

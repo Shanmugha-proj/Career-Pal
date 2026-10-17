@@ -135,7 +135,8 @@ Rules:
 - 'Japanese' is a QUALIFICATION, not the posting's language. Include it ONLY if the posting explicitly lists Japanese
   ability as required or preferred: business-level / JLPT N2 = 2, native / N1 = 3, conversational / basic / N3 = 1.
   If it says Japanese is not required, or only English is required, or it is a bilingual posting with no stated
-  Japanese requirement, DO NOT include Japanese. 'English': business = 2, fluent/native = 3.
+  Japanese requirement, DO NOT include Japanese. Exception: a posting written ENTIRELY in Japanese (no English version)
+  implicitly requires business Japanese - include Japanese at level 2. 'English': business = 2, fluent/native = 3.
 - Containers/Docker/K8s -> Docker and/or Kubernetes. Terraform/IaC -> Terraform. AWS/GCP/Azure -> the named cloud(s).
 - Monitoring/observability tools -> Prometheus/Grafana, Datadog or Logging (ELK/Loki) as named. On-call/SLOs -> SRE Practices.
 - Ignore generic soft skills except Team Leadership (managing/leading engineers) and Mentoring."""

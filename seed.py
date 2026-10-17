@@ -42,8 +42,13 @@ def load_real_jobs() -> list[dict]:
         raw = json.load(open("demo/real_jobs.json", encoding="utf-8"))
     except FileNotFoundError:
         return []
+    import re
+    non_software = re.compile(r"propulsion|spacecraft|mechanical|tire|electrical|facility|facilities|GNC|guidance|thermal|"
+                              r"structural|manufacturing|hardware|chiplet|physical design|verification engineer|field service", re.I)
     jobs = []
     for i, j in enumerate(raw, 1):
+        if non_software.search(j["title"]):
+            continue
         jobs.append({
             "id": f"real-{i:03d}", "title": j["title"].strip(), "company": j["company"], "location": j["location"] or "Tokyo, Japan",
             "posted_days_ago": 7, "role": role_for(j["title"]), "source": "real", "url": j.get("url", ""),
